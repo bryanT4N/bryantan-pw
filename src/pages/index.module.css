@@ -5,17 +5,34 @@
  * and scoped locally.
  */
 
+ .bannerWrap {
+  display: flex;
+  align-items: center;
+  padding-top:    0rem;
+  padding-right:  0rem;
+  padding-bottom: 0rem;
+  padding-left:   0rem;
+  width: 100%;
+}
+
+/* .container {
+  flex-direction: row-reverse;
+  margin: 20;
+  display: flex;
+} */
+
 .heroBanner {
   padding-top:    1rem;
   padding-right:  17rem;
   padding-bottom: 0rem;
   padding-left:   0rem;
+  margin-left: 0rem;
   text-align: left;
   position: relative;
   overflow: hidden;
 }
 
-@media screen and (max-width: 996px) {
+@media screen and (max-width: 852px) {
   .heroBanner {
     padding-top:    2rem;
     padding-right:  2rem;

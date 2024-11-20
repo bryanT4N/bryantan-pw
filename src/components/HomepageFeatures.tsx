@@ -5,7 +5,7 @@ import { PersonalTabs, EducationTabs, ExperienceTabs, ProjectsTabs } from './Tab
 export default function HomepageFeatures() {
   return (
     <section className={styles.features}>
-      <div className="container" style={{width:1000}}>
+      <div className="container" style={{width:996}}>
         <div className="row">
           <div className="col col--offset-1 col--11">
             <EducationTabs/>
