@@ -22,11 +22,11 @@ export const Experience = ({
             <div className={classes.companyContainer}>
               <div className={classes.flex}>
                 {company ? (<div className={classes.company}>{company}</div>) : (<></>)}
-                {location ? (<div className={classes.city}>{location}&emsp;&emsp;&emsp;</div>) : (<></>)}
+                {location ? (<div className={classes.city}>{location}&emsp;&emsp;</div>) : (<></>)}
               </div>
               <div className={classes.flex}>
                 <h3 className={classes.jobTitle}>{jobTitle}</h3>
-                <h4 className={classes.flexDate}>{date}&emsp;&emsp;&emsp;</h4>
+                <h4 className={classes.flexDate}>{date}&emsp;&emsp;</h4>
               </div>
             </div>
             <div className={classes.information}>

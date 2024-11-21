@@ -16,11 +16,11 @@ export const Education = ({ img, school, city, study, date }) => {
             <div className={classes.schoolContainer}>
               <div className={classes.flex}>
                 {school ? (<div className={classes.schoolTitle}>{school}</div>) : (<></>)}
-                {city ? (<div className={classes.city}>{city}&emsp;&emsp;&emsp;</div>) : (<></>)}
+                {city ? (<div className={classes.city}>{city}&emsp;&emsp;</div>) : (<></>)}
               </div>
               <div className={classes.flex}>
                 <div className={classes.degree}>{study}</div>
-                <h4 className={classes.flexDate}>{date}&emsp;&emsp;&emsp;</h4>
+                <h4 className={classes.flexDate}>{date}&emsp;&emsp;</h4>
               </div>
             </div>
           </div>
