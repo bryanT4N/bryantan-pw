@@ -30,7 +30,7 @@ export const Project = ({
             {codeLink ? (
               <a
                 style={{
-                  marginRight: '.7rem',
+                  marginRight: '1.32rem',
                   marginLeft: '-.7rem',
                   padding: '.5rem .7rem',
                 }}
