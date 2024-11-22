@@ -43,6 +43,7 @@
   --ifm-font-size-base: 70%;
   --ifm-footer-color:#ebedf0;
   --ifm-footer-background-color: #5c636f;
+  /* background-image: url("/img/bg1.png"); */
 }
 
 .docusaurus-highlight-code-line {
