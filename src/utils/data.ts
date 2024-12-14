@@ -25,7 +25,7 @@ const projects: Array<ProjectType> = [
     img: 'img/projects/sceneeditor.png',
     title: '3D Scene Editor',
     description:
-      'Final project for Computer Graphics course (2021). Developed a scene editor using C++ and OpenGL, implementing features such as skyboxes, terrain, model transformation, Euler angle camera, and Blinn-Phong lighting.',
+      'Final project for Computer Graphics course (2020). Developed a scene editor using C++ and OpenGL, implementing features such as skyboxes, terrain, model transformation, Euler angle camera, and Blinn-Phong lighting.',
     codeLink: 'https://github.com/bryanT4N/Simple_Scene_Editor/',
     liveLink: '',
     techstack: ['C++', 'OpenGL'],
@@ -77,7 +77,7 @@ const experience: Array<ExperienceType> = [
     // company: 'Guangzhou 4399 Information Technology Co., Ltd.',
     // location: 'Guangzhou, China',
     tasks: [
-      'Designed an exploration puzzle mini-game for the main storyline in 𝘌𝘳𝘢 𝘰𝘧 𝘊𝘰𝘯𝘲𝘶𝘦𝘴𝘵 (4X), creating over 30 levels.',
+      'Designed an exploration puzzle game for the main storyline in 𝘌𝘳𝘢 𝘰𝘧 𝘊𝘰𝘯𝘲𝘶𝘦𝘴𝘵 (4X), creating over 30 mini-game levels.',
       'Iterated on other systems and some combat-related features such as battle reports.',
     ],
   },
