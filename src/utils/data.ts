@@ -67,7 +67,7 @@ const experience: Array<ExperienceType> = [
     // company: 'Guangzhou 4399 Information Technology Co., Ltd.',
     // location: 'Guangzhou, China',
     tasks: [
-      'Combat system and related features for a 4X strategy + auto battler game.',
+      'Combat system and related features for a 4X Strategy + Auto Battler game.',
     ],
   },
   {
