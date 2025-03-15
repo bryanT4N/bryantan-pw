@@ -12,7 +12,7 @@ const caculateWorkLength = (startMonth: Date, endMonth: Date): number => {
 };
 
 const projects: Array<ProjectType> = [
-  {
+/*   {
     img: 'img/projects/vinsar.png',
     title: 'Optimization of Visual-Inertial SLAM for Mobile AR with Improved Feature Tracking in Low-Light Environments',
     description:
@@ -20,17 +20,17 @@ const projects: Array<ProjectType> = [
     codeLink: 'files/vinsarandroid.zip',
     liveLink: '',
     techstack: ['C++', 'Java'],
-  },
+  }, */
   {
     img: 'img/projects/sceneeditor.png',
-    title: '3D Scene Editor',
+    title: '3D场景编辑器',
     description:
-      'Final project for Computer Graphics course (2020). Developed a scene editor using C++ and OpenGL, implementing features such as skyboxes, terrain, model transformation, Euler angle camera, and Blinn-Phong lighting.',
-    codeLink: 'https://github.com/bryanT4N/Simple_Scene_Editor/',
+      '图形学课程作业 (2020)。 基于 C++ 和 OpenGL 开发，实现了 Blinn-Phong 光照，模型变换，天空盒，高度图地形，欧拉角摄像机，交互控制等基本功能。',
+    codeLink: 'https://github.com/bryanT4N/3DSE/',
     liveLink: '',
     techstack: ['C++', 'OpenGL'],
   },
-  {
+/*   {
     img: 'img/projects/pcencoder.png',
     title: ' A Geometry-based Point Cloud Codec',
     description:
@@ -38,11 +38,11 @@ const projects: Array<ProjectType> = [
     codeLink: 'https://github.com/sky-5462/PCEncoder',
     liveLink: '',
     techstack: ['C++'],
-  },
+  }, */
   {
     img: 'img/projects/bryantanpw.png',
     title: 'bryantan.net',
-    description: 'Personal website. Designed to introduce myself and share personal information. I will also post blogs here in the future.',
+    description: '使用 Docusaurus 制作的个人主页，用于分享信息和发布博客。',
     codeLink: 'https://github.com/bryanT4N/bryantan-pw',
     techstack: ['ReactJS', 'TypeScript'],
   },
@@ -51,44 +51,25 @@ const projects: Array<ProjectType> = [
 const experience: Array<ExperienceType> = [
   {
     img: 'img/experience/4399-logo.png',
-    jobTitle: 'System Designer',
-    date: '02/2024 - 05/2024',
-    company: 'Guangzhou 4399 Information Technology Co., Ltd.',
-    location: 'Guangzhou, China',
+    jobTitle: '战斗/系统策划',
+    date: '07/2022 - 05/2024',
+    company: '广州四三九九信息科技有限公司',
+    location: '广州, 中国',
     tasks: [
-      'Pet system for a turn-based MMORPG.',
+      'SLG+项目：管理战斗开发月版本规划；搭建战斗玩法(塔防+自走棋)，技能、Buff、出兵与怪物逻辑、玩家AI、飘字等',
+      'MMORPG项目：宠物系统',
+      '文明与征服：设计主线解谜探索小游戏，产出30+关卡；迭代优化战报等其它系统',
     ],
     // techstack: ['C++', 'Java'],
   },
   {
     img: '',
-    jobTitle: 'Lead Combat Designer',
-    date: '03/2023 - 02/2024',
+    jobTitle: '策划实习',
+    date: '07/2021 - 08/2021',
     // company: 'Guangzhou 4399 Information Technology Co., Ltd.',
     // location: 'Guangzhou, China',
     tasks: [
-      'Combat system and related features for a 4X Strategy + Auto Battler game.',
-    ],
-  },
-  {
-    img: '',
-    jobTitle: 'Level Designer',
-    date: '06/2022 - 03/2023',
-    // company: 'Guangzhou 4399 Information Technology Co., Ltd.',
-    // location: 'Guangzhou, China',
-    tasks: [
-      'Designed an exploration puzzle game for the main storyline in 𝘌𝘳𝘢 𝘰𝘧 𝘊𝘰𝘯𝘲𝘶𝘦𝘴𝘵 (4X), creating over 30 mini-game levels.',
-      'Iterated on other systems and some combat-related features such as battle reports.',
-    ],
-  },
-  {
-    img: '',
-    jobTitle: 'Game Designer Intern',
-    date: '07/2021 - 06/2022',
-    // company: 'Guangzhou 4399 Information Technology Co., Ltd.',
-    // location: 'Guangzhou, China',
-    tasks: [
-      'Assisted with various tasks. Helped improve system features for 𝘌𝘳𝘢 𝘰𝘧 𝘊𝘰𝘯𝘲𝘶𝘦𝘴𝘵.',
+      '文明与征服',
     ],
   },
 ];
@@ -96,9 +77,9 @@ const experience: Array<ExperienceType> = [
 const education: Array<EducationType> = [
   {
     img: 'img/education/Sun_Yat-sen_University_Logo.png',
-    school: 'Sun Yat-sen University',
-    city: 'Guangzhou, China',
-    study: 'B.Eng. in Computer Science and Technology',
+    school: '中山大学',
+    city: '广州, 中国',
+    study: '计算机科学与技术 - 工学学士',
     date: '08/2018 - 06/2022',
   },
 ];

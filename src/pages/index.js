@@ -22,7 +22,7 @@ function HomepageHeader() {
             <div className="container">
               <Grid container spacing={2}>
                 <Grid item xs={{ display: 'flex' }}>
-                  <Avatar alt="Leixuan Tan" src={useBaseUrl('/img/avatar.png')} sx={{ width: 132, height: 132, m: 1, ml:-2 }} />                  
+                  <Avatar alt="Bryan Tan" src={useBaseUrl('/img/Kaju_A_1024.png')} sx={{ width: 132, height: 132, m: 1, ml:-2 }} />                  
                 </Grid>
                 <Grid item xs={12} sm container>
                   <Grid item xs container direction="column" spacing={1}>

@@ -1,0 +1,67 @@
+docusaurus:
+  label: Docusaurus
+  permalink: /docusaurus
+  description: Docusaurus tag
+
+game_design:
+  label: 游戏设计
+  permalink: /game_design
+  description: 游戏设计tag
+
+game_dev:
+  label: 游戏开发
+  permalink: /game_dev
+  description: 游戏开发tag
+
+game_review:
+  label: 游戏评论
+  permalink: /game_review
+  description: 游戏评论tag
+
+career:
+  label: 职业
+  permalink: /career
+  description: 职业tag
+
+thoughts:
+  label: 想法
+  permalink: /thoughts
+  description: 想法tag
+  
+life:
+  label: 生活
+  permalink: /life
+  description: 生活tag
+
+others:
+  label: 其它
+  permalink: /others
+  description: 其它tag
+
+pokemon:
+  label: 宝可梦
+  permalink: /pokemon
+  description: 宝可梦tag
+
+monster_hunter:
+  label: 怪物猎人
+  permalink: /monster_hunter
+  description: 怪物猎人tag
+
+mihoyo:
+  label: 米哈游
+  permalink: /mihoyo
+  description: 米哈游tag
+
+zenless_zone_zero:
+  label: 绝区零
+  permalink: /zenless_zone_zero
+  description: 绝区零tag
+
+tencent:
+  label: 腾讯
+  permalink: /tencent
+  description: 腾讯tag
+
+
+

@@ -31,6 +31,7 @@ export const projectStyles = makeStyles(() =>
     title: {
       flex: '3 0',
       fontWeight: 800,
+      letterSpacing: '0.8px',
       fontSize: 18,
     },
     description: {

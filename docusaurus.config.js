@@ -5,7 +5,7 @@ import {themes as prismThemes} from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
-  title: 'Leixuan Tan',
+  title: 'Bryan Tan',
   tagline: 'Game Designer & Programmer.',
   url: 'https://bryantan.net',
   baseUrl: '/',
@@ -13,14 +13,14 @@ module.exports = {
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/faviconB.ico',
   organizationName: 'bryanT4N', // Usually your GitHub org/user name.
-  projectName: 'bryantan', // Usually your repo name.
+  projectName: 'bryantan-pw', // Usually your repo name.
   trailingSlash: true,
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
   // may want to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: 'en',
+    defaultLocale: 'zh-cn',
     locales: ['en', "zh-cn"],
     localeConfigs: {
       en: {
@@ -100,13 +100,15 @@ module.exports = {
       {
         docs: false,
         blog: {
-          showReadingTime: true,
+          showReadingTime: false,
+          showLastUpdateAuthor: true,
+          showLastUpdateTime: true,
           // Please change this to your repo.
-          editUrl: 'https://github.com/bryanT4N/bryantan-pw/edit/master/',
+          // editUrl: 'https://github.com/bryanT4N/bryantan-pw/edit/master/',
           feedOptions: {
             type: 'all',
           },
-          postsPerPage: 3,
+          postsPerPage: 5,
           truncateMarker: /<!--\s*(truncate)\s*-->/,
         },
         googleAnalytics: {
@@ -121,6 +123,11 @@ module.exports = {
   ],
 
   themeConfig: {
+    blog: {
+      sidebar: {
+        groupByYear: false,
+      },
+    },
     colorMode: {
       defaultMode: 'light',
       disableSwitch: true,
@@ -128,14 +135,14 @@ module.exports = {
     },
     navbar: {
       hideOnScroll: true,
-      // title: 'Leixuan Tan',
-      // logo: {
-      //   alt: 'My Site Logo',
-      //   src: 'img/logoB.png',
-      // },
+      title: 'Bryan Tan',
+      logo: {
+        alt: 'Logo',
+        src: 'img/Kaju_C.png',
+      },
       items: [
         // { type: 'localeDropdown', position: 'right'},
-        // { to: '/blog', label: 'Blog', position: 'left' },
+        { to: '/blog', label: 'Blog', position: 'left' },
         {
           href: 'https://github.com/bryanT4N/',
           label: 'GitHub',

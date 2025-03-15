@@ -53,8 +53,10 @@ const experienceStyles = makeStyles(() =>
       display: 'inline',
       fontSize: 15,
       fontWeight: 500,
+      letterSpacing: '1px',
       marginBottom: 2,
       marginTop: 0,
+      textDecoration: 'underline',
       // fontSize: 16,
       // fontWeight: 600,
       // marginBottom: 2,
@@ -63,6 +65,7 @@ const experienceStyles = makeStyles(() =>
     company: {
       fontSize: 16,
       fontWeight: 600,
+      letterSpacing: '0.8px',
       marginBottom: 4,
       marginTop: 2,
       // display: 'inline',

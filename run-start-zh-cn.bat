@@ -1,0 +1,2 @@
+pnpm run start
+pause

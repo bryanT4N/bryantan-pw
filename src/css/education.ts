@@ -57,6 +57,7 @@ const educationStyles = makeStyles(() =>
     schoolTitle: {
       fontSize: 16,
       fontWeight: 600,
+      letterSpacing: '0.8px',
       marginBottom: 2,
       marginTop: 0,
     },

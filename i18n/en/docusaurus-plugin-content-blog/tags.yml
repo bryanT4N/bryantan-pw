@@ -1,0 +1,15 @@
+docusaurus:
+  label: Docusaurus
+  permalink: /docusaurus
+  description: Docusaurus tag description
+
+game_design:
+  label: Game Design
+  permalink: /game_design
+  description: Game design tag description
+
+game_dev:
+  label: Game Dev
+  permalink: /game_dev
+  description: Game dev tag description
+
