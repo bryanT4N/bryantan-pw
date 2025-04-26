@@ -3,6 +3,11 @@ docusaurus:
   permalink: /docusaurus
   description: Docusaurus tag
 
+markdown:
+  label: Markdown
+  permalink: /markdown
+  description: Markdown tag
+
 game_design:
   label: 游戏设计
   permalink: /game_design

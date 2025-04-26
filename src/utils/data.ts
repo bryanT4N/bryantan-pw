@@ -22,7 +22,7 @@ const projects: Array<ProjectType> = [
     techstack: ['C++', 'Java'],
   }, */
   {
-    img: 'img/projects/sceneeditor.png',
+    img: 'img/projects/sceneeditor.webp',
     title: '3D场景编辑器',
     description:
       '图形学课程作业 (2020)。 基于 C++ 和 OpenGL 开发，实现的基本功能包括 Blinn-Phong 光照，天空盒，欧拉角摄像机，高度图地形，模型变换，交互控制等。',
@@ -31,7 +31,7 @@ const projects: Array<ProjectType> = [
     techstack: ['C++', 'OpenGL'],
   },
 /*   {
-    img: 'img/projects/pcencoder.png',
+    img: 'img/projects/pcencoder.webp',
     title: ' A Geometry-based Point Cloud Codec',
     description:
       'Extracurricular Project (2021). A point cloud codec featuring sampling, prediction, transform coding, and entropy coding, utilizing an octree-based and image-based method.',
@@ -40,7 +40,7 @@ const projects: Array<ProjectType> = [
     techstack: ['C++'],
   }, */
   {
-    img: 'img/projects/bryantanpw.png',
+    img: 'img/projects/bryantanpw.webp',
     title: 'bryantan.net',
     description: '使用 Docusaurus 制作的个人主页，用于信息展示和博客发布。',
     codeLink: 'https://github.com/bryanT4N/bryantan-pw',
@@ -56,9 +56,10 @@ const experience: Array<ExperienceType> = [
     company: '广州四三九九信息科技有限公司',
     location: '广州, 中国',
     tasks: [
-      'SLG+项目：管理战斗开发月版本规划；搭建战斗玩法(塔防+自走棋)，技能、Buff、出兵与怪物逻辑、玩家AI、飘字等',
-      'MMORPG项目：宠物系统',
-      '文明与征服：设计主线解谜探索小游戏，产出30+关卡；迭代优化战报等其它系统',
+      //'SLG+项目：管理战斗开发月版本规划；搭建战斗玩法(塔防+自走棋)，技能、Buff、出兵与怪物逻辑、玩家AI、飘字等',
+      //'MMORPG项目：宠物系统',
+      //'文明与征服：设计主线解谜探索小游戏，产出30+关卡；迭代优化战报等其它系统',
+      'SLG+塔防+自走棋，MMORPG，文明与征服',
     ],
     // techstack: ['C++', 'Java'],
   },
@@ -76,7 +77,7 @@ const experience: Array<ExperienceType> = [
 
 const education: Array<EducationType> = [
   {
-    img: 'img/education/Sun_Yat-sen_University_Logo.png',
+    img: 'img/education/Sun_Yat-sen_University_Logo.webp',
     school: '中山大学',
     city: '广州, 中国',
     study: '计算机科学与技术 - 工学学士',
