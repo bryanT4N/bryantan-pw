@@ -33,7 +33,7 @@ export const Experience = ({
               {tasks.map(task => {
                 return (
                   <>
-                    ▪ {task} <br />
+                    &nbsp;&nbsp;▪&nbsp;&nbsp;{task} <br />
                   </>
                 );
               })}

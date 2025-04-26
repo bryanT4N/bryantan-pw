@@ -138,7 +138,7 @@ module.exports = {
       title: 'Bryan Tan',
       logo: {
         alt: 'Logo',
-        src: 'img/Kaju_C.png',
+        src: 'img/avatar_c.png',
       },
       items: [
         // { type: 'localeDropdown', position: 'right'},

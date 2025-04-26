@@ -42,7 +42,7 @@ const projects: Array<ProjectType> = [
   {
     img: 'img/projects/bryantanpw.png',
     title: 'bryantan.net',
-    description: '使用 Docusaurus 制作的个人主页，用于分享信息和发布博客。',
+    description: '使用 Docusaurus 制作的个人主页，用于信息展示和博客发布。',
     codeLink: 'https://github.com/bryanT4N/bryantan-pw',
     techstack: ['ReactJS', 'TypeScript'],
   },

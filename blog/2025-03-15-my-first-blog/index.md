@@ -12,7 +12,7 @@ tags: [docusaurus]
 
 这里主要更新游戏相关的学习和思考内容，一部分也会触及其它主题。而吐槽之类的动态大概就不会发在网站。
 
-<div class="text--center"><img src="./bg7.png" width="70%" /></div>
+<div class="text--center"><img src="/bg7.png" width="70%" /></div>
 
 顺便感叹一下 Docusaurus 做网页确实方便，只要是框架之内的东西唰唰两下就改好了，“开箱即用”作为产品来讲是很有吸引力的。
 但用来写博客其实也有不爽的地方，它的 markdown 又和 github 这些有区别。居中之类的一些常见格式调整要求用内置的 Infima 类，而且写岔了是要报错的……
