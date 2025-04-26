@@ -25,7 +25,7 @@ const projects: Array<ProjectType> = [
     img: 'img/projects/sceneeditor.png',
     title: '3D场景编辑器',
     description:
-      '图形学课程作业 (2020)。 基于 C++ 和 OpenGL 开发，实现了 Blinn-Phong 光照，模型变换，天空盒，高度图地形，欧拉角摄像机，交互控制等基本功能。',
+      '图形学课程作业 (2020)。 基于 C++ 和 OpenGL 开发，实现的基本功能包括 Blinn-Phong 光照，天空盒，欧拉角摄像机，高度图地形，模型变换，交互控制等。',
     codeLink: 'https://github.com/bryanT4N/3DSE/',
     liveLink: '',
     techstack: ['C++', 'OpenGL'],
