@@ -11,11 +11,11 @@ tags: [docusaurus]
 <!-- truncate -->
 
 <div class="text--center">
-    <img src={require('./bg7.png').default} width="80%" />
+    <img src={require('./bg7.webp').default} width="80%" />
 </div>
 
 <br/>
-Docusaurus 拿来做网页确实方便，只要是框架之内的东西唰唰两下就改好了，“开箱即用”作为产品来讲很有吸引力。
+Docusaurus 拿来做个信息页面很方便，框架里的东西唰唰两下就改好，开箱即用作为产品来讲很有吸引力。
 
-但写博客内容其实也有不爽的地方，它的 Markdown 又和 Github 这些有区别。比如以 HTML 格式引用图片不能直接用相对路径，居中等一些常见调整得借助内置的 Infima 类，而且写岔了是要报错的……
+但写博客的时候也发现有不爽的地方，比如它的 Markdown 使起来并不完美：用 HTML 格式引用图片不能直接用相对路径、居中等一些常见调整得借助内置的 Infima 类等等，而且写岔了是要报错的……
 

@@ -11,7 +11,7 @@ module.exports = {
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/faviconB.ico',
+  favicon: 'img/faviconA.ico',
   organizationName: 'bryanT4N', // Usually your GitHub org/user name.
   projectName: 'bryantan-pw', // Usually your repo name.
   trailingSlash: true,
