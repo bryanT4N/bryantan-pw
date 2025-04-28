@@ -1,72 +1,86 @@
 docusaurus:
   label: Docusaurus
   permalink: /docusaurus
-  description: Docusaurus tag
+  description: " "
 
 markdown:
   label: Markdown
   permalink: /markdown
-  description: Markdown tag
+  description: " "
+
+reading_notes:
+  label: 读书笔记
+  permalink: /reading_notes
+  description: " "
+
+narrative:
+  label: 叙事
+  permalink: /narrative
+  description: " "
 
 game_design:
   label: 游戏设计
   permalink: /game_design
-  description: 游戏设计tag
+  description: " "
 
 game_dev:
   label: 游戏开发
   permalink: /game_dev
-  description: 游戏开发tag
+  description: " "
 
 game_review:
   label: 游戏评论
   permalink: /game_review
-  description: 游戏评论tag
+  description: " "
 
 career:
   label: 职业
   permalink: /career
-  description: 职业tag
+  description: " "
 
 thoughts:
   label: 想法
   permalink: /thoughts
-  description: 想法tag
+  description: " "
   
 life:
   label: 生活
   permalink: /life
-  description: 生活tag
+  description: " "
 
 others:
   label: 其它
   permalink: /others
-  description: 其它tag
+  description: " "
 
 pokemon:
   label: 宝可梦
   permalink: /pokemon
-  description: 宝可梦tag
+  description: " "
 
 monster_hunter:
   label: 怪物猎人
   permalink: /monster_hunter
-  description: 怪物猎人tag
+  description: " "
 
 mihoyo:
   label: 米哈游
   permalink: /mihoyo
-  description: 米哈游tag
+  description: " "
 
 zenless_zone_zero:
   label: 绝区零
   permalink: /zenless_zone_zero
-  description: 绝区零tag
+  description: " "
 
 tencent:
   label: 腾讯
   permalink: /tencent
-  description: 腾讯tag
+  description: " "
 
+save_the_cat:
+  label: 救猫咪
+  permalink: /save_the_cat
+  description: " "
 
 

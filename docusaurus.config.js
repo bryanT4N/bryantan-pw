@@ -100,6 +100,7 @@ module.exports = {
       {
         docs: false,
         blog: {
+          // recentPosts: 10,
           showReadingTime: false,
           showLastUpdateAuthor: true,
           showLastUpdateTime: true,
@@ -108,7 +109,7 @@ module.exports = {
           feedOptions: {
             type: 'all',
           },
-          postsPerPage: 5,
+          postsPerPage: 'ALL',
           truncateMarker: /<!--\s*(truncate)\s*-->/,
         },
         googleAnalytics: {

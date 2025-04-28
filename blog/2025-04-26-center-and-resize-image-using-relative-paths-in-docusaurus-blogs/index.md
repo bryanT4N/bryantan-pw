@@ -15,7 +15,7 @@ Markdown 语法不允许图像自由调整大小，而用 Docusaurus 的 HTML �
 `<div>` 是使用 Docusaurus 内置的 Infima 类来设置居中，不需要可以去掉。
 
 <!-- truncate -->
-<br/>
+---
 Docusaurus 博客实际上有多种方式引用图像：
 
 #### 1. 用 Markdown 语法
