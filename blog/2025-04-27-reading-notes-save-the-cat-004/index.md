@@ -3,7 +3,7 @@ title: Bryan 的读书笔记：《救猫咪》| 4 - 来构建节拍吧！
 authors: [bry4ntan]
 tags: [reading_notes, game_design, narrative, save_the_cat]
 ---
-  
+   
 ---
 
 ## 4 “来构建节拍吧！” LET'S BEAT IT OUT

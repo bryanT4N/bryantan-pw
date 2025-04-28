@@ -3,7 +3,7 @@ title: Bryan 的读书笔记：《救猫咪》| 5 - 演示板
 authors: [bry4ntan]
 tags: [reading_notes, game_design, narrative, save_the_cat]
 ---
-  
+   
 ---
 
 ## 5 “演示板：助你打造完美剧本”
@@ -107,7 +107,7 @@ tags: [reading_notes, game_design, narrative, save_the_cat]
 
 ### 5.10 秘密武器
 
-作者提到“如果我真的写到卡壳的时候，我就会给麦克·切达打电话”，并且提供了一个网站 [www.mikecheda.com](www.mikecheda.com) 找麦克·切达帮你看剧本，他看剧本和分析剧本会收 500 美元的费用。
+作者提到“如果我真的写到卡壳的时候，我就会给麦克·切达打电话”，并且提供了一个网站 [www.mikecheda.com](http://www.mikecheda.com/) 找麦克·切达帮你看剧本，他看剧本和分析剧本会收 500 美元的费用。
 
 > p.s. 麦克·切达在书中被多次提到，他与作者是亦师亦友的关系，这节实际上是在书里打个小广告。截止至这篇博客记录时，网站看起来依然存活，而作者布莱克·斯奈德已经在 2009 年离世了。
 

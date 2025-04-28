@@ -3,7 +3,7 @@ title: Bryan 的读书笔记：《救猫咪》| 1&2 - 一句话故事
 authors: [bry4ntan]
 tags: [reading_notes, game_design, narrative, save_the_cat]
 ---
-  
+   
 ---
 ## 1 “它讲的是什么？”
 

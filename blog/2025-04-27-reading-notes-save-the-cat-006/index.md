@@ -3,7 +3,7 @@ title: Bryan 的读书笔记：《救猫咪》| 6 - 剧本创作的不变法则
 authors: [bry4ntan]
 tags: [reading_notes, game_design, narrative, save_the_cat]
 ---
-  
+   
 ---
 
 ## 6 “剧本创作的不变法则”
