@@ -2,6 +2,7 @@
 title: Bryan 的读书笔记：《救猫咪》| 7 - “这电影出了什么问题？”
 authors: [bry4ntan]
 tags: [reading_notes, game_design, narrative, save_the_cat]
+date: 2025-04-27T00:06
 ---
    
 ---

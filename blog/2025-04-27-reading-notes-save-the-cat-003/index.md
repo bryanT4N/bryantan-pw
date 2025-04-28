@@ -2,6 +2,7 @@
 title: Bryan 的读书笔记：《救猫咪》| 3 - “讲的是这样一个人，他……”
 authors: [bry4ntan]
 tags: [reading_notes, game_design, narrative, save_the_cat]
+date: 2025-04-27T00:02
 ---
    
 ---
