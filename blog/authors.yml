@@ -2,7 +2,8 @@ bry4ntan:
   name: Bryan Tan
   title: Game Designer & Programmer
   # url: https://github.com/bryanT4N
-  image_url: https://github.com/bryanT4N.png
+  image_url: '/img/avatar.png'
+  # image_url: https://github.com/bryanT4N.png
   # email: bry4n.lx.tan@gmail.com
   page: 
     # customize the url of the author page at /blog/authors/<permalink>
