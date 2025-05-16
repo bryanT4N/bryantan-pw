@@ -1,7 +1,7 @@
 ---
 title: Bryan 的读书笔记：《救猫咪》| 5 - 演示板
 authors: [bry4ntan]
-tags: [reading_notes, game_design, narrative, save_the_cat]
+tags: [reading_notes, narrative, save_the_cat]
 date: 2025-04-27T00:04
 ---
    

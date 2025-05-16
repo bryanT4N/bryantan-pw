@@ -1,7 +1,7 @@
 ---
 title: Bryan 的读书笔记：《救猫咪》| 前言
 authors: [bry4ntan]
-tags: [reading_notes, game_design, narrative, save_the_cat]
+tags: [reading_notes, narrative, save_the_cat]
 ---
 
 《救猫咪》是一本编剧书，讲述了剧作中一系列行之有效的经验，说清楚了作为编剧从头至尾该怎么创作。这本书好就好在它鼓励读者“照着执行”，能清楚感受到作者想把内容要点传达清楚。
