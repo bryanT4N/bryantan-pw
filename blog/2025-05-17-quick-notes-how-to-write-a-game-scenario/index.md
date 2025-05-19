@@ -25,7 +25,7 @@ tags: [reading_notes, game_design, narrative, how_to_write_a_game_scenario]
 
 不要脱离游戏系统讲故事。
 
-### 0-3 安排故事节奏：序破急（三幕式）
+### 0-3 安排故事节奏：序破急
 <div class="text--center">
     <img src={require('./assets/425945f064318235b311925c95b7c4e5.png').default} width="75%" />
 </div>
@@ -498,7 +498,7 @@ tags: [reading_notes, game_design, narrative, how_to_write_a_game_scenario]
     <img src={require('./assets/a5e5523ff3234f14b8de9d3a6319ca02.png').default} width="75%" />
 </div> 
 
-剧本的分支能实现其他几种体裁做不到的事情。一个是“剧本多线发展”，另一个是“可以设置坏结局、最佳结局等多个结局”。
+游戏剧本的分支能实现其他体裁做不到的事情。一个是“剧本多线发展”，另一个是“可以设置坏结局、最佳结局等多个结局”。
 
 
 #### 三种选项
