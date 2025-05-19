@@ -1,7 +1,7 @@
 ---
 title: 《绝区零》1.x 回顾：我消灭选关了…！…吗？
 authors: [bry4ntan]
-tags: [game_review, zenless_zone_zero, mihoyo]
+tags: [game_review, game_experience_observation, zenless_zone_zero, mihoyo]
 ---
 
 《绝区零》2.0 将近，正是适合写篇阶段性评价的时机。文章记录个人的感受和思考，谨作参考备忘，错漏请多包涵。
@@ -162,7 +162,7 @@ tags: [game_review, zenless_zone_zero, mihoyo]
 
 走格子是绕不开的争议话题。我不是格子玩法的反对者，但确实感觉到走格子体验有难受之处。
 
-几点印象：
+<b>对走格子的几点印象</b>：
 - 【格子+遭遇战】关卡结构，对生产很友好。
 - 格子玩法很丰富，许多基于格子的设计被验证过（炸弹人、魔塔、节奏地牢……）。不过剧情里主要用来做了解谜。
 - 【格子+遭遇战】是一种<b>解谜+战斗</b>关卡。在构成上接近的游戏还有《坎公骑冠剑》、《棕色尘埃 2 》。

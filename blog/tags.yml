@@ -83,4 +83,12 @@ save_the_cat:
   permalink: /save_the_cat
   description: " "
 
+game_experience_observation:
+  label: 游戏体验观察
+  permalink: /game_experience_observation
+  description: " "
 
+how_to_write_a_game_scenario:
+  label: 游戏剧本怎么写
+  permalink: /how_to_write_a_game_scenario
+  description: " "
