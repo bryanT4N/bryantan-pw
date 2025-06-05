@@ -92,3 +92,18 @@ how_to_write_a_game_scenario:
   label: 游戏剧本怎么写
   permalink: /how_to_write_a_game_scenario
   description: " "
+
+study_abroad:
+  label: 留学
+  permalink: /study_abroad
+  description: " "
+
+job_hunting:
+  label: 求职
+  permalink: /job_hunting
+  description: " "
+
+personal_planning:
+  label: 个人规划
+  permalink: /personal_planning
+  description: " "
