@@ -1,7 +1,7 @@
 ---
 title: 《绝区零》1.x 回顾：我消灭选关了…！…吗？
 authors: [bry4ntan]
-tags: [game_review, game_experience_observation, zenless_zone_zero, mihoyo]
+tags: [game_review, game_experience, zenless_zone_zero, mihoyo]
 ---
 
 《绝区零》2.0 将近，正是适合写篇阶段性评价的时机。文章记录个人的感受和思考，谨作参考备忘，错漏请多包涵。

@@ -33,6 +33,26 @@ game_review:
   permalink: /game_review
   description: " "
 
+game_experience:
+  label: 游戏体验
+  permalink: /game_experience
+  description: " "
+
+d2:
+  label: DIRECT 2
+  permalink: /d2
+  description: " "
+
+fc10:
+  label: FOCUS 10
+  permalink: /fc10
+  description: " "
+
+is50:
+  label: INSIGHT 50
+  permalink: /is50
+  description: " "
+
 career:
   label: 职业
   permalink: /career
@@ -83,11 +103,6 @@ save_the_cat:
   permalink: /save_the_cat
   description: " "
 
-game_experience_observation:
-  label: 游戏体验观察
-  permalink: /game_experience_observation
-  description: " "
-
 how_to_write_a_game_scenario:
   label: 游戏剧本怎么写
   permalink: /how_to_write_a_game_scenario
@@ -106,4 +121,9 @@ job_hunting:
 personal_planning:
   label: 个人规划
   permalink: /personal_planning
+  description: " "
+
+hhwzzxx:
+  label: 航海王壮志雄心
+  permalink: /hhwzzxx
   description: " "
