@@ -4,7 +4,7 @@ authors: [bry4ntan]
 tags: [game_experience, game_review, fc10, hhwzzxx]
 hide_table_of_contents: true
 ---
-玩了 2 周多，记一下航海王壮志雄心的体验和思考过程。
+玩了两周多，记一下航海王壮志雄心的体验和思考过程。
 
 因为用 Excel 写的懒得转 md 就打印嵌入一下，PDF 的显示可能有些设备浏览器会不兼容。另外 Docusaurus 这个布局不知道手动好不好改，有空再琢磨下。
 
