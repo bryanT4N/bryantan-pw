@@ -128,8 +128,8 @@ tags: [personal_planning, study_abroad, career, job_hunting]
 
 - 要制作的项目
   - 横板 Demo
-  - 回合制 Demo（CRPG）
   - 3D Demo
+  - 回合制 Demo（CRPG）
   - 以上 Demo 应以展示对系统设计的理解为主，而不仅是功能实现
 
 - 要弄清楚的品类和主题
