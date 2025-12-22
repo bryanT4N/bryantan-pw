@@ -27,7 +27,7 @@ const projects: Array<ProjectType> = [
     description:
       '横板 2D 解谜游戏 (2025)，使用 Unity 开发。玩家扮演一只因不会正常攀爬而受到排挤的蜘蛛，利用它特殊的弹性蛛网穿越障碍、躲避危险，登至蜘蛛巢穴顶部。',
     codeLink: '',
-    liveLink: 'files/ArachNOT.zip',
+    // liveLink: 'files/ArachNOT.zip',
     techstack: ['Unity'],
   },
   {
