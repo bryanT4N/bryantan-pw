@@ -22,6 +22,24 @@ const projects: Array<ProjectType> = [
     techstack: ['C++', 'Java'],
   }, */
   {
+    img: 'img/projects/ArachNOT.gif',
+    title: 'ArachNOT',
+    description:
+      '横板 2D 解谜游戏 (2025)，使用 Unity 开发。玩家扮演一只因不会正常攀爬而受到排挤的蜘蛛，利用它特殊的弹性蛛网穿越障碍、躲避危险，登至蜘蛛巢穴顶部。',
+    codeLink: '',
+    liveLink: 'files/ArachNOT.zip',
+    techstack: ['Unity'],
+  },
+  {
+    img: 'img/projects/Starship.gif',
+    title: '个人引擎',
+    description:
+      '基于 C++ 和 OpenGL 开发的游戏引擎 (2025)，有简单到复杂的多个演示项目。引擎功能涵盖数学工具类与方法，输入系统，音频系统，渲染器，纹理与图像，精灵图与动画，bitmap 字体与文本框，事件系统，开发者控制台，Xml 配置数据等。',
+    codeLink: '',
+    liveLink: 'files/Starship.zip',
+    techstack: ['C++', 'OpenGL'],
+  },
+  {
     img: 'img/projects/sceneeditor.webp',
     title: '3D场景编辑器',
     description:
@@ -77,10 +95,17 @@ const experience: Array<ExperienceType> = [
 
 const education: Array<EducationType> = [
   {
+    img: 'img/education/Guildhall_Promo_Logo.png',
+    school: '南卫理公会大学',
+    city: '达拉斯, 美国',
+    study: '交互技术硕士 - 数字游戏开发',
+    date: '08/2025 - 06/2027',
+  },
+  {
     img: 'img/education/Sun_Yat-sen_University_Logo.webp',
     school: '中山大学',
     city: '广州, 中国',
-    study: '计算机科学与技术 - 工学学士',
+    study: '工学学士 - 计算机科学与技术',
     date: '08/2018 - 06/2022',
   },
 ];

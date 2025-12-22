@@ -45,14 +45,14 @@ export const Project = ({
             {liveLink ? (
               <a
                 style={{
-                  marginRight: '.7rem',
+                  marginRight: '.32rem',
                   marginLeft: '-.7rem',
                   padding: '.5rem .7rem',
                 }}
                 href={liveLink}
                 target="_blank"
               >
-                Live
+                Demo
               </a>
             ) : (
               <></>

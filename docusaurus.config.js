@@ -143,7 +143,7 @@ module.exports = {
       },
       items: [
         // { type: 'localeDropdown', position: 'right'},
-        { to: '/blog', label: 'Blog', position: 'left' },
+        // { to: '/blog', label: 'Blog', position: 'left' },
         {
           href: 'https://github.com/bryanT4N/',
           label: 'GitHub',
