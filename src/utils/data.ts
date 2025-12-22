@@ -34,7 +34,7 @@ const projects: Array<ProjectType> = [
     img: 'img/projects/Starship.gif',
     title: '个人引擎',
     description:
-      '基于 C++ 和 OpenGL 开发的游戏引擎 (2025)，有简单到复杂的多个演示项目。引擎功能涵盖数学工具类与方法，输入系统，音频系统，渲染器，纹理与图像，精灵图与动画，bitmap 字体与文本框，事件系统，开发者控制台，Xml 配置数据等。',
+      '基于 C++ 和 OpenGL 开发的游戏引擎 (2025)，有多个演示项目。引擎功能涵盖数学工具类与方法，输入系统，音频系统，渲染器，纹理与图像，精灵图与动画，bitmap 字体与文本框，事件系统，开发者控制台，Xml 配置数据等。',
     codeLink: '',
     liveLink: 'files/Starship.zip',
     techstack: ['C++', 'OpenGL'],
