@@ -3,6 +3,21 @@ docusaurus:
   permalink: /docusaurus
   description: Docusaurus tag description
 
+markdown:
+  label: Markdown
+  permalink: /markdown
+  description: Markdown tag description
+
+reading_notes:
+  label: Reading Notes
+  permalink: /reading_notes
+  description: Reading notes tag description
+
+narrative:
+  label: Narrative
+  permalink: /narrative
+  description: Narrative tag description
+
 game_design:
   label: Game Design
   permalink: /game_design
@@ -12,4 +27,104 @@ game_dev:
   label: Game Dev
   permalink: /game_dev
   description: Game dev tag description
+
+game_review:
+  label: Game Review
+  permalink: /game_review
+  description: Game review tag description
+
+game_experience:
+  label: Game Experience
+  permalink: /game_experience
+  description: Game experience tag description
+
+d2:
+  label: DIRECT 2
+  permalink: /d2
+  description: DIRECT 2 tag description
+
+fc10:
+  label: FOCUS 10
+  permalink: /fc10
+  description: FOCUS 10 tag description
+
+is50:
+  label: INSIGHT 50
+  permalink: /is50
+  description: INSIGHT 50 tag description
+
+career:
+  label: Career
+  permalink: /career
+  description: Career tag description
+
+thoughts:
+  label: Thoughts
+  permalink: /thoughts
+  description: Thoughts tag description
+
+life:
+  label: Life
+  permalink: /life
+  description: Life tag description
+
+others:
+  label: Others
+  permalink: /others
+  description: Others tag description
+
+pokemon:
+  label: Pokemon
+  permalink: /pokemon
+  description: Pokemon tag description
+
+monster_hunter:
+  label: Monster Hunter
+  permalink: /monster_hunter
+  description: Monster Hunter tag description
+
+mihoyo:
+  label: miHoYo
+  permalink: /mihoyo
+  description: miHoYo tag description
+
+zenless_zone_zero:
+  label: Zenless Zone Zero
+  permalink: /zenless_zone_zero
+  description: Zenless Zone Zero tag description
+
+tencent:
+  label: Tencent
+  permalink: /tencent
+  description: Tencent tag description
+
+save_the_cat:
+  label: Save the Cat
+  permalink: /save_the_cat
+  description: Save the Cat tag description
+
+how_to_write_a_game_scenario:
+  label: How to Write a Game Scenario
+  permalink: /how_to_write_a_game_scenario
+  description: How to Write a Game Scenario tag description
+
+study_abroad:
+  label: Studying Abroad
+  permalink: /study_abroad
+  description: Studying abroad tag description
+
+job_hunting:
+  label: Job Hunting
+  permalink: /job_hunting
+  description: Job hunting tag description
+
+personal_planning:
+  label: Personal Planning
+  permalink: /personal_planning
+  description: Personal planning tag description
+
+hhwzzxx:
+  label: One Piece Project Fighter
+  permalink: /hhwzzxx
+  description: One Piece Project Fighter tag description
 

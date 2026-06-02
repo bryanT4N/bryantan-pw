@@ -10,8 +10,12 @@ module.exports = {
   url: 'https://bryantan.net',
   baseUrl: '/',
   onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
   favicon: 'img/faviconA.ico',
+  markdown: {
+    hooks: {
+      onBrokenMarkdownLinks: 'warn',
+    },
+  },
   organizationName: 'bryanT4N', // Usually your GitHub org/user name.
   projectName: 'bryantan-pw', // Usually your repo name.
   trailingSlash: true,
