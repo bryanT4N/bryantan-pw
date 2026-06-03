@@ -1,62 +1,94 @@
-import React from 'react';
-import Avatar from '@mui/material/Avatar';
-import Box from '@mui/material/Box';
-import Grid from '@mui/material/Grid2';
-import ButtonBase from '@mui/material/ButtonBase';
-import clsx from 'clsx';
+import React, { useEffect, useRef } from 'react';
 import Layout from '@theme/Layout';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import styles from './index.module.css';
+import Head from '@docusaurus/Head';
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import styles from './index.module.css';
 import HomepageFeatures from '../components/HomepageFeatures';
-import { Socials } from '../components';
 
-function HomepageHeader() {
-  const { siteConfig } = useDocusaurusContext();
+function HomepageHero() {
+  const heroRef = useRef(null);
+  const heroImgUrl = useBaseUrl('/img/hero.png');
+
+  // Mouse parallax — hover-capable devices only, 温和 ±3px / ±2px, rAF-throttled
+  useEffect(() => {
+    const hero = heroRef.current;
+    if (!hero) return;
+    if (typeof window === 'undefined') return;
+    if (!window.matchMedia('(hover: hover)').matches) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    let raf = 0;
+    const onMove = (e) => {
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(() => {
+        const rect = hero.getBoundingClientRect();
+        const x = ((e.clientX - rect.left) / rect.width - 0.5) * 6;
+        const y = ((e.clientY - rect.top) / rect.height - 0.5) * 4;
+        hero.style.setProperty('--mouse-x', x.toFixed(2));
+        hero.style.setProperty('--mouse-y', y.toFixed(2));
+      });
+    };
+    const onLeave = () => {
+      hero.style.setProperty('--mouse-x', '0');
+      hero.style.setProperty('--mouse-y', '0');
+    };
+    hero.addEventListener('mousemove', onMove, { passive: true });
+    hero.addEventListener('mouseleave', onLeave);
+    return () => {
+      hero.removeEventListener('mousemove', onMove);
+      hero.removeEventListener('mouseleave', onLeave);
+      cancelAnimationFrame(raf);
+    };
+  }, []);
+
   return (
-    <section className={styles.bannerWrap}>
-      <div className="container" style={{ width: 996 }}>
-      <div className="row">
-        <div className="col col--offset-1 col--11">
-          <header className={clsx('hero', styles.heroBanner)}>
-            <div className="container">
-              <Grid container spacing={2}>
-                <Grid item xs={{ display: 'flex' }}>
-                  <Avatar alt="Bryan Tan" src={useBaseUrl('/img/avatar.png')} sx={{ width: 132, height: 132, m: 1, ml:-2 }} />                  
-                </Grid>
-                <Grid item xs={12} sm container>
-                  <Grid item xs container direction="column" spacing={1}>
-                    <Grid item xs={{ display: 'flex' }}>
-                    </Grid>
-                    <Grid item xs={{ display: 'flex' }}>
-                    </Grid>
-                    <Grid item xs container direction="row" spacing={1}>
-                      <Grid item xs={{ display: 'flex' }}>
-                        <h1 className="hero__title">{siteConfig.title} </h1>
-                      </Grid>
-                      {/* <Grid item xs={{ display: 'flex' }}>
-                  <Socials/>
-                </Grid> */}
-                    </Grid>
-                    <Grid item xs={{ display: 'flex' }}>
-                      <p className="hero__subtitle">{siteConfig.tagline}</p>
-                    </Grid>
-                  </Grid>
-                </Grid>
-              </Grid>
-            </div>
-          </header>
+    <>
+      <Head>
+        <link rel="preload" as="image" href={heroImgUrl} fetchpriority="high" />
+      </Head>
+      <section ref={heroRef} className={styles.hero}>
+        <div className={styles.heroBackdrop} aria-hidden="true">
+          <img
+            src={heroImgUrl}
+            alt=""
+            className={styles.heroIllustration}
+            loading="eager"
+            fetchpriority="high"
+          />
         </div>
-      </div>
-      </div>
-    </section>
+        <div className={styles.heroBottomFade} aria-hidden="true" />
+        <div className={styles.heroInner}>
+          <div className={styles.heroText}>
+            <h1 className={styles.name}>
+              谭磊轩 <span className={styles.nameEn}>Bryan Tan</span>
+            </h1>
+            <p className={styles.bio}>
+              前 4399 战斗系统策划，现 SMU Guildhall 交互技术硕士。关注玩家手感、数值反馈与可玩性结构。
+            </p>
+            <nav className={styles.heroLinks} aria-label="Site sections">
+              <ul className={styles.linksRow}>
+                <li><a href="/individual">个人作品</a></li>
+                <li><span className={styles.sep} aria-hidden="true">·</span></li>
+                <li><a href="/teamwork">团队作品</a></li>
+                <li><span className={styles.sep} aria-hidden="true">·</span></li>
+                <li><a href={useBaseUrl('/files/Bryan_Tan_Resume_2026.pdf')} download>简历 ↓</a></li>
+                <li><span className={styles.sep} aria-hidden="true">·</span></li>
+                <li><a href="https://www.linkedin.com/in/bryan-tan-321647389/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></li>
+                <li><span className={styles.sep} aria-hidden="true">·</span></li>
+                <li><a href="https://github.com/bryanT4N/" target="_blank" rel="noopener noreferrer">GitHub ↗</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </section>
+    </>
   );
 }
 
 export default function Home() {
   return (
-    <Layout title="Home" description="Personal website of Leixuan (Bryan) Tan">
-      <HomepageHeader />
+    <Layout title="Home" description="谭磊轩 Bryan Tan — 技术策划 · 战斗 / 系统设计">
+      <HomepageHero />
       <main>
         <HomepageFeatures />
       </main>

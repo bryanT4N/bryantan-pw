@@ -1,62 +1,174 @@
 /* stylelint-disable docusaurus/copyright-header */
 /**
- * Any CSS included here will be global. The classic template
- * bundles Infima by default. Infima is a CSS framework designed to
- * work well for content-centric websites.
+ * bryantan.net Homepage v1 — Design Tokens + Global Styles
+ * Spec: 0_HomepageDesign_v1_Final_Spec.md (2026-06-02)
+ *
+ * Token 体系：暖纸白底 + 陶土橙红 accent + Fraunces/Inter/JetBrains Mono 字体
+ * 设计哲学：工艺派 craft — 看不到设计本身但用起来舒服
  */
 
-/* You can override the default Infima variables here. */
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Noto+Serif+SC:wght@500&family=Noto+Sans+SC:wght@400;500&display=swap');
+
 :root {
-  --ifm-color-primary: #2e4885;
-  --ifm-color-primary-dark: #294778;
-  --ifm-color-primary-darker: #274571;
-  --ifm-color-primary-darkest: #030303;
-  --ifm-color-primary-light: #336792;
-  --ifm-color-primary-lighter: #3c65ad;
-  --ifm-color-primary-lightest: #3a5276;
-  /* --ifm-heading-color:#f5f6f7; */
-  /* --ifm-background-color:#f5f6f7; */
-  --ifm-navbar-background-color: #f4f5f7;
-  --ifm-hero-background-color: #f4f5f7;
-  --ifm-hero-text-color: #232934;
-  --ifm-background-color: #f4f5f7;
-  --ifm-footer-background-color: #e4e4e4;
+  /* --- Color Tokens (v1) --- */
+  --paper:        #F5F1E8;  /* 暖纸白底 */
+  --paper-hover:  #ECE6DA;  /* hover 唯一反馈底色 */
+  --surface:      #EDE7D9;  /* Projects 卡片底 */
+  --ink:          #1F1B16;  /* 文字主色（暖近黑） */
+  --ink-soft:     #5B5246;  /* 次要文字 / meta */
+  --ink-faint:    #9A938A;  /* 最弱信息 */
+  --accent:       #B05A3B;  /* 陶土橙红 */
+  --accent-hover: #8F4628;  /* accent 暗一档 */
+  --rule:         #D9D2C2;  /* 极淡分隔线 */
 
-  --ifm-color-secondary: #888888;
-  --ifm-color-content-secondary: #888888;
-  --ifm-color-danger: #888888;
+  /* --- Type Tokens --- */
+  --font-serif: 'Fraunces', 'Noto Serif SC', 'Songti SC', serif;
+  --font-sans:  'Inter', 'Noto Sans SC', 'PingFang SC', system-ui, sans-serif;
+  --font-mono:  'JetBrains Mono', ui-monospace, 'Courier New', monospace;
 
-  /* --ifm-font-size-base: 50%; */
+  /* --- Motion Tokens --- */
+  --dur-fast: 150ms;
+  --dur-base: 240ms;
+  --ease:     cubic-bezier(0.2, 0.6, 0.2, 1);
+
+  /* --- Spacing Scale (8px 基础) --- */
+  --space-1:   4px;
+  --space-2:   8px;
+  --space-3:  16px;
+  --space-4:  24px;
+  --space-5:  32px;
+  --space-6:  48px;
+  --space-7:  64px;
+  --space-8:  96px;
+  --space-9: 192px;
+
+  /* --- Width Tokens (v1.2) --- */
+  --width-main:  min(1120px, 92vw);   /* v1.2 主宽度，全站统一对齐（Bryan 说 v1 hero 还行 ≈ 1080） */
+  --width-prose: min(680px, 92vw);    /* 长文段落限行宽（~65ch），仅 description / bio 段落用 */
+  /* legacy aliases (deprecated, still referenced by some v1.1 module css) */
+  --width-page:  var(--width-main);
+  --width-hero:  var(--width-main);
+  --width-content: var(--width-main);
+
+  /* --- Infima 覆写：把 Docusaurus 默认色映射到 v1 token --- */
+  --ifm-color-primary:         #B05A3B;
+  --ifm-color-primary-dark:    #9F5235;
+  --ifm-color-primary-darker:  #964D32;
+  --ifm-color-primary-darkest: #7B4029;
+  --ifm-color-primary-light:   #B96B4D;
+  --ifm-color-primary-lighter: #C0775A;
+  --ifm-color-primary-lightest:#CD937D;
+
+  --ifm-background-color:        #F5F1E8;
+  --ifm-navbar-background-color: #F5F1E8;
+  --ifm-footer-background-color: #EDE7D9;
+  --ifm-hero-background-color:   #F5F1E8;
+  --ifm-hero-text-color:         #1F1B16;
+
+  --ifm-color-content:           #1F1B16;
+  --ifm-color-content-secondary: #5B5246;
+
+  --ifm-font-family-base:      var(--font-sans);
+  --ifm-heading-font-family:   var(--font-serif);
+  --ifm-font-family-monospace: var(--font-mono);
+
   --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --ifm-heading-color:  var(--ink);
+  --ifm-link-color:     var(--accent);
+  --ifm-link-hover-color: var(--accent-hover);
+
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.06);
 }
 
+/* dark mode 被禁用（docusaurus.config.js: disableSwitch: true），保留 dark 块作为防御 */
+html[data-theme='dark'] {
+  --ifm-color-primary: #B05A3B;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+/* --- Global resets / 增强 --- */
+
+body {
+  font-family: var(--font-sans);
+  background: var(--paper);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  color: var(--ink);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+/* Footer */
 .footer {
-  --ifm-font-size-base: 70%;
-  --ifm-footer-color:#ebedf0;
-  --ifm-footer-background-color: #5c636f;
-  /* background-image: url("/img/bg1.png"); */
+  background-color: var(--surface);
+  color: var(--ink-soft);
+  --ifm-footer-color: var(--ink-soft);
+  --ifm-footer-link-color: var(--accent);
+  --ifm-footer-link-hover-color: var(--accent-hover);
+  font-size: 13px;
+  font-family: var(--font-mono);
+  border-top: 1px solid var(--rule);
 }
 
+/* Navbar */
+.navbar {
+  background: var(--paper);
+  border-bottom: 1px solid var(--rule);
+  box-shadow: none;
+}
+
+.navbar__title {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.navbar__link {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  color: var(--ink);
+  transition: color var(--dur-fast) var(--ease);
+}
+
+.navbar__link:hover {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.navbar__link--active {
+  color: var(--accent);
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 4px;
+}
+
+/* Generic link */
+a {
+  color: var(--accent);
+  transition: color var(--dur-fast) var(--ease);
+}
+
+a:hover {
+  color: var(--accent-hover);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+/* Selection */
+::selection {
+  background: var(--paper-hover);
+  color: var(--ink);
+}
+
+/* Code highlights */
 .docusaurus-highlight-code-line {
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: var(--docusaurus-highlighted-code-line-bg);
   display: block;
   margin: 0 calc(-1 * var(--ifm-pre-padding));
   padding: 0 var(--ifm-pre-padding);
-}
-
-/* html[data-navbar='false'] .navbar {
-  display: none;
-} */
-
-html[data-theme='dark'] .docusaurus-highlight-code-line {
-  background-color: rgba(0, 0, 0, 0.3);
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }

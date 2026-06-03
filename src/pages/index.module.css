@@ -1,48 +1,257 @@
 /* stylelint-disable docusaurus/copyright-header */
-
 /**
- * CSS files with the .module.css suffix will be treated as CSS modules
- * and scoped locally.
+ * Homepage v1.3 — Hero Section with 4-layer backdrop + scroll-driven animations
+ * Spec: 0_HomepageDesign_v1.2_Rollback_Spec.md + v1.3 hero illustration integration
+ *
+ * Layer 0 (paper bg)       — .hero background
+ * Layer 1 (illustration)   — .heroBackdrop > <img>  · opacity 0.88 · multiply blend · mouse + scroll parallax
+ * Layer 2 (bottom fade)    — .heroBottomFade        · linear-gradient → paper
+ * Layer 3 (text)           — .heroInner             · z-index: 2 · onload fade-in · scroll micro-parallax
+ *
+ * Animations:
+ * - .heroBackdrop: onload fade-in 700ms + scroll-driven (opacity 0.88→0, translateY 0→-32, blur 0→6) over 0-80vh
+ * - .heroIllustration: mouse parallax via --mouse-x/y CSS vars (set by JS, 400ms ease catch-up)
+ * - .heroInner: onload fade-in 700ms + scroll-driven micro-parallax (translateY 0→-16, opacity 1→0.7) — slower than backdrop
+ * - prefers-reduced-motion: all animations off
+ * - @supports fallback: no scroll-timeline → only onload fade-in
  */
 
- .bannerWrap {
-  display: flex;
-  align-items: center;
-  padding-top:    0rem;
-  padding-right:  0rem;
-  padding-bottom: 0rem;
-  padding-left:   0rem;
-  width: 100%;
-}
-
-/* .container {
-  flex-direction: row-reverse;
-  margin: 20;
-  display: flex;
-} */
-
-.heroBanner {
-  padding-top:    1rem;
-  padding-right:  17rem;
-  padding-bottom: 0rem;
-  padding-left:   0rem;
-  margin-left: 0rem;
-  text-align: left;
+.hero {
   position: relative;
   overflow: hidden;
-}
-
-@media screen and (max-width: 852px) {
-  .heroBanner {
-    padding-top:    2rem;
-    padding-right:  2rem;
-    padding-bottom: 2rem;
-    padding-left:   2rem;
-  }
-}
-
-.buttons {
+  background: var(--paper);
+  padding: var(--space-7) 0;        /* 64 top / 64 bottom */
+  min-height: 80vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  --mouse-x: 0;
+  --mouse-y: 0;
+}
+
+/* === Layer 1: Hero illustration backdrop === */
+.heroBackdrop {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  will-change: opacity, transform, filter;
+  animation:
+    hero-backdrop-fade-in 800ms cubic-bezier(0.2, 0.6, 0.2, 1) both,
+    hero-backdrop-scroll linear both;
+  animation-timeline: auto, scroll(root);
+  animation-range: normal, 0 80vh;
+}
+
+.heroIllustration {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  opacity: 0.88;
+  mix-blend-mode: multiply;
+  transform: translate3d(
+    calc(var(--mouse-x) * 1px),
+    calc(var(--mouse-y) * 1px),
+    0
+  );
+  transition: transform 400ms cubic-bezier(0.2, 0.6, 0.2, 1);
+  will-change: transform;
+}
+
+@keyframes hero-backdrop-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes hero-backdrop-scroll {
+  0%   { opacity: 1; transform: translateY(0); filter: blur(0); }
+  100% { opacity: 0; transform: translateY(-32px); filter: blur(6px); }
+}
+
+/* === Layer 2: Bottom fade overlay to paper (hero → Projects soft transition) === */
+.heroBottomFade {
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 25%;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(
+    to bottom,
+    rgba(245, 241, 232, 0) 0%,
+    rgba(245, 241, 232, 0.85) 70%,
+    var(--paper) 100%
+  );
+}
+
+/* === Layer 3: Text layer === */
+.heroInner {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  width: 100%;
+  max-width: var(--width-main);     /* 1120 弹性 */
+  margin: 0 auto;
+  padding: 0 clamp(24px, 6vw, 64px);
+  animation:
+    hero-text-fade-in 800ms cubic-bezier(0.2, 0.6, 0.2, 1) 100ms both,
+    hero-text-scroll linear both;
+  animation-timeline: auto, scroll(root);
+  animation-range: normal, 0 80vh;
+  will-change: opacity, transform;
+}
+
+@keyframes hero-text-fade-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Slower fade than backdrop — content lingers; subtle micro-parallax */
+@keyframes hero-text-scroll {
+  0%   { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0.7; transform: translateY(-16px); }
+}
+
+.heroText {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: var(--width-prose);   /* 680, 文字阅读宽 */
+}
+
+.name {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: 56px;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin: 0 0 var(--space-4) 0;     /* 24 below */
+  color: var(--ink);
+}
+
+.nameEn {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 20px;
+  letter-spacing: 0;
+  color: var(--ink-soft);
+  margin-left: var(--space-3);
+}
+
+.bio {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.65;
+  color: var(--ink);
+  margin: 0 0 var(--space-6) 0;     /* 48 below */
+  max-width: 38em;
+}
+
+.heroLinks {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.linksRow {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-3);              /* 16 */
+  justify-content: center;
+}
+
+.linksRow li {
+  margin: 0;
+}
+
+.linksRow a {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 16px;
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 2px;
+  transition: color var(--dur-fast) var(--ease), border-color var(--dur-fast) var(--ease);
+}
+
+.linksRow a:hover {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+  text-decoration: none;
+}
+
+.sep {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--ink-faint);
+}
+
+/* === Responsive === */
+@media screen and (max-width: 996px) {
+  .hero {
+    min-height: 0;
+    padding: var(--space-6) 0;
+  }
+  .heroIllustration {
+    object-position: center 30%;
+    opacity: 0.55;     /* mobile 端图位置可能偏，再淡化让文字更突出 */
+  }
+  .name {
+    font-size: 40px;
+  }
+  .nameEn {
+    display: block;
+    margin-left: 0;
+    margin-top: var(--space-2);
+  }
+  .bio {
+    font-size: 16px;
+  }
+}
+
+/* === a11y: prefers-reduced-motion === */
+@media (prefers-reduced-motion: reduce) {
+  .heroBackdrop,
+  .heroInner {
+    animation: none !important;
+  }
+  .heroIllustration {
+    transition: none;
+    transform: none;
+  }
+}
+
+/* === Fallback for browsers without scroll-driven animations (Firefox <130) === */
+@supports not (animation-timeline: scroll()) {
+  .heroBackdrop {
+    animation: hero-backdrop-fade-in 800ms cubic-bezier(0.2, 0.6, 0.2, 1) both;
+  }
+  .heroInner {
+    animation: hero-text-fade-in 800ms cubic-bezier(0.2, 0.6, 0.2, 1) 100ms both;
+  }
+}
+
+/* === Legacy class no-ops (v1 / v1.1 / v1.2 transition safety) === */
+.avatar,
+.role,
+.heroCta,
+.ctaPrimary,
+.ctaArrow,
+.heroLinksSecondary,
+.linksPrimary,
+.linksSecondary,
+.heroIllustrationPlaceholder,
+.bannerWrap,
+.heroBanner,
+.buttons {
+  /* deprecated */
 }

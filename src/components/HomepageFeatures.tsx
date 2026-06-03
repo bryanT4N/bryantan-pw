@@ -1,17 +1,20 @@
 import React from 'react';
 import styles from './HomepageFeatures.module.css';
-import { PersonalTabs, EducationTabs, ExperienceTabs, ProjectsTabs } from './Tabs';
+import { Project } from '.';
+import { projects } from '../utils/data';
 
 export default function HomepageFeatures() {
   return (
-    <section className={styles.features}>
-      <div className="container" style={{width:996}}>
-        <div className="row">
-          <div className="col col--offset-1 col--11">
-            <EducationTabs/>
-            <ExperienceTabs/>
-            <ProjectsTabs/>
-          </div>
+    <section className={styles.section} id="projects">
+      <div className={styles.container}>
+        <h2 className={styles.sectionTitle}>
+          <span className={styles.sectionTitleMark} aria-hidden="true" />
+          Projects
+        </h2>
+        <div className={styles.projectsGrid}>
+          {projects.map((props, idx) => (
+            <Project key={idx} {...props} />
+          ))}
         </div>
       </div>
     </section>

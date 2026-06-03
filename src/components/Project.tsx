@@ -1,6 +1,16 @@
 import React from 'react';
-import { projectStyles } from '../css';
-import { TechStacks } from '.';
+import styles from './Project.module.css';
+
+type ProjectProps = {
+  img?: string;
+  title: string;
+  description: string;
+  codeLink?: string;
+  liveLink?: string;
+  techstack?: string[];
+  status?: string;          // placeholder 用，如 "in proposal" / "upcoming"
+  detailLink?: string;      // 内部跳转（覆盖默认 codeLink/liveLink 选择）
+};
 
 export const Project = ({
   img,
@@ -9,57 +19,39 @@ export const Project = ({
   codeLink,
   liveLink,
   techstack,
-}) => {
-  const classes = projectStyles();
+  status,
+  detailLink,
+}: ProjectProps) => {
+  const link = detailLink || liveLink || codeLink;
+  const isExternal = !!link && /^https?:\/\//.test(link);
 
   return (
-    <section className={classes.container}>
-      <div className={classes.imgContainer}>
-        <img src={img} className={classes.img} alt="dummy img" />
-      </div>
-      <div className={classes.content}>
-        <div className={classes.titleContainer}>
-          <span className={classes.title}>{title}</span>
+    <article className={styles.card}>
+      {img ? (
+        <div className={styles.imgContainer}>
+          <img src={img} className={styles.img} alt={title} />
         </div>
-        <span className={classes.description}>{description}</span>
-        <div className={classes.flex}>
-          <div>
-            <TechStacks stack={techstack} />
-          </div>
-          <div className={classes.flexLinkContainer}>
-            {codeLink ? (
-              <a
-                style={{
-                  marginRight: '.32rem',
-                  marginLeft: '-.7rem',
-                  padding: '.5rem .7rem',
-                }}
-                href={codeLink}
-                target="_blank"
-              >
-                Code
-              </a>
-            ) : (
-              <></>
-            )}
-            {liveLink ? (
-              <a
-                style={{
-                  marginRight: '.32rem',
-                  marginLeft: '-.7rem',
-                  padding: '.5rem .7rem',
-                }}
-                href={liveLink}
-                target="_blank"
-              >
-                Demo
-              </a>
-            ) : (
-              <></>
-            )}
-          </div>
+      ) : (
+        <div className={styles.imgPlaceholder}>
+          <span>{status || 'Coming soon'}</span>
         </div>
+      )}
+      <div className={styles.content}>
+        <h3 className={styles.title}>{title}</h3>
+        {techstack && techstack.length > 0 && (
+          <div className={styles.meta}>{techstack.join(' · ')}</div>
+        )}
+        <p className={styles.description}>{description}</p>
+        {link && (
+          <a
+            className={styles.link}
+            href={link}
+            {...(isExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+          >
+            查看 →
+          </a>
+        )}
       </div>
-    </section>
+    </article>
   );
 };

@@ -4,6 +4,9 @@
 # Production
 /build
 
+# Local audit trail (Playwright sanity-check screenshots, not deploy assets)
+/screenshots
+
 # Generated files
 .docusaurus
 .cache-loader

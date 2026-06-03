@@ -1,0 +1,122 @@
+/* stylelint-disable docusaurus/copyright-header */
+/**
+ * Individual Work page v1.2 (rebuilt, no "← 回到首页" anti-pattern; unified width)
+ * Spec: 0_HomepageDesign_v1.2_Rollback_Spec.md
+ */
+
+.main {
+  background: var(--paper);
+  min-height: calc(100vh - 64px);
+  padding: var(--space-7) 0 var(--space-8) 0;   /* 64 top / 96 bottom */
+}
+
+.container {
+  max-width: var(--width-main);                  /* 1120 弹性，全站统一 */
+  margin: 0 auto;
+  padding: 0 clamp(24px, 6vw, 64px);
+}
+
+.pageHeader {
+  margin: 0 0 var(--space-7) 0;                  /* 64 below */
+}
+
+.pageTitle {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: 48px;                               /* 比 hero name 56 小一档，避免 subpage 像另一首页 */
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+  margin: 0;
+}
+
+.pageTitleMark {
+  display: inline-block;
+  width: 32px;
+  height: 2px;
+  background: var(--accent);
+  border-radius: 1px;
+  flex-shrink: 0;
+}
+
+.pageTitleEn {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 18px;
+  color: var(--ink-soft);
+  margin-left: var(--space-3);
+}
+
+.project {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.projectTitle {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin: 0;
+}
+
+.meta {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--ink-faint);
+  margin-bottom: var(--space-4);
+}
+
+.figure {
+  margin: var(--space-3) 0;
+}
+
+.placeholder {
+  width: 100%;
+  max-width: 720px;
+  aspect-ratio: 16 / 9;
+  background: var(--surface);
+  border: 1px dashed var(--rule);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ink-faint);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  text-align: center;
+  line-height: 1.6;
+}
+
+.caption {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--ink-soft);
+  margin-top: var(--space-2);
+  max-width: 720px;
+}
+
+.description {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--ink);
+  margin: var(--space-4) 0 0 0;
+  max-width: 65ch;                               /* 长文限行宽，避免在 1120 内横扫 */
+}
+
+@media screen and (max-width: 768px) {
+  .pageTitle {
+    font-size: 32px;
+  }
+  .pageTitleEn {
+    display: block;
+    margin-left: 0;
+    margin-top: var(--space-2);
+  }
+}

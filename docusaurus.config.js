@@ -60,7 +60,7 @@ module.exports = {
           {
             tagName: 'meta',
             name: 'theme-color',
-            content: 'rgb(37, 194, 160)',
+            content: '#F5F1E8',
           },
           {
             tagName: 'meta',
@@ -81,7 +81,7 @@ module.exports = {
             tagName: 'link',
             rel: 'mask-icon',
             href: 'img/faviconA.ico',
-            color: 'rgb(62, 204, 94)',
+            color: '#B05A3B',
           },
           {
             tagName: 'meta',
@@ -139,20 +139,26 @@ module.exports = {
       respectPrefersColorScheme: false,
     },
     navbar: {
-      hideOnScroll: true,
+      hideOnScroll: false,            // v1.1: 关，让 anime avatar 常驻承担人格识别符号
       title: 'Bryan Tan',
       logo: {
-        alt: 'Logo',
-        src: 'img/avatar_c.png',
+        alt: 'Bryan Tan',
+        src: 'img/avatar.png',        // v1.1: 用 anime avatar 替代 plain avatar_c
+        width: 32,
+        height: 32,
       },
       items: [
-        // { type: 'localeDropdown', position: 'right'},
-        // { to: '/blog', label: 'Blog', position: 'left' },
+        // v1.2 rollback: 恢复 Individual + Teamwork 两 page navbar 入口（spec 4 page 硬要求）
+        { to: '/individual', label: '作品 · Individual', position: 'right' },
+        { to: '/teamwork',   label: '团队 · Teamwork',  position: 'right' },
+        { to: '/personal',   label: '关于 · Personal',  position: 'right' },
         {
           href: 'https://github.com/bryanT4N/',
           label: 'GitHub',
           position: 'right',
         },
+        // { type: 'localeDropdown', position: 'right'},  // v2 enable when 英文 locale 内容补全
+        // { to: '/blog', label: 'Blog', position: 'left' },  // Bryan 明确不开放 blog 到 navbar
       ],
     },
     footer: {

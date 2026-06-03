@@ -1,0 +1,319 @@
+/* stylelint-disable docusaurus/copyright-header */
+/**
+ * Personal page v1.4 — About hero (相框 + 内容) + 2-column grids + hairline 分隔
+ * Spec: v1.4 propose in chat 2026-06-03
+ *
+ * Layout 改动 vs v1.2:
+ * - 顶部加 About hero section: 左相框 (35fr) + 右 About+Resume (60fr)
+ * - Education / Experience 改 2 列 grid (entries 并排，每段只 2 entries 正好 1 行)
+ * - section 之间用 1px rule hairline 分隔（不只是间距）
+ * - Resume 段并入 About hero 右栏 (不再是独立段)
+ * - Contact 改 3 列水平 grid
+ * - 全宽 var(--width-main) 统一
+ */
+
+.main {
+  background: var(--paper);
+  min-height: calc(100vh - 64px);
+  padding: var(--space-7) 0 var(--space-8) 0;   /* 64 top / 96 bottom */
+}
+
+.container {
+  max-width: var(--width-main);                  /* 1120 弹性 */
+  margin: 0 auto;
+  padding: 0 clamp(24px, 6vw, 64px);
+}
+
+/* === Page header === */
+.pageHeader {
+  margin: 0 0 var(--space-6) 0;
+}
+
+.pageTitle {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: 48px;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+  margin: 0;
+}
+
+.pageTitleMark {
+  display: inline-block;
+  width: 32px;
+  height: 2px;
+  background: var(--accent);
+  border-radius: 1px;
+  flex-shrink: 0;
+}
+
+.pageTitleEn {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 18px;
+  color: var(--ink-soft);
+  margin-left: var(--space-3);
+}
+
+/* === About hero: 左相框 + 右内容 === */
+.aboutHero {
+  display: grid;
+  grid-template-columns: 35fr 60fr;
+  gap: var(--space-6);                           /* 48 */
+  align-items: start;
+  margin-bottom: var(--space-7);                 /* 64 */
+}
+
+.portrait {
+  width: 100%;
+}
+
+.portraitFrame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;                           /* 竖构图，portrait 半身像比例 */
+  background-color: var(--surface);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 1px solid var(--rule);
+  box-shadow: 0 1px 4px rgba(31, 27, 22, 0.06); /* 极淡相框阴影 */
+  overflow: hidden;
+  /* background-image 由 inline style 注入；图缺失时 CSS 不显示 broken icon（与 <img> 不同）*/
+}
+
+.portraitPlaceholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--ink-faint);
+  pointer-events: none;
+}
+
+.aboutContent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding-top: var(--space-2);                  /* 顶部微对齐相框 */
+}
+
+.aboutName {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+  margin: 0;
+}
+
+.aboutNameEn {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 18px;
+  letter-spacing: 0;
+  color: var(--ink-soft);
+  margin-left: var(--space-2);
+}
+
+.aboutNameMark {
+  display: inline-block;
+  width: 24px;
+  height: 2px;
+  background: var(--accent);
+  border-radius: 1px;
+  margin: 0 0 var(--space-2) 0;
+}
+
+.bio {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--ink);
+  margin: 0 0 var(--space-4) 0;
+  max-width: 60ch;
+}
+
+/* Resume block embedded in About */
+.resumeBlock {
+  width: 100%;
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--rule);
+}
+
+.subTitle {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.3;
+  color: var(--ink);
+  margin: 0 0 var(--space-2) 0;
+}
+
+.resumeMeta {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--ink-faint);
+  margin: 0 0 var(--space-3) 0;
+}
+
+.resumeActions {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  align-items: center;
+}
+
+.action {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 15px;
+  color: var(--accent);
+  text-decoration: none;
+  transition: color var(--dur-fast) var(--ease);
+}
+
+.action:hover {
+  color: var(--accent-hover);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.sep {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--ink-faint);
+}
+
+/* === Section blocks (Edu / Exp / Contact): hairline + 2-col / 3-col grid === */
+.section {
+  padding-top: var(--space-6);                  /* 48 */
+  border-top: 1px solid var(--rule);
+  margin-bottom: var(--space-6);
+}
+
+.section:last-child {
+  margin-bottom: 0;
+}
+
+.sectionTitle {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin: 0 0 var(--space-5) 0;                 /* 32 below */
+}
+
+.sectionTitleMark {
+  display: inline-block;
+  width: 24px;
+  height: 2px;
+  background: var(--accent);
+  border-radius: 1px;
+  flex-shrink: 0;
+}
+
+/* 2-column grid for Education / Experience */
+.twoColumnGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-5);                          /* 32 */
+}
+
+/* 3-column grid for Contact */
+.contactGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);                          /* 24 */
+  margin: 0;
+}
+
+.contactItem {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.contactLabel {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--ink-faint);
+  margin: 0;
+}
+
+.contactValue {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  color: var(--ink);
+  margin: 0;
+  word-break: break-word;
+}
+
+.contactValue a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color var(--dur-fast) var(--ease);
+}
+
+.contactValue a:hover {
+  color: var(--accent-hover);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* === Responsive === */
+@media screen and (max-width: 996px) {
+  .aboutHero {
+    grid-template-columns: 1fr;
+    gap: var(--space-5);
+  }
+  .portrait {
+    max-width: 320px;
+  }
+  .pageTitle {
+    font-size: 36px;
+  }
+  .pageTitleEn {
+    display: block;
+    margin-left: 0;
+    margin-top: var(--space-2);
+  }
+  .aboutName {
+    font-size: 28px;
+  }
+  .twoColumnGrid {
+    grid-template-columns: 1fr;
+    gap: var(--space-5);
+  }
+  .contactGrid {
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
+  }
+}
+
+/* === Legacy class no-ops (v1 / v1.1 / v1.2 transition safety) === */
+.back,
+.pdfFrame,
+.pdfObject,
+.pdfFallback,
+.actions,
+.meta,
+.entries {
+  /* deprecated v1.x classes */
+}
