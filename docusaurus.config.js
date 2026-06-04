@@ -3,9 +3,14 @@
 
 import {themes as prismThemes} from 'prism-react-renderer';
 
+// v1.7.5: site title 动态根据 build locale 切换 —— 让所有 page 的 tab 后缀自动 i18n。
+// Docusaurus 每个 locale build 时会 set 这个 env (commands/build/buildLocale.js + commands/start/start.js)。
+const currentLocale = process.env.DOCUSAURUS_CURRENT_LOCALE || 'en';
+const siteTitle = currentLocale === 'zh-cn' ? '谭磊轩' : 'Bryan Tan';
+
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
-  title: '谭磊轩',
+  title: siteTitle,
   tagline: '系统/战斗策划，从事游戏开发，关注 RPG 和互动叙事研究。',
   url: 'https://bryantan.net',
   baseUrl: '/',
