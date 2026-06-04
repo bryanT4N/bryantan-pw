@@ -379,15 +379,15 @@
     "description": "DFS I project description (currently placeholder)"
   },
   "page.personal.title": {
-    "message": "About",
+    "message": "Personal",
     "description": "Personal page <title>"
   },
   "page.personal.description": {
-    "message": "Bryan Tan · About",
+    "message": "Bryan Tan · Personal",
     "description": "Personal page meta description"
   },
   "page.personal.heading": {
-    "message": "About",
+    "message": "Personal",
     "description": "Personal page H1 heading"
   },
   "personal.about.name": {
@@ -399,7 +399,7 @@
     "description": "Personal page about-section subtitle name"
   },
   "personal.about.bio": {
-    "message": "Master of Interactive Technology candidate at SMU Guildhall, formerly a game designer at 4399. Worked on the SLG title Civilization & Conquest (2021).",
+    "message": "Master of Interactive Technology candidate at SMU Guildhall, formerly a game designer at 4399. Worked on the SLG title Era of Conquest (2021).",
     "description": "Personal page about-section bio"
   },
   "personal.resume.download": {
@@ -503,7 +503,7 @@
     "description": "4399 task 2 (MMORPG pet system)"
   },
   "data.experience.4399.task.3": {
-    "message": "SLG Civilization & Conquest: designed a main-line puzzle exploration mini-game and shipped 30+ levels. Iterated on battle reports and other systems.",
+    "message": "SLG Era of Conquest: designed a main-line puzzle exploration mini-game and shipped 30+ levels. Iterated on battle reports and other systems.",
     "description": "4399 task 3 (Civilization & Conquest)"
   },
   "data.education.smu.study": {

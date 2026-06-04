@@ -20,7 +20,7 @@
     "description": "Navbar item with label 团队作品"
   },
   "item.label.关于": {
-    "message": "About",
+    "message": "Personal",
     "description": "Navbar item with label 关于"
   }
 }
