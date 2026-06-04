@@ -156,7 +156,9 @@ module.exports = {
       },
       items: [
         // v1.5.1: 首页 改放右上，与其他 page link 同 group（Bryan 反馈）
-        { to: '/',           label: '首页',     position: 'right' },
+        // v1.7.2: activeBaseRegex 限制 active 态只在 "/" 或 "/zh-cn/" 根 URL；
+        // 否则 Home 会因 startsWith("/") 在所有 sub-page 都亮起
+        { to: '/',           label: '首页',     position: 'right', activeBaseRegex: '^/(zh-cn)?/?$' },
         { to: '/individual', label: '个人作品', position: 'right' },
         { to: '/teamwork',   label: '团队作品', position: 'right' },
         { to: '/personal',   label: '关于',     position: 'right' },

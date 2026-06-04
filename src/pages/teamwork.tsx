@@ -18,7 +18,7 @@ export default function Teamwork() {
           </header>
 
           <article className={styles.project}>
-            <h2 className={styles.projectTitle}>TGP I — ArachNOT</h2>
+            <h2 className={styles.projectTitle}>ArachNOT</h2>
             <div className={styles.meta}>
               <Translate id="teamwork.tgp1.meta" description="TGP I meta line (date + school + tech + status)">2025 · SMU Guildhall · Unity · 已完成</Translate>
             </div>

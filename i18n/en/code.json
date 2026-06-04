@@ -319,7 +319,7 @@
     "description": "Hero subtitle under the name"
   },
   "hero.bio": {
-    "message": "Systems / combat designer focused on RPGs and interactive storytelling.",
+    "message": "System / combat designer. Researching interactive storytelling.",
     "description": "Hero short bio"
   },
   "hero.links.resume": {
@@ -331,7 +331,7 @@
     "description": "Homepage <title>"
   },
   "page.home.description": {
-    "message": "Bryan Tan — systems / combat designer focused on RPGs and interactive storytelling.",
+    "message": "Bryan Tan — system / combat designer. Researching interactive storytelling.",
     "description": "Homepage meta description"
   },
   "page.individual.title": {
