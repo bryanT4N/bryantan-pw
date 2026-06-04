@@ -537,5 +537,9 @@
   "theme.navbar.mobileDropdown.collapseButton.collapseAriaLabel": {
     "message": "Collapse the dropdown",
     "description": "The ARIA label of the button to collapse the mobile dropdown navbar item"
+  },
+  "page.home.tabTitle": {
+    "message": "Bryan Tan",
+    "description": "Browser tab title for Home page"
   }
 }

@@ -51,9 +51,8 @@ function HomepageHero() {
   return (
     <>
       <Head>
-        {/* v1.7.3: override Home tab title to brand only (was "Home | 谭磊轩").
-            Both locales share the bilingual brand string. */}
-        <title>谭磊轩 Bryan Tan</title>
+        {/* v1.7.4: per-locale Home tab title — zh-cn 默认 "谭磊轩"，en 走 i18n 翻译 "Bryan Tan" */}
+        <title>{translate({ id: 'page.home.tabTitle', message: '谭磊轩', description: 'Browser tab title for Home page' })}</title>
         <link rel="preload" as="image" href={heroImgUrl} fetchpriority="high" />
       </Head>
       <section ref={heroRef} className={styles.hero}>
