@@ -23,8 +23,13 @@ module.exports = {
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
   // may want to replace "en" with "zh-Hans".
+  // v1.7: defaultLocale 改为 en —— 主要受众是 SMU Guildhall 老师 / 招聘方。
+  // bryantan.net/        → English (root)
+  // bryantan.net/zh-cn/  → 中文
+  // .tsx 源码里 <Translate message="中文…"> 作为 zh-cn fallback（i18n/zh-cn/ 不存在时显示中文 message）
+  // i18n/en/code.json 里 53 个 custom keys 的英文 message 是 en locale 的来源
   i18n: {
-    defaultLocale: 'zh-cn',
+    defaultLocale: 'en',
     locales: ['en', "zh-cn"],
     localeConfigs: {
       en: {
