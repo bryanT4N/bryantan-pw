@@ -1,6 +1,26 @@
 {
-  "item.label.GitHub": {
-    "message": "GitHub",
-    "description": "Navbar item with label GitHub"
+  "title": {
+    "message": "Bryan Tan",
+    "description": "The title in the navbar"
+  },
+  "logo.alt": {
+    "message": "Bryan Tan",
+    "description": "The alt text of navbar logo"
+  },
+  "item.label.首页": {
+    "message": "Home",
+    "description": "Navbar item with label 首页"
+  },
+  "item.label.个人作品": {
+    "message": "Individual",
+    "description": "Navbar item with label 个人作品"
+  },
+  "item.label.团队作品": {
+    "message": "Teamwork",
+    "description": "Navbar item with label 团队作品"
+  },
+  "item.label.关于": {
+    "message": "About",
+    "description": "Navbar item with label 关于"
   }
 }

@@ -155,8 +155,9 @@ module.exports = {
         { to: '/individual', label: '个人作品', position: 'right' },
         { to: '/teamwork',   label: '团队作品', position: 'right' },
         { to: '/personal',   label: '关于',     position: 'right' },
+        // v1.6: locale switcher at far right (English locale rolled out)
+        { type: 'localeDropdown', position: 'right' },
         // v1.5: 去掉 navbar 的 GitHub item（Bryan 反馈 #2 — Home hero links 已有 GitHub）
-        // { type: 'localeDropdown', position: 'right'},  // 英文 locale 内容补全后再 enable
         // { to: '/blog', label: 'Blog', position: 'left' },  // Bryan 明确不开放 blog 到 navbar
       ],
     },

@@ -2,12 +2,19 @@ import React, { useEffect, useRef } from 'react';
 import Layout from '@theme/Layout';
 import Head from '@docusaurus/Head';
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import Translate, { translate } from '@docusaurus/Translate';
 import styles from './index.module.css';
 import HomepageFeatures from '../components/HomepageFeatures';
 
 function HomepageHero() {
   const heroRef = useRef(null);
   const heroImgUrl = useBaseUrl('/img/hero.png');
+  const { i18n } = useDocusaurusContext();
+  const isEn = i18n.currentLocale === 'en';
+  const resumeUrl = useBaseUrl(
+    isEn ? '/files/Bryan_Tan_Resume_2026_en.pdf' : '/files/Bryan_Tan_Resume_2026.pdf'
+  );
 
   // Mouse parallax — hover-capable devices only, 温和 ±3px / ±2px, rAF-throttled
   useEffect(() => {
@@ -59,14 +66,23 @@ function HomepageHero() {
         <div className={styles.heroBottomFade} aria-hidden="true" />
         <div className={styles.heroInner}>
           <div className={styles.heroText}>
-            <h1 className={styles.name}>谭磊轩</h1>
-            <p className={styles.nameEn}>Bryan Tan</p>
+            <h1 className={styles.name}>
+              <Translate id="hero.name" description="Hero main heading (the name)">谭磊轩</Translate>
+            </h1>
+            {/* v1.6: 中文 locale 显示 "Bryan Tan" 副标题；英文 locale 不需要（drop）*/}
+            {!isEn && (
+              <p className={styles.nameEn}>
+                <Translate id="hero.nameEn" description="Hero subtitle under the name">Bryan Tan</Translate>
+              </p>
+            )}
             <p className={styles.bio}>
-              系统/战斗策划，关注 RPG 和互动叙事研究。
+              <Translate id="hero.bio" description="Hero short bio">
+                系统/战斗策划，关注 RPG 和互动叙事研究。
+              </Translate>
             </p>
             <nav className={styles.heroLinks} aria-label="Site links">
               <ul className={styles.linksRow}>
-                <li><a href={useBaseUrl('/files/Bryan_Tan_Resume_2026.pdf')} download>简历 ↓</a></li>
+                <li><a href={resumeUrl} download><Translate id="hero.links.resume" description="Hero link to resume PDF">简历 ↓</Translate></a></li>
                 <li><span className={styles.sep} aria-hidden="true">·</span></li>
                 <li><a href="https://www.linkedin.com/in/bryan-tan-321647389/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></li>
                 <li><span className={styles.sep} aria-hidden="true">·</span></li>
@@ -82,7 +98,13 @@ function HomepageHero() {
 
 export default function Home() {
   return (
-    <Layout title="Home" description="谭磊轩 Bryan Tan — 系统/战斗策划，关注 RPG 和互动叙事研究。">
+    <Layout
+      title={translate({ id: 'page.home.title', message: 'Home', description: 'Homepage <title>' })}
+      description={translate({
+        id: 'page.home.description',
+        message: '谭磊轩 Bryan Tan — 系统/战斗策划，关注 RPG 和互动叙事研究。',
+        description: 'Homepage meta description',
+      })}>
       <HomepageHero />
       <main>
         <HomepageFeatures />

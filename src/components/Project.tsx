@@ -1,4 +1,5 @@
 import React from 'react';
+import Translate from '@docusaurus/Translate';
 import styles from './Project.module.css';
 
 type ProjectProps = {
@@ -49,7 +50,7 @@ export const Project = ({
                   href={link}
                   {...(isExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
                 >
-                  查看 →
+                  <Translate id="project.card.viewLink" description="Project card view-detail link label">查看 →</Translate>
                 </a>
               )}
             </span>

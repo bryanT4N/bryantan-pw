@@ -45,7 +45,7 @@
   },
   "theme.colorToggle.ariaLabel": {
     "message": "Switch between dark and light mode (currently {mode})",
-    "description": "The ARIA label for the navbar color mode toggle"
+    "description": "The ARIA label for the color mode toggle"
   },
   "theme.colorToggle.ariaLabel.mode.dark": {
     "message": "dark mode",
@@ -309,5 +309,233 @@
   "theme.tags.tagsPageTitle": {
     "message": "Tags",
     "description": "The title of the tag list page"
+  },
+  "hero.name": {
+    "message": "Bryan Tan",
+    "description": "Hero main heading (the name)"
+  },
+  "hero.nameEn": {
+    "message": "",
+    "description": "Hero subtitle under the name"
+  },
+  "hero.bio": {
+    "message": "Systems / combat designer focused on RPGs and interactive storytelling.",
+    "description": "Hero short bio"
+  },
+  "hero.links.resume": {
+    "message": "Resume ↓",
+    "description": "Hero link to resume PDF"
+  },
+  "page.home.title": {
+    "message": "Home",
+    "description": "Homepage <title>"
+  },
+  "page.home.description": {
+    "message": "Bryan Tan — systems / combat designer focused on RPGs and interactive storytelling.",
+    "description": "Homepage meta description"
+  },
+  "page.individual.title": {
+    "message": "Individual",
+    "description": "Individual page <title>"
+  },
+  "page.individual.description": {
+    "message": "Bryan Tan · Individual work",
+    "description": "Individual page meta description"
+  },
+  "page.individual.heading": {
+    "message": "Individual Work",
+    "description": "Individual page H1 heading"
+  },
+  "individual.dfs1.meta": {
+    "message": "2026 Fall · in proposal",
+    "description": "DFS I project meta (date + status)"
+  },
+  "individual.dfs1.concept.placeholder": {
+    "message": "Static image placeholder",
+    "description": "DFS I static-image placeholder"
+  },
+  "individual.dfs1.concept.coming": {
+    "message": "Concept art coming Fall 2026",
+    "description": "DFS I concept-art coming line"
+  },
+  "individual.dfs1.concept.caption": {
+    "message": "Concept",
+    "description": "DFS I concept image caption"
+  },
+  "individual.dfs1.gameplay.placeholder": {
+    "message": "Animated image placeholder",
+    "description": "DFS I animated-image placeholder"
+  },
+  "individual.dfs1.gameplay.coming": {
+    "message": "Gameplay loop coming Fall 2026",
+    "description": "DFS I gameplay-loop coming line"
+  },
+  "individual.dfs1.gameplay.caption": {
+    "message": "Gameplay loop",
+    "description": "DFS I gameplay image caption"
+  },
+  "individual.dfs1.description": {
+    "message": "Coming soon.",
+    "description": "DFS I project description (currently placeholder)"
+  },
+  "page.personal.title": {
+    "message": "About",
+    "description": "Personal page <title>"
+  },
+  "page.personal.description": {
+    "message": "Bryan Tan · About",
+    "description": "Personal page meta description"
+  },
+  "page.personal.heading": {
+    "message": "About",
+    "description": "Personal page H1 heading"
+  },
+  "personal.about.name": {
+    "message": "Bryan Tan",
+    "description": "Personal page about-section main name"
+  },
+  "personal.about.nameEn": {
+    "message": "",
+    "description": "Personal page about-section subtitle name"
+  },
+  "personal.about.bio": {
+    "message": "Master of Interactive Technology candidate at SMU Guildhall, formerly a game designer at 4399. Worked on the SLG title Civilization & Conquest (2021).",
+    "description": "Personal page about-section bio"
+  },
+  "personal.resume.download": {
+    "message": "Download PDF ↓",
+    "description": "Personal page resume download link"
+  },
+  "page.teamwork.title": {
+    "message": "Teamwork",
+    "description": "Teamwork page <title>"
+  },
+  "page.teamwork.description": {
+    "message": "Bryan Tan · Team projects",
+    "description": "Teamwork page meta description"
+  },
+  "page.teamwork.heading": {
+    "message": "Team Projects",
+    "description": "Teamwork page H1 heading"
+  },
+  "teamwork.tgp1.meta": {
+    "message": "2025 · SMU Guildhall · Unity · Shipped",
+    "description": "TGP I meta line (date + school + tech + status)"
+  },
+  "teamwork.tgp1.trailer.placeholder": {
+    "message": "▷ ArachNOT trailer placeholder",
+    "description": "TGP I trailer placeholder line 1"
+  },
+  "teamwork.tgp1.trailer.coming": {
+    "message": "YouTube embed coming",
+    "description": "TGP I trailer placeholder line 2"
+  },
+  "teamwork.tgp1.description": {
+    "message": "A side-scrolling 2D puzzle game and SMU Guildhall TGP I team project. The player controls a spider that cannot climb the normal way; instead, it uses its uniquely elastic webs to navigate obstacles, evade hazards, and reach the top of the spider nest.",
+    "description": "TGP I project description"
+  },
+  "teamwork.tgp2.meta": {
+    "message": "2027 Spring · SMU Guildhall · upcoming",
+    "description": "TGP II meta line (date + school + status)"
+  },
+  "teamwork.tgp2.trailer.coming": {
+    "message": "▷ Trailer coming Spring 2027",
+    "description": "TGP II trailer placeholder line"
+  },
+  "teamwork.tgp2.description": {
+    "message": "Coming soon.",
+    "description": "TGP II project description (placeholder)"
+  },
+  "home.projects.title": {
+    "message": "Recent Projects",
+    "description": "Homepage projects section title"
+  },
+  "project.card.viewLink": {
+    "message": "View →",
+    "description": "Project card view-detail link label"
+  },
+  "data.project.arachnot.description": {
+    "message": "A side-scrolling 2D puzzle game (2025) built in Unity. The player controls a spider that cannot climb normally and uses its uniquely elastic webs to navigate obstacles, evade hazards, and reach the top of the spider nest.",
+    "description": "ArachNOT project description on Home"
+  },
+  "data.project.engine.title": {
+    "message": "Personal Engine",
+    "description": "Personal engine project title"
+  },
+  "data.project.engine.description": {
+    "message": "A game engine (2025) built in C++ and OpenGL. Features include math utilities, an input system, audio, renderer, textures and images, sprite sheets and animation, bitmap fonts and text boxes, an event system, a developer console, and more.",
+    "description": "Personal engine project description"
+  },
+  "data.project.dfs1.description": {
+    "message": "Coming soon.",
+    "description": "DFS I project description (Home card placeholder)"
+  },
+  "data.project.dfs1.status": {
+    "message": "2026 Fall · in proposal",
+    "description": "DFS I project status badge (Home card)"
+  },
+  "data.project.tgp2.description": {
+    "message": "Coming soon.",
+    "description": "TGP II project description (Home card placeholder)"
+  },
+  "data.project.tgp2.status": {
+    "message": "2027 Spring · upcoming",
+    "description": "TGP II project status badge (Home card)"
+  },
+  "data.experience.4399.jobTitle": {
+    "message": "Systems / Combat Designer",
+    "description": "4399 job title"
+  },
+  "data.experience.4399.company": {
+    "message": "Guangzhou 4399 Information Technology Co., Ltd.",
+    "description": "4399 company name"
+  },
+  "data.experience.4399.location": {
+    "message": "Guangzhou, China",
+    "description": "4399 work location"
+  },
+  "data.experience.4399.task.1": {
+    "message": "SLG + Tower-Defense + Auto-Battler project: built combat systems including gameplay, skills, buffs, troop and monster logic, player AI, and damage numbers. Owned monthly combat-feature release planning.",
+    "description": "4399 task 1 (SLG+TD+autobattler)"
+  },
+  "data.experience.4399.task.2": {
+    "message": "MMORPG project: pet system.",
+    "description": "4399 task 2 (MMORPG pet system)"
+  },
+  "data.experience.4399.task.3": {
+    "message": "SLG Civilization & Conquest: designed a main-line puzzle exploration mini-game and shipped 30+ levels. Iterated on battle reports and other systems.",
+    "description": "4399 task 3 (Civilization & Conquest)"
+  },
+  "data.education.smu.study": {
+    "message": "M.I.T. — Digital Game Development",
+    "description": "SMU Guildhall degree"
+  },
+  "data.education.sysu.school": {
+    "message": "Sun Yat-sen University",
+    "description": "Sun Yat-sen University name"
+  },
+  "data.education.sysu.city": {
+    "message": "Guangzhou, China",
+    "description": "Sun Yat-sen University city"
+  },
+  "data.education.sysu.study": {
+    "message": "B.Eng. — Computer Science and Technology",
+    "description": "Sun Yat-sen University degree"
+  },
+  "theme.colorToggle.ariaLabel.mode.system": {
+    "message": "system mode",
+    "description": "The name for the system color mode"
+  },
+  "theme.IconExternalLink.ariaLabel": {
+    "message": "(opens in new tab)",
+    "description": "The ARIA label for the external link icon"
+  },
+  "theme.navbar.mobileDropdown.collapseButton.expandAriaLabel": {
+    "message": "Expand the dropdown",
+    "description": "The ARIA label of the button to expand the mobile dropdown navbar item"
+  },
+  "theme.navbar.mobileDropdown.collapseButton.collapseAriaLabel": {
+    "message": "Collapse the dropdown",
+    "description": "The ARIA label of the button to collapse the mobile dropdown navbar item"
   }
 }

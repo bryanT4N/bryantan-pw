@@ -1,12 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import Layout from '@theme/Layout';
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import Translate, { translate } from '@docusaurus/Translate';
 import styles from './personal.module.css';
 import { Education, Experience } from '../components';
 import { education, experience } from '../utils/data';
 
 export default function Personal() {
-  const resumeUrl = useBaseUrl('/files/Bryan_Tan_Resume_2026.pdf');
+  const { i18n } = useDocusaurusContext();
+  const isEn = i18n.currentLocale === 'en';
+  const resumeUrl = useBaseUrl(
+    isEn ? '/files/Bryan_Tan_Resume_2026_en.pdf' : '/files/Bryan_Tan_Resume_2026.pdf'
+  );
   // Bryan 后续把真人照保存到 static/img/portrait.png 后会自动作为 background-image 显示，
   // 同时 placeholder "Portrait coming" 自动消失。
   // 图缺失时 (默认) 显示 surface 底色 + placeholder 文案，CSS background-image 不显示 broken icon。
@@ -21,13 +27,15 @@ export default function Personal() {
   }, [portraitUrl]);
 
   return (
-    <Layout title="关于" description="谭磊轩 · 关于">
+    <Layout
+      title={translate({ id: 'page.personal.title', message: '关于', description: 'Personal page <title>' })}
+      description={translate({ id: 'page.personal.description', message: '谭磊轩 · 关于', description: 'Personal page meta description' })}>
       <main className={styles.main}>
         <div className={styles.container}>
           <header className={styles.pageHeader}>
             <h1 className={styles.pageTitle}>
               <span className={styles.pageTitleMark} aria-hidden="true" />
-              关于
+              <Translate id="page.personal.heading" description="Personal page H1 heading">关于</Translate>
             </h1>
           </header>
 
@@ -50,19 +58,28 @@ export default function Personal() {
 
             <div className={styles.aboutContent}>
               <h2 className={styles.aboutName}>
-                谭磊轩 <span className={styles.aboutNameEn}>Bryan Tan</span>
+                <Translate id="personal.about.name" description="Personal page about-section main name">谭磊轩</Translate>
+                {!isEn && (
+                  <span className={styles.aboutNameEn}>
+                    <Translate id="personal.about.nameEn" description="Personal page about-section subtitle name">Bryan Tan</Translate>
+                  </span>
+                )}
               </h2>
               <span className={styles.aboutNameMark} aria-hidden="true" />
 
               <p className={styles.bio}>
-                SMU Guildhall 交互技术硕士在读，前 4399 游戏策划。参与游戏项目《文明与征服》(2021)。
+                <Translate id="personal.about.bio" description="Personal page about-section bio">
+                  SMU Guildhall 交互技术硕士在读，前 4399 游戏策划。参与游戏项目《文明与征服》(2021)。
+                </Translate>
               </p>
 
               <div className={styles.resumeBlock}>
                 <h3 className={styles.subTitle}>Resume</h3>
                 <p className={styles.resumeMeta}>Last updated 2026-06-03</p>
                 <p className={styles.resumeActions}>
-                  <a className={styles.action} href={resumeUrl} download>下载 PDF ↓</a>
+                  <a className={styles.action} href={resumeUrl} download>
+                    <Translate id="personal.resume.download" description="Personal page resume download link">下载 PDF ↓</Translate>
+                  </a>
                 </p>
               </div>
             </div>
