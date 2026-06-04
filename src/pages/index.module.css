@@ -122,13 +122,14 @@
   max-width: var(--width-prose);   /* 680, 文字阅读宽 */
 }
 
+/* v1.5: 中英名垂排（Bryan Q2 默认） — 谭磊轩主标题居中 + Bryan Tan 副标题居中 */
 .name {
   font-family: var(--font-serif);
   font-weight: 500;
   font-size: 56px;
   line-height: 1.15;
   letter-spacing: -0.02em;
-  margin: 0 0 var(--space-4) 0;     /* 24 below */
+  margin: 0 0 var(--space-2) 0;     /* 8 below name */
   color: var(--ink);
 }
 
@@ -136,9 +137,10 @@
   font-family: var(--font-sans);
   font-weight: 400;
   font-size: 20px;
-  letter-spacing: 0;
+  letter-spacing: 0.02em;
   color: var(--ink-soft);
-  margin-left: var(--space-3);
+  margin: 0 0 var(--space-5) 0;     /* 32 below subtitle */
+  text-align: center;
 }
 
 .bio {
@@ -209,9 +211,8 @@
     font-size: 40px;
   }
   .nameEn {
-    display: block;
-    margin-left: 0;
-    margin-top: var(--space-2);
+    font-size: 16px;
+    margin-bottom: var(--space-4);
   }
   .bio {
     font-size: 16px;

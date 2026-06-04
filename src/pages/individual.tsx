@@ -4,13 +4,13 @@ import styles from './individual.module.css';
 
 export default function IndividualWork() {
   return (
-    <Layout title="作品 · Individual Work" description="个人作品 — DFS I Ace Attorney Approximation">
+    <Layout title="个人作品" description="谭磊轩 · 个人作品">
       <main className={styles.main}>
         <div className={styles.container}>
           <header className={styles.pageHeader}>
             <h1 className={styles.pageTitle}>
               <span className={styles.pageTitleMark} aria-hidden="true" />
-              作品 <span className={styles.pageTitleEn}>Individual Work</span>
+              个人作品
             </h1>
           </header>
 
@@ -34,9 +34,7 @@ export default function IndividualWork() {
               <figcaption className={styles.caption}>玩法演示 · Gameplay loop</figcaption>
             </figure>
 
-            <p className={styles.description}>
-              仿《逆转裁判》的法庭辩论推理 demo。当前 proposal 阶段，计划探索分支证据树、玩家推理压力曲线、法庭节奏控制。SMU Guildhall DFS I 项目，2026 秋季正式开始。
-            </p>
+            <p className={styles.description}>Coming soon.</p>
           </article>
         </div>
       </main>

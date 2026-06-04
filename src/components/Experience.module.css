@@ -1,48 +1,118 @@
 /* stylelint-disable docusaurus/copyright-header */
+/**
+ * Experience entry v1.5 — horizontal layout, logo left + content right,
+ * tasks rendered as bulleted list (one task per line, Bryan's pre-MP1 style)
+ */
 
 .entry {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: var(--space-4);
+  align-items: flex-start;
+}
+
+.logoWrap {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 6px;
+  background: var(--surface);
+  flex-shrink: 0;
+}
+
+.logo {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.content {
   display: flex;
   flex-direction: column;
-  gap: var(--space-2);  /* 8px */
+  gap: var(--space-1);                /* 4 between header rows */
+  min-width: 0;
+}
+
+.headerRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--space-3);
+  flex-wrap: wrap;
 }
 
 .jobTitle {
   font-family: var(--font-sans);
   font-weight: 600;
-  font-size: 18px;
+  font-size: 17px;
   line-height: 1.4;
   color: var(--ink);
   margin: 0;
 }
 
+.dateRight {
+  font-family: var(--font-mono);
+  font-weight: 400;
+  font-size: 13px;
+  color: var(--ink-faint);
+  flex-shrink: 0;
+}
+
+.subRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
 .company {
   font-family: var(--font-sans);
   font-weight: 400;
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.5;
   color: var(--ink-soft);
 }
 
-.meta {
+.city {
   font-family: var(--font-mono);
   font-weight: 400;
   font-size: 13px;
-  line-height: 1.5;
   color: var(--ink-faint);
+  flex-shrink: 0;
 }
 
-.metaSep {
-  color: var(--ink-faint);
+/* v1.5: tasks bulleted, each on its own line */
+.tasks {
+  margin: var(--space-3) 0 0 0;       /* 16 above tasks */
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);                /* 8 between tasks */
 }
 
-.description {
+.task {
   font-family: var(--font-sans);
   font-weight: 400;
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.65;
   color: var(--ink);
-  margin: var(--space-3) 0 0 0;  /* 16px top */
-  max-width: 65ch;
+  padding-left: 1.4em;
+  position: relative;
+}
+
+.task::before {
+  content: '▪';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--ink-faint);
+  font-size: 13px;
+  line-height: 1.65;
 }
 
 .techstack {
@@ -51,4 +121,22 @@
   font-size: 13px;
   color: var(--ink-faint);
   margin-top: var(--space-2);
+}
+
+@media screen and (max-width: 768px) {
+  .entry {
+    grid-template-columns: 48px 1fr;
+    gap: var(--space-3);
+  }
+  .logoWrap {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+/* Legacy v1.x class no-ops */
+.description,
+.meta,
+.metaSep {
+  display: none;
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 import styles from './Education.module.css';
 
 type EducationProps = {
@@ -9,15 +10,24 @@ type EducationProps = {
   date: string;
 };
 
-export const Education = ({ school, city, study, date }: EducationProps) => {
+export const Education = ({ img, school, city, study, date }: EducationProps) => {
+  const imgUrl = useBaseUrl(img || '');
   return (
     <article className={styles.entry}>
-      <h3 className={styles.school}>{school}</h3>
-      <div className={styles.degree}>{study}</div>
-      <div className={styles.meta}>
-        <span>{date}</span>
-        {city && <span className={styles.metaSep}> · </span>}
-        {city && <span>{city}</span>}
+      {img && (
+        <div className={styles.logoWrap}>
+          <img src={imgUrl} alt={school} className={styles.logo} loading="lazy" />
+        </div>
+      )}
+      <div className={styles.content}>
+        <div className={styles.headerRow}>
+          <h3 className={styles.school}>{school}</h3>
+          <span className={styles.dateRight}>{date}</span>
+        </div>
+        <div className={styles.subRow}>
+          <span className={styles.degree}>{study}</span>
+          {city && <span className={styles.city}>{city}</span>}
+        </div>
       </div>
     </article>
   );

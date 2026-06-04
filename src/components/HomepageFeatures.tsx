@@ -9,7 +9,7 @@ export default function HomepageFeatures() {
       <div className={styles.container}>
         <h2 className={styles.sectionTitle}>
           <span className={styles.sectionTitleMark} aria-hidden="true" />
-          Projects
+          近期项目
         </h2>
         <div className={styles.projectsGrid}>
           {projects.map((props, idx) => (

@@ -38,18 +38,25 @@ export const Project = ({
       )}
       <div className={styles.content}>
         <h3 className={styles.title}>{title}</h3>
-        {techstack && techstack.length > 0 && (
-          <div className={styles.meta}>{techstack.join(' · ')}</div>
-        )}
         <p className={styles.description}>{description}</p>
-        {link && (
-          <a
-            className={styles.link}
-            href={link}
-            {...(isExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-          >
-            查看 →
-          </a>
+        {/* v1.5 footer: 左 查看 / 右 tags 同行；只有一侧也对齐 */}
+        {(link || (techstack && techstack.length > 0)) && (
+          <div className={styles.footer}>
+            <span className={styles.footerLink}>
+              {link && (
+                <a
+                  className={styles.link}
+                  href={link}
+                  {...(isExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                >
+                  查看 →
+                </a>
+              )}
+            </span>
+            {techstack && techstack.length > 0 && (
+              <span className={styles.meta}>{techstack.join(' · ')}</span>
+            )}
+          </div>
         )}
       </div>
     </article>

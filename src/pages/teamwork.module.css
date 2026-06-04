@@ -42,19 +42,19 @@
   flex-shrink: 0;
 }
 
-.pageTitleEn {
-  font-family: var(--font-sans);
-  font-weight: 400;
-  font-size: 18px;
-  color: var(--ink-soft);
-  margin-left: var(--space-3);
-}
-
+/* v1.5: 项目间 hairline 分隔（跟 Individual 一致） */
 .project {
   display: flex;
   flex-direction: column;
   gap: var(--space-3);
-  margin-bottom: var(--space-8);
+  padding-top: var(--space-6);                   /* 48 */
+  border-top: 1px solid var(--rule);
+  margin-bottom: var(--space-7);                 /* 64 */
+}
+
+.project:first-of-type {
+  padding-top: 0;
+  border-top: none;
 }
 
 .project:last-child {
@@ -112,9 +112,9 @@
   .pageTitle {
     font-size: 32px;
   }
-  .pageTitleEn {
-    display: block;
-    margin-left: 0;
-    margin-top: var(--space-2);
-  }
+}
+
+/* v1.5: pageTitleEn legacy no-op (page title 已去英文后缀) */
+.pageTitleEn {
+  display: none;
 }

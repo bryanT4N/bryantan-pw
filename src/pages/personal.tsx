@@ -21,13 +21,13 @@ export default function Personal() {
   }, [portraitUrl]);
 
   return (
-    <Layout title="关于 · Personal" description="谭磊轩 Bryan Tan — Resume, Education, Experience & Contact">
+    <Layout title="关于" description="谭磊轩 · 关于">
       <main className={styles.main}>
         <div className={styles.container}>
           <header className={styles.pageHeader}>
             <h1 className={styles.pageTitle}>
               <span className={styles.pageTitleMark} aria-hidden="true" />
-              关于 <span className={styles.pageTitleEn}>Personal</span>
+              关于
             </h1>
           </header>
 
@@ -55,7 +55,7 @@ export default function Personal() {
               <span className={styles.aboutNameMark} aria-hidden="true" />
 
               <p className={styles.bio}>
-                前 4399 战斗系统策划，现 SMU Guildhall 交互技术硕士。关注玩家手感、数值反馈与可玩性结构。
+                SMU Guildhall 交互技术硕士在读，前 4399 游戏策划。参与游戏项目《文明与征服》(2021)。
               </p>
 
               <div className={styles.resumeBlock}>
@@ -63,33 +63,31 @@ export default function Personal() {
                 <p className={styles.resumeMeta}>Last updated 2026-06-03</p>
                 <p className={styles.resumeActions}>
                   <a className={styles.action} href={resumeUrl} download>下载 PDF ↓</a>
-                  <span className={styles.sep} aria-hidden="true">·</span>
-                  <a className={styles.action} href={resumeUrl} target="_blank" rel="noopener noreferrer">在新窗口打开 ↗</a>
                 </p>
               </div>
             </div>
           </section>
 
-          {/* Education */}
+          {/* Education — v1.5: 单列横排带 logo */}
           <section className={styles.section} id="education">
             <h2 className={styles.sectionTitle}>
               <span className={styles.sectionTitleMark} aria-hidden="true" />
               Education
             </h2>
-            <div className={styles.twoColumnGrid}>
+            <div className={styles.entries}>
               {education.map((props, idx) => (
                 <Education key={idx} {...props} />
               ))}
             </div>
           </section>
 
-          {/* Experience */}
+          {/* Experience — v1.5: 单列横排带 logo + tasks 多行 */}
           <section className={styles.section} id="experience">
             <h2 className={styles.sectionTitle}>
               <span className={styles.sectionTitleMark} aria-hidden="true" />
               Experience
             </h2>
-            <div className={styles.twoColumnGrid}>
+            <div className={styles.entries}>
               {experience.map((props, idx) => (
                 <Experience key={idx} {...props} />
               ))}

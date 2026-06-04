@@ -4,13 +4,13 @@ import styles from './teamwork.module.css';
 
 export default function Teamwork() {
   return (
-    <Layout title="团队 · Teamwork" description="团队作品 — SMU Guildhall TGP I (ArachNOT) & TGP II">
+    <Layout title="团队作品" description="谭磊轩 · 团队作品">
       <main className={styles.main}>
         <div className={styles.container}>
           <header className={styles.pageHeader}>
             <h1 className={styles.pageTitle}>
               <span className={styles.pageTitleMark} aria-hidden="true" />
-              团队 <span className={styles.pageTitleEn}>Teamwork</span>
+              团队作品
             </h1>
           </header>
 
@@ -35,9 +35,7 @@ export default function Teamwork() {
                 <span>▷ Trailer coming Spring 2027</span>
               </div>
             </div>
-            <p className={styles.description}>
-              第二个 SMU Guildhall 团队游戏项目，2027 春季启动。届时本页面更新项目简介、个人职责、技术贡献与最终成片。
-            </p>
+            <p className={styles.description}>Coming soon.</p>
           </article>
         </div>
       </main>

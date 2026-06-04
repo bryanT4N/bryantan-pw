@@ -62,13 +62,6 @@
   margin: 0;
 }
 
-.meta {
-  font-family: var(--font-mono);
-  font-weight: 400;
-  font-size: 13px;
-  color: var(--ink-faint);
-}
-
 .description {
   font-family: var(--font-sans);
   font-weight: 400;
@@ -78,14 +71,33 @@
   margin: 0;
 }
 
+/* v1.5: footer 左 link / 右 tags 同行（Bryan #4） */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-3);
+  margin-top: var(--space-2);
+}
+
+.footerLink {
+  flex: 0 0 auto;
+}
+
+.meta {
+  font-family: var(--font-mono);
+  font-weight: 400;
+  font-size: 13px;
+  color: var(--ink-faint);
+  text-align: right;
+}
+
 .link {
   font-family: var(--font-sans);
   font-weight: 500;
   font-size: 14px;
   color: var(--accent);
   text-decoration: none;
-  margin-top: var(--space-2);
-  align-self: flex-start;
   transition: color var(--dur-fast) var(--ease);
 }
 

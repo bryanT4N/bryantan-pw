@@ -5,8 +5,8 @@ import {themes as prismThemes} from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
-  title: 'Bryan Tan',
-  tagline: 'Game Designer & Programmer.',
+  title: '谭磊轩',
+  tagline: '系统/战斗策划，从事游戏开发，关注 RPG 和互动叙事研究。',
   url: 'https://bryantan.net',
   baseUrl: '/',
   onBrokenLinks: 'throw',
@@ -139,25 +139,24 @@ module.exports = {
       respectPrefersColorScheme: false,
     },
     navbar: {
-      hideOnScroll: false,            // v1.1: 关，让 anime avatar 常驻承担人格识别符号
-      title: 'Bryan Tan',
+      hideOnScroll: false,
+      title: '谭磊轩',
+      // v1.5: Font Awesome 6 house-solid icon (SVG file, ink color hardcoded #1F1B16)
+      // Logo points to home, so the leftmost cluster doubles as the "home" affordance.
       logo: {
-        alt: 'Bryan Tan',
-        src: 'img/avatar.png',        // v1.1: 用 anime avatar 替代 plain avatar_c
-        width: 32,
-        height: 32,
+        alt: '谭磊轩',
+        src: 'img/icon-home.svg',
+        width: 24,
+        height: 24,
       },
       items: [
-        // v1.2 rollback: 恢复 Individual + Teamwork 两 page navbar 入口（spec 4 page 硬要求）
-        { to: '/individual', label: '作品 · Individual', position: 'right' },
-        { to: '/teamwork',   label: '团队 · Teamwork',  position: 'right' },
-        { to: '/personal',   label: '关于 · Personal',  position: 'right' },
-        {
-          href: 'https://github.com/bryanT4N/',
-          label: 'GitHub',
-          position: 'right',
-        },
-        // { type: 'localeDropdown', position: 'right'},  // v2 enable when 英文 locale 内容补全
+        // v1.5: 显式"首页"入口（Bryan Q8=B），最左
+        { to: '/',           label: '首页',     position: 'left' },
+        { to: '/individual', label: '个人作品', position: 'right' },
+        { to: '/teamwork',   label: '团队作品', position: 'right' },
+        { to: '/personal',   label: '关于',     position: 'right' },
+        // v1.5: 去掉 navbar 的 GitHub item（Bryan 反馈 #2 — Home hero links 已有 GitHub）
+        // { type: 'localeDropdown', position: 'right'},  // 英文 locale 内容补全后再 enable
         // { to: '/blog', label: 'Blog', position: 'left' },  // Bryan 明确不开放 blog 到 navbar
       ],
     },

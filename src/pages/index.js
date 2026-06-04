@@ -59,18 +59,13 @@ function HomepageHero() {
         <div className={styles.heroBottomFade} aria-hidden="true" />
         <div className={styles.heroInner}>
           <div className={styles.heroText}>
-            <h1 className={styles.name}>
-              谭磊轩 <span className={styles.nameEn}>Bryan Tan</span>
-            </h1>
+            <h1 className={styles.name}>谭磊轩</h1>
+            <p className={styles.nameEn}>Bryan Tan</p>
             <p className={styles.bio}>
-              前 4399 战斗系统策划，现 SMU Guildhall 交互技术硕士。关注玩家手感、数值反馈与可玩性结构。
+              系统/战斗策划，从事游戏开发，关注 RPG 和互动叙事研究。
             </p>
-            <nav className={styles.heroLinks} aria-label="Site sections">
+            <nav className={styles.heroLinks} aria-label="Site links">
               <ul className={styles.linksRow}>
-                <li><a href="/individual">个人作品</a></li>
-                <li><span className={styles.sep} aria-hidden="true">·</span></li>
-                <li><a href="/teamwork">团队作品</a></li>
-                <li><span className={styles.sep} aria-hidden="true">·</span></li>
                 <li><a href={useBaseUrl('/files/Bryan_Tan_Resume_2026.pdf')} download>简历 ↓</a></li>
                 <li><span className={styles.sep} aria-hidden="true">·</span></li>
                 <li><a href="https://www.linkedin.com/in/bryan-tan-321647389/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></li>

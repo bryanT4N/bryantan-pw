@@ -229,11 +229,11 @@
   flex-shrink: 0;
 }
 
-/* 2-column grid for Education / Experience */
-.twoColumnGrid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--space-5);                          /* 32 */
+/* v1.5: Edu/Exp 改单列 vertical stack（Bryan 反馈 #10 — 像作业开始前一样横着摆） */
+.entries {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);                          /* 48 between entries */
 }
 
 /* 3-column grid for Contact */
@@ -297,8 +297,7 @@
   .aboutName {
     font-size: 28px;
   }
-  .twoColumnGrid {
-    grid-template-columns: 1fr;
+  .entries {
     gap: var(--space-5);
   }
   .contactGrid {
