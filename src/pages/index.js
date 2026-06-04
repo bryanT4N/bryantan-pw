@@ -62,7 +62,7 @@ function HomepageHero() {
             <h1 className={styles.name}>谭磊轩</h1>
             <p className={styles.nameEn}>Bryan Tan</p>
             <p className={styles.bio}>
-              系统/战斗策划，从事游戏开发，关注 RPG 和互动叙事研究。
+              系统/战斗策划，关注 RPG 和互动叙事研究。
             </p>
             <nav className={styles.heroLinks} aria-label="Site links">
               <ul className={styles.linksRow}>
@@ -82,7 +82,7 @@ function HomepageHero() {
 
 export default function Home() {
   return (
-    <Layout title="Home" description="谭磊轩 Bryan Tan — 技术策划 · 战斗 / 系统设计">
+    <Layout title="Home" description="谭磊轩 Bryan Tan — 系统/战斗策划，关注 RPG 和互动叙事研究。">
       <HomepageHero />
       <main>
         <HomepageFeatures />

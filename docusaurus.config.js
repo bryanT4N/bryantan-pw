@@ -150,8 +150,8 @@ module.exports = {
         height: 24,
       },
       items: [
-        // v1.5: 显式"首页"入口（Bryan Q8=B），最左
-        { to: '/',           label: '首页',     position: 'left' },
+        // v1.5.1: 首页 改放右上，与其他 page link 同 group（Bryan 反馈）
+        { to: '/',           label: '首页',     position: 'right' },
         { to: '/individual', label: '个人作品', position: 'right' },
         { to: '/teamwork',   label: '团队作品', position: 'right' },
         { to: '/personal',   label: '关于',     position: 'right' },

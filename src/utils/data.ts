@@ -11,7 +11,7 @@ const projects: Array<ProjectType> = [
     img: 'img/projects/ArachNOT.gif',
     title: 'ArachNOT',
     description:
-      '横板 2D 解谜游戏 (2025)，SMU Guildhall TGP I 团队项目，使用 Unity 开发。玩家扮演一只因不会正常攀爬而受到排挤的蜘蛛，利用它特殊的弹性蛛网穿越障碍、躲避危险，登至蜘蛛巢穴顶部。',
+      '横板 2D 解谜游戏 (2025)，使用 Unity 开发。玩家扮演一只因不会正常攀爬而受到排挤的蜘蛛，利用它特殊的弹性蛛网穿越障碍、躲避危险，登至蜘蛛巢穴顶部。',
     codeLink: '',
     techstack: ['Unity'],
   },
@@ -19,7 +19,7 @@ const projects: Array<ProjectType> = [
     img: 'img/projects/Starship.gif',
     title: '个人引擎',
     description:
-      '基于 C++ 和 OpenGL 开发的游戏引擎 (2025)，有多个演示项目。功能涵盖数学工具类、输入系统、音频系统、渲染器、纹理与图像、精灵图与动画、bitmap 字体与文本框、事件系统、开发者控制台、Xml 配置数据等。',
+      '基于 C++ 和 OpenGL 开发的游戏引擎 (2025)。功能涵盖数学工具类、输入系统、音频系统、渲染器、纹理与图像、精灵图与动画、bitmap 字体与文本框、事件系统、开发者控制台等。',
     codeLink: '',
     liveLink: 'files/Starship.zip',
     techstack: ['C++', 'OpenGL'],
@@ -41,7 +41,7 @@ const projects: Array<ProjectType> = [
   //   techstack: ['ReactJS', 'TypeScript'],
   // },
   {
-    title: 'DFS I — Ace Attorney Approximation',
+    title: 'DFS I',
     description: 'Coming soon.',
     status: '2026 Fall · in proposal',
     detailLink: '/individual',
@@ -59,14 +59,14 @@ const projects: Array<ProjectType> = [
 const experience: Array<ExperienceType> = [
   {
     img: 'img/experience/4399-logo.png',
-    jobTitle: '战斗 / 系统策划',
+    jobTitle: '系统 / 战斗策划',
     date: '2022.07 — 2024.05',
     company: '广州四三九九信息科技有限公司',
     location: '广州',
     tasks: [
-      'SLG + 塔防 + 自走棋项目：管理战斗开发月版本规划；搭建战斗玩法、技能、Buff、出兵与怪物逻辑、玩家 AI、飘字等。',
+      'SLG+塔防+自走棋项目：搭建战斗玩法、技能、Buff、出兵与怪物逻辑、玩家 AI、飘字等，管理战斗开发月版本规划。',
       'MMORPG 项目：宠物系统。',
-      '《文明与征服》：设计主线解谜探索小游戏，产出 30+ 关卡；迭代优化战报等系统。',
+      'SLG《文明与征服》：设计主线解谜探索小游戏，产出 30+ 关卡。优化迭代战报等系统。',
     ],
   },
   // {
