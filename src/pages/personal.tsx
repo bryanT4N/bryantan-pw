@@ -4,8 +4,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Translate, { translate } from '@docusaurus/Translate';
 import styles from './personal.module.css';
-import { Education, Experience } from '../components';
-import { education, experience } from '../utils/data';
+import { Education } from '../components';
+import { GitHubIcon, LinkedInIcon, EmailIcon } from '../components/icons';
+import { education } from '../utils/data';
 
 export default function Personal() {
   const { i18n } = useDocusaurusContext();
@@ -98,7 +99,7 @@ export default function Personal() {
             </div>
           </section>
 
-          {/* Experience — v1.5: 单列横排带 logo + tasks 多行 */}
+          {/* v1.8: Experience 段按老师反馈先隐藏（保留 Education）；恢复时取消注释即可
           <section className={styles.section} id="experience">
             <h2 className={styles.sectionTitle}>
               <span className={styles.sectionTitleMark} aria-hidden="true" />
@@ -110,6 +111,7 @@ export default function Personal() {
               ))}
             </div>
           </section>
+          */}
 
           {/* Contact */}
           <section className={styles.section} id="contact">
@@ -119,21 +121,21 @@ export default function Personal() {
             </h2>
             <dl className={styles.contactGrid}>
               <div className={styles.contactItem}>
-                <dt className={styles.contactLabel}>Email</dt>
+                <dt className={styles.contactIcon} aria-label="Email"><EmailIcon size={20} /></dt>
                 <dd className={styles.contactValue}>
                   <a href="mailto:bry4n.lx.tan@gmail.com">bry4n.lx.tan@gmail.com</a>
                 </dd>
               </div>
               <div className={styles.contactItem}>
-                <dt className={styles.contactLabel}>LinkedIn</dt>
+                <dt className={styles.contactIcon} aria-label="LinkedIn"><LinkedInIcon size={20} /></dt>
                 <dd className={styles.contactValue}>
-                  <a href="https://www.linkedin.com/in/bryan-tan-321647389/" target="_blank" rel="noopener noreferrer">
-                    /in/bryan-tan ↗
+                  <a href="https://www.linkedin.com/in/bry4ntan/" target="_blank" rel="noopener noreferrer">
+                    /in/bry4ntan ↗
                   </a>
                 </dd>
               </div>
               <div className={styles.contactItem}>
-                <dt className={styles.contactLabel}>GitHub</dt>
+                <dt className={styles.contactIcon} aria-label="GitHub"><GitHubIcon size={20} /></dt>
                 <dd className={styles.contactValue}>
                   <a href="https://github.com/bryanT4N/" target="_blank" rel="noopener noreferrer">
                     @bryanT4N ↗

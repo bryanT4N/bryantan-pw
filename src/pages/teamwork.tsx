@@ -20,20 +20,29 @@ export default function Teamwork() {
           <article className={styles.project}>
             <h2 className={styles.projectTitle}>ArachNOT</h2>
             <div className={styles.meta}>
-              <Translate id="teamwork.tgp1.meta" description="TGP I meta line (date + school + tech + status)">2025 · SMU Guildhall · Unity · 已完成</Translate>
+              <Translate id="teamwork.tgp1.meta" description="TGP I meta line (date + school + tech + status)">2025 · SMU Guildhall · Unity · 已完成 · 4 人团队</Translate>
             </div>
             <div className={styles.videoFrame}>
-              <div className={styles.placeholder}>
-                <span>
-                  <Translate id="teamwork.tgp1.trailer.placeholder" description="TGP I trailer placeholder line 1">▷ ArachNOT trailer placeholder</Translate>
-                  <br />
-                  <Translate id="teamwork.tgp1.trailer.coming" description="TGP I trailer placeholder line 2">YouTube embed coming</Translate>
-                </span>
-              </div>
+              <iframe
+                className={styles.video}
+                src="https://www.youtube.com/embed/SwW2MTjFZvY"
+                title="ArachNOT trailer"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              />
             </div>
             <p className={styles.description}>
               <Translate id="teamwork.tgp1.description" description="TGP I project description">
                 横板 2D 解谜游戏，SMU Guildhall TGP I 团队项目。玩家扮演一只因不会正常攀爬而受到排挤的蜘蛛，利用它特殊的弹性蛛网穿越障碍、躲避危险，登至蜘蛛巢穴顶部。
+              </Translate>
+            </p>
+            <p className={styles.contribution}>
+              <span className={styles.contributionLabel}>
+                <Translate id="teamwork.tgp1.contribution.label" description="Contribution label">我的职责 · Programmer</Translate>
+              </span>
+              <Translate id="teamwork.tgp1.contribution" description="TGP I personal contribution">
+                实现蛛网 Gameplay（基于物理，Unity joints 组合）、蜘蛛角色的瞄准与射击、对话系统，以及部分界面 UI。
               </Translate>
             </p>
           </article>

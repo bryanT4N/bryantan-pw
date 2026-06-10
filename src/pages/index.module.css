@@ -191,6 +191,29 @@
   text-decoration: none;
 }
 
+/* v1.8: 简历文字链独占一行，图标换行到下方 */
+.resumeItem {
+  flex-basis: 100%;
+  text-align: center;
+}
+
+/* v1.8: icon-only 链接 — 墨色图标，hover 转 accent + 轻微上移 */
+.iconLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  color: var(--ink);
+  border-bottom: none !important;
+  transition: color var(--dur-fast) var(--ease), transform var(--dur-fast) var(--ease);
+}
+
+.iconLink:hover {
+  color: var(--accent);
+  transform: translateY(-2px);
+}
+
 .sep {
   font-family: var(--font-mono);
   font-size: 13px;

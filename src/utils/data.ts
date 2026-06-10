@@ -17,6 +17,7 @@ const projects: Array<ProjectType> = [
       description: 'ArachNOT project description on Home',
     }),
     codeLink: '',
+    detailLink: '/teamwork',
     techstack: ['Unity'],
   },
   {
@@ -32,7 +33,7 @@ const projects: Array<ProjectType> = [
       description: 'Personal engine project description',
     }),
     codeLink: '',
-    liveLink: 'files/Starship.zip',
+    detailLink: '/individual',
     techstack: ['C++', 'OpenGL'],
   },
   // {

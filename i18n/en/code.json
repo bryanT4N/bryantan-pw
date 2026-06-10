@@ -319,12 +319,16 @@
     "description": "Hero subtitle under the name"
   },
   "hero.bio": {
-    "message": "System / combat designer. Researching interactive storytelling.",
+    "message": "Systems / combat designer, atypical game programmer.{br}Into RPGs and interactive storytelling.",
     "description": "Hero short bio"
   },
   "hero.links.resume": {
-    "message": "Resume ↓",
+    "message": "My Resume ↓",
     "description": "Hero link to resume PDF"
+  },
+  "hero.links.resume.aria": {
+    "message": "Download résumé (PDF)",
+    "description": "Hero resume icon link aria-label"
   },
   "page.home.title": {
     "message": "Home",
@@ -376,7 +380,31 @@
   },
   "individual.dfs1.description": {
     "message": "Coming soon.",
-    "description": "DFS I project description (currently placeholder)"
+    "description": "DFS I project description"
+  },
+  "individual.engine.title": {
+    "message": "Personal Engine",
+    "description": "Personal engine title on Individual page"
+  },
+  "individual.engine.meta": {
+    "message": "2025 · C++ · OpenGL · Solo project",
+    "description": "Personal engine meta line"
+  },
+  "individual.engine.still.caption": {
+    "message": "Still",
+    "description": "Engine still image caption"
+  },
+  "individual.engine.running.caption": {
+    "message": "Running (Starship demo)",
+    "description": "Engine animated image caption"
+  },
+  "individual.engine.description": {
+    "message": "A game engine built from scratch in C++ and OpenGL. Implemented math utilities, an input system, audio, a renderer, textures and images, sprite sheets and animation, bitmap fonts and text boxes, an event system, and a developer console. Above is Starship, a small game made with the engine.",
+    "description": "Personal engine description on Individual page"
+  },
+  "individual.engine.download": {
+    "message": "Download Starship demo build ↓",
+    "description": "Engine demo build download link"
   },
   "page.personal.title": {
     "message": "Personal",
@@ -419,7 +447,7 @@
     "description": "Teamwork page H1 heading"
   },
   "teamwork.tgp1.meta": {
-    "message": "2025 · SMU Guildhall · Unity · Shipped",
+    "message": "2025 · SMU Guildhall · Unity · Shipped · 4-person team",
     "description": "TGP I meta line (date + school + tech + status)"
   },
   "teamwork.tgp1.trailer.placeholder": {
@@ -433,6 +461,14 @@
   "teamwork.tgp1.description": {
     "message": "A side-scrolling 2D puzzle game and SMU Guildhall TGP I team project. The player controls a spider that cannot climb the normal way; instead, it uses its uniquely elastic webs to navigate obstacles, evade hazards, and reach the top of the spider nest.",
     "description": "TGP I project description"
+  },
+  "teamwork.tgp1.contribution.label": {
+    "message": "My role · Programmer",
+    "description": "Contribution label"
+  },
+  "teamwork.tgp1.contribution": {
+    "message": "Built the web gameplay (physics-based, using Unity joints), the spider's aiming and shooting, the dialogue system, and part of the UI.",
+    "description": "TGP I personal contribution"
   },
   "teamwork.tgp2.meta": {
     "message": "2027 Spring · SMU Guildhall · upcoming",

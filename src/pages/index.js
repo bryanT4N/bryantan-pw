@@ -6,6 +6,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Translate, { translate } from '@docusaurus/Translate';
 import styles from './index.module.css';
 import HomepageFeatures from '../components/HomepageFeatures';
+import { GitHubIcon, LinkedInIcon } from '../components/icons';
 
 function HomepageHero() {
   const heroRef = useRef(null);
@@ -71,24 +72,26 @@ function HomepageHero() {
             <h1 className={styles.name}>
               <Translate id="hero.name" description="Hero main heading (the name)">谭磊轩</Translate>
             </h1>
-            {/* v1.6: 中文 locale 显示 "Bryan Tan" 副标题；英文 locale 不需要（drop）*/}
-            {!isEn && (
-              <p className={styles.nameEn}>
-                <Translate id="hero.nameEn" description="Hero subtitle under the name">Bryan Tan</Translate>
-              </p>
-            )}
             <p className={styles.bio}>
-              <Translate id="hero.bio" description="Hero short bio">
-                系统/战斗策划，关注 RPG 和互动叙事研究。
+              <Translate id="hero.bio" description="Hero short bio" values={{ br: <br /> }}>
+                {'系统/战斗策划，非典型游戏程序。{br}关注 RPG 与互动叙事。'}
               </Translate>
             </p>
             <nav className={styles.heroLinks} aria-label="Site links">
               <ul className={styles.linksRow}>
-                <li><a href={resumeUrl} download><Translate id="hero.links.resume" description="Hero link to resume PDF">简历 ↓</Translate></a></li>
-                <li><span className={styles.sep} aria-hidden="true">·</span></li>
-                <li><a href="https://www.linkedin.com/in/bryan-tan-321647389/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></li>
-                <li><span className={styles.sep} aria-hidden="true">·</span></li>
-                <li><a href="https://github.com/bryanT4N/" target="_blank" rel="noopener noreferrer">GitHub ↗</a></li>
+                <li>
+                  <a className={styles.iconLink} href="https://www.linkedin.com/in/bry4ntan/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <LinkedInIcon size={30} />
+                  </a>
+                </li>
+                <li>
+                  <a className={styles.iconLink} href="https://github.com/bryanT4N/" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                    <GitHubIcon size={30} />
+                  </a>
+                </li>
+                <li className={styles.resumeItem}>
+                  <a href={resumeUrl} download><Translate id="hero.links.resume" description="Hero link to resume PDF">个人简历 ↓</Translate></a>
+                </li>
               </ul>
             </nav>
           </div>

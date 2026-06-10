@@ -257,6 +257,13 @@
   margin: 0;
 }
 
+/* v1.8: contact 用品牌图标替代文字 label */
+.contactIcon {
+  display: inline-flex;
+  color: var(--ink-soft);
+  margin: 0;
+}
+
 .contactValue {
   font-family: var(--font-sans);
   font-size: 16px;
