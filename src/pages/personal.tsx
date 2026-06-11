@@ -4,9 +4,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Translate, { translate } from '@docusaurus/Translate';
 import styles from './personal.module.css';
-import { Education } from '../components';
 import { GitHubIcon, LinkedInIcon, EmailIcon } from '../components/icons';
-import { education } from '../utils/data';
 
 export default function Personal() {
   const { i18n } = useDocusaurusContext();
@@ -14,6 +12,8 @@ export default function Personal() {
   const resumeUrl = useBaseUrl(
     isEn ? '/files/Bryan_Tan_Resume_2026_en.pdf' : '/files/Bryan_Tan_Resume_2026.pdf'
   );
+  // v1.8: 英文页用 SMU 邮箱，中文页保留 gmail
+  const email = isEn ? 'bryantan@smu.edu' : 'bry4n.lx.tan@gmail.com';
   // Bryan 后续把真人照保存到 static/img/portrait.png 后会自动作为 background-image 显示，
   // 同时 placeholder "Portrait coming" 自动消失。
   // 图缺失时 (默认) 显示 surface 底色 + placeholder 文案，CSS background-image 不显示 broken icon。
@@ -86,7 +86,9 @@ export default function Personal() {
             </div>
           </section>
 
-          {/* Education — v1.5: 单列横排带 logo */}
+          {/* v1.8: Education + Experience 两段先隐藏（恢复时取消注释 + 加回 import：
+                import { Education, Experience } from '../components';
+                import { education, experience } from '../utils/data';）
           <section className={styles.section} id="education">
             <h2 className={styles.sectionTitle}>
               <span className={styles.sectionTitleMark} aria-hidden="true" />
@@ -99,7 +101,6 @@ export default function Personal() {
             </div>
           </section>
 
-          {/* v1.8: Experience 段按老师反馈先隐藏（保留 Education）；恢复时取消注释即可
           <section className={styles.section} id="experience">
             <h2 className={styles.sectionTitle}>
               <span className={styles.sectionTitleMark} aria-hidden="true" />
@@ -123,7 +124,7 @@ export default function Personal() {
               <div className={styles.contactItem}>
                 <dt className={styles.contactIcon} aria-label="Email"><EmailIcon size={28} /></dt>
                 <dd className={styles.contactValue}>
-                  <a href="mailto:bry4n.lx.tan@gmail.com">bry4n.lx.tan@gmail.com</a>
+                  <a href={`mailto:${email}`}>{email}</a>
                 </dd>
               </div>
               <div className={styles.contactItem}>
