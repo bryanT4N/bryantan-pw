@@ -11,7 +11,7 @@ const siteTitle = currentLocale === 'zh-cn' ? '谭磊轩' : 'Bryan Tan';
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
   title: siteTitle,
-  tagline: '系统/战斗策划，非典型游戏程序，关注 RPG 与互动叙事研究。',
+  tagline: '系统/战斗策划，兴趣使然的游戏开发者，关注 RPG 与互动叙事研究。',
   url: 'https://bryantan.net',
   baseUrl: '/',
   onBrokenLinks: 'throw',
