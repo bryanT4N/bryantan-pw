@@ -74,7 +74,7 @@ function HomepageHero() {
             </h1>
             <p className={styles.bio}>
               <Translate id="hero.bio" description="Hero short bio" values={{ br: <br /> }}>
-                {'系统/战斗策划，非典型游戏程序。{br}关注 RPG 与互动叙事。'}
+                {'系统/战斗策划，兴趣使然的游戏开发者。{br}关注 RPG 与互动叙事。'}
               </Translate>
             </p>
             <nav className={styles.heroLinks} aria-label="Site links">
