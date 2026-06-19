@@ -21,6 +21,10 @@ function HomepageHero() {
   // 中文每个字信息量比英文字母大，逐字打字调慢一些
   const nameTypingSpeedMs = isEn ? 55 : 120;
   const bioTypingSpeedMs = isEn ? 37 : 80;
+  // hero 4 个组件浮现延迟，分语言两套（顺序：LinkedIn / GitHub / Email / My Resume）
+  const revealDelaysMs = isEn
+    ? [350, 1050, 1750, 3250]
+    : [100, 800, 1500, 3000];
   // Hero name + bio type out in sequence: name first, then the two bio sentences.
   // The single caret stays at the name's end until the bio types its first char.
   const [nameDone, setNameDone] = useState(false);
@@ -107,22 +111,22 @@ function HomepageHero() {
             </p>
             <nav className={styles.heroLinks} aria-label="Site links">
               <ul className={styles.linksRow}>
-                <li className={styles.revealItem} style={{ animationDelay: '450ms' }}>
+                <li className={styles.revealItem} style={{ animationDelay: `${revealDelaysMs[0]}ms` }}>
                   <a className={styles.iconLink} href="https://www.linkedin.com/in/bry4ntan/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                     <LinkedInIcon size={30} />
                   </a>
                 </li>
-                <li className={styles.revealItem} style={{ animationDelay: '1150ms' }}>
+                <li className={styles.revealItem} style={{ animationDelay: `${revealDelaysMs[1]}ms` }}>
                   <a className={styles.iconLink} href="https://github.com/bryanT4N/" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                     <GitHubIcon size={30} />
                   </a>
                 </li>
-                <li className={styles.revealItem} style={{ animationDelay: '1850ms' }}>
+                <li className={styles.revealItem} style={{ animationDelay: `${revealDelaysMs[2]}ms` }}>
                   <a className={styles.iconLink} href={`mailto:${email}`} aria-label="Email">
                     <EmailIcon size={30} />
                   </a>
                 </li>
-                <li className={`${styles.resumeItem} ${styles.revealItem}`} style={{ animationDelay: '3350ms' }}>
+                <li className={`${styles.resumeItem} ${styles.revealItem}`} style={{ animationDelay: `${revealDelaysMs[3]}ms` }}>
                   <a className={styles.resumeLink} href={`${resumeUrl}#navpanes=0`} target="_blank" rel="noopener noreferrer">
                     <Translate id="hero.links.resume" description="Hero link to resume PDF">个人简历</Translate>
                   </a>
