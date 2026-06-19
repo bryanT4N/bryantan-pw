@@ -18,6 +18,9 @@ function HomepageHero() {
     isEn ? '/files/Bryan_Tan_Resume_2026_en.pdf' : '/files/Bryan_Tan_Resume_2026.pdf'
   );
   const email = isEn ? 'bryantan@smu.edu' : 'bry4n.lx.tan@gmail.com';
+  // 中文每个字信息量比英文字母大，逐字打字调慢一些
+  const nameTypingSpeedMs = isEn ? 55 : 120;
+  const bioTypingSpeedMs = isEn ? 37 : 80;
   // Hero name + bio type out in sequence: name first, then the two bio sentences.
   // The single caret stays at the name's end until the bio types its first char.
   const [nameDone, setNameDone] = useState(false);
@@ -90,13 +93,13 @@ function HomepageHero() {
         <div className={styles.heroInner}>
           <div className={styles.heroText}>
             <h1 className={styles.name}>
-              <Typewriter lines={[heroName]} typingSpeedMs={55} startDelayMs={0} showCursor={!bioStarted} onDone={() => setNameDone(true)} />
+              <Typewriter lines={[heroName]} typingSpeedMs={nameTypingSpeedMs} startDelayMs={0} showCursor={!bioStarted} onDone={() => setNameDone(true)} />
             </h1>
             <p className={styles.bio}>
               <Typewriter
                 lines={bioLines}
                 start={nameDone}
-                typingSpeedMs={37}
+                typingSpeedMs={bioTypingSpeedMs}
                 linePauseMs={500}
                 startDelayMs={1000}
                 onStart={() => setBioStarted(true)}
@@ -104,22 +107,22 @@ function HomepageHero() {
             </p>
             <nav className={styles.heroLinks} aria-label="Site links">
               <ul className={styles.linksRow}>
-                <li className={styles.revealItem} style={{ animationDelay: '350ms' }}>
+                <li className={styles.revealItem} style={{ animationDelay: '450ms' }}>
                   <a className={styles.iconLink} href="https://www.linkedin.com/in/bry4ntan/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                     <LinkedInIcon size={30} />
                   </a>
                 </li>
-                <li className={styles.revealItem} style={{ animationDelay: '1050ms' }}>
+                <li className={styles.revealItem} style={{ animationDelay: '1150ms' }}>
                   <a className={styles.iconLink} href="https://github.com/bryanT4N/" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                     <GitHubIcon size={30} />
                   </a>
                 </li>
-                <li className={styles.revealItem} style={{ animationDelay: '1750ms' }}>
+                <li className={styles.revealItem} style={{ animationDelay: '1850ms' }}>
                   <a className={styles.iconLink} href={`mailto:${email}`} aria-label="Email">
                     <EmailIcon size={30} />
                   </a>
                 </li>
-                <li className={`${styles.resumeItem} ${styles.revealItem}`} style={{ animationDelay: '3250ms' }}>
+                <li className={`${styles.resumeItem} ${styles.revealItem}`} style={{ animationDelay: '3350ms' }}>
                   <a className={styles.resumeLink} href={`${resumeUrl}#navpanes=0`} target="_blank" rel="noopener noreferrer">
                     <Translate id="hero.links.resume" description="Hero link to resume PDF">个人简历</Translate>
                   </a>
