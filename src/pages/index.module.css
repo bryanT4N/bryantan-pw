@@ -203,6 +203,21 @@
   border-bottom-color: var(--ink-faint);
 }
 
+/* hero 链接逐个浮现 — 纯 opacity/transform，不占布局不挤开 */
+.revealItem {
+  opacity: 0;
+  animation: hero-reveal 0.65s var(--ease) both;
+}
+
+@keyframes hero-reveal {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .revealItem { opacity: 1; transform: none; animation: none; }
+}
+
 /* v1.8: icon-only 链接 — 墨色图标，hover 转 accent + 轻微上移 */
 .iconLink {
   display: inline-flex;

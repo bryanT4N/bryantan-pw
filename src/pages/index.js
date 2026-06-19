@@ -90,7 +90,7 @@ function HomepageHero() {
         <div className={styles.heroInner}>
           <div className={styles.heroText}>
             <h1 className={styles.name}>
-              <Typewriter lines={[heroName]} typingSpeedMs={55} showCursor={!bioStarted} onDone={() => setNameDone(true)} />
+              <Typewriter lines={[heroName]} typingSpeedMs={55} startDelayMs={0} showCursor={!bioStarted} onDone={() => setNameDone(true)} />
             </h1>
             <p className={styles.bio}>
               <Typewriter
@@ -104,22 +104,22 @@ function HomepageHero() {
             </p>
             <nav className={styles.heroLinks} aria-label="Site links">
               <ul className={styles.linksRow}>
-                <li>
+                <li className={styles.revealItem} style={{ animationDelay: '350ms' }}>
                   <a className={styles.iconLink} href="https://www.linkedin.com/in/bry4ntan/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                     <LinkedInIcon size={30} />
                   </a>
                 </li>
-                <li>
+                <li className={styles.revealItem} style={{ animationDelay: '1050ms' }}>
                   <a className={styles.iconLink} href="https://github.com/bryanT4N/" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                     <GitHubIcon size={30} />
                   </a>
                 </li>
-                <li>
+                <li className={styles.revealItem} style={{ animationDelay: '1750ms' }}>
                   <a className={styles.iconLink} href={`mailto:${email}`} aria-label="Email">
                     <EmailIcon size={30} />
                   </a>
                 </li>
-                <li className={styles.resumeItem}>
+                <li className={`${styles.resumeItem} ${styles.revealItem}`} style={{ animationDelay: '3250ms' }}>
                   <a className={styles.resumeLink} href={`${resumeUrl}#navpanes=0`} target="_blank" rel="noopener noreferrer">
                     <Translate id="hero.links.resume" description="Hero link to resume PDF">个人简历</Translate>
                   </a>

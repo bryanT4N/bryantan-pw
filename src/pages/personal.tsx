@@ -122,12 +122,6 @@ export default function Personal() {
             </h2>
             <dl className={styles.contactGrid}>
               <div className={styles.contactItem}>
-                <dt className={styles.contactIcon} aria-label="Email"><EmailIcon size={28} /></dt>
-                <dd className={styles.contactValue}>
-                  <a href={`mailto:${email}`}>{email}</a>
-                </dd>
-              </div>
-              <div className={styles.contactItem}>
                 <dt className={styles.contactIcon} aria-label="LinkedIn"><LinkedInIcon size={28} /></dt>
                 <dd className={styles.contactValue}>
                   <a href="https://www.linkedin.com/in/bry4ntan/" target="_blank" rel="noopener noreferrer">
@@ -141,6 +135,12 @@ export default function Personal() {
                   <a href="https://github.com/bryanT4N/" target="_blank" rel="noopener noreferrer">
                     @bryanT4N ↗
                   </a>
+                </dd>
+              </div>
+              <div className={styles.contactItem}>
+                <dt className={styles.contactIcon} aria-label="Email"><EmailIcon size={28} /></dt>
+                <dd className={styles.contactValue}>
+                  <a href={`mailto:${email}`}>{email}</a>
                 </dd>
               </div>
             </dl>
