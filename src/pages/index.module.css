@@ -197,15 +197,10 @@
   text-align: center;
 }
 
-/* 简历文字链 + 下载图标同行对齐 */
-.resumeLink {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-}
-
-.resumeIcon {
-  flex: none;
+/* 简历文字链 — 比上面链接更浅，默认带下划线 */
+.linksRow a.resumeLink {
+  color: var(--ink-faint);
+  border-bottom-color: var(--ink-faint);
 }
 
 /* v1.8: icon-only 链接 — 墨色图标，hover 转 accent + 轻微上移 */

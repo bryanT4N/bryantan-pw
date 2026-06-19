@@ -7,7 +7,7 @@ import Translate, { translate } from '@docusaurus/Translate';
 import styles from './index.module.css';
 import HomepageFeatures from '../components/HomepageFeatures';
 import Typewriter from '../components/Typewriter';
-import { GitHubIcon, LinkedInIcon, DownloadIcon } from '../components/icons';
+import { GitHubIcon, LinkedInIcon, EmailIcon } from '../components/icons';
 
 function HomepageHero() {
   const heroRef = useRef(null);
@@ -17,6 +17,7 @@ function HomepageHero() {
   const resumeUrl = useBaseUrl(
     isEn ? '/files/Bryan_Tan_Resume_2026_en.pdf' : '/files/Bryan_Tan_Resume_2026.pdf'
   );
+  const email = isEn ? 'bryantan@smu.edu' : 'bry4n.lx.tan@gmail.com';
   // Hero name + bio type out in sequence: name first, then the two bio sentences.
   // The single caret stays at the name's end until the bio types its first char.
   const [nameDone, setNameDone] = useState(false);
@@ -113,10 +114,14 @@ function HomepageHero() {
                     <GitHubIcon size={30} />
                   </a>
                 </li>
+                <li>
+                  <a className={styles.iconLink} href={`mailto:${email}`} aria-label="Email">
+                    <EmailIcon size={30} />
+                  </a>
+                </li>
                 <li className={styles.resumeItem}>
-                  <a className={styles.resumeLink} href={resumeUrl} download>
+                  <a className={styles.resumeLink} href={`${resumeUrl}#navpanes=0`} target="_blank" rel="noopener noreferrer">
                     <Translate id="hero.links.resume" description="Hero link to resume PDF">个人简历</Translate>
-                    <DownloadIcon size={15} className={styles.resumeIcon} />
                   </a>
                 </li>
               </ul>
