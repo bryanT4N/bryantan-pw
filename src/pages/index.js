@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Layout from '@theme/Layout';
 import Head from '@docusaurus/Head';
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -6,6 +6,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Translate, { translate } from '@docusaurus/Translate';
 import styles from './index.module.css';
 import HomepageFeatures from '../components/HomepageFeatures';
+import Typewriter from '../components/Typewriter';
 import { GitHubIcon, LinkedInIcon } from '../components/icons';
 
 function HomepageHero() {
@@ -16,6 +17,24 @@ function HomepageHero() {
   const resumeUrl = useBaseUrl(
     isEn ? '/files/Bryan_Tan_Resume_2026_en.pdf' : '/files/Bryan_Tan_Resume_2026.pdf'
   );
+  // Hero name + bio type out in sequence: name first, then the two bio sentences.
+  // The single caret stays at the name's end until the bio types its first char.
+  const [nameDone, setNameDone] = useState(false);
+  const [bioStarted, setBioStarted] = useState(false);
+  const heroName = translate({
+    id: 'hero.name',
+    description: 'Hero main heading (the name)',
+    message: '谭磊轩',
+  });
+  // Reuse the existing hero.bio i18n key; split its two sentences for the typewriter.
+  const bioLines = translate(
+    {
+      id: 'hero.bio',
+      description: 'Hero short bio',
+      message: '系统/战斗策划，兴趣使然的游戏开发者。{br}关注 RPG 与互动叙事。',
+    },
+    { br: '\n' }
+  ).split('\n');
 
   // Mouse parallax — hover-capable devices only, 温和 ±3px / ±2px, rAF-throttled
   useEffect(() => {
@@ -70,12 +89,17 @@ function HomepageHero() {
         <div className={styles.heroInner}>
           <div className={styles.heroText}>
             <h1 className={styles.name}>
-              <Translate id="hero.name" description="Hero main heading (the name)">谭磊轩</Translate>
+              <Typewriter lines={[heroName]} typingSpeedMs={55} showCursor={!bioStarted} onDone={() => setNameDone(true)} />
             </h1>
             <p className={styles.bio}>
-              <Translate id="hero.bio" description="Hero short bio" values={{ br: <br /> }}>
-                {'系统/战斗策划，兴趣使然的游戏开发者。{br}关注 RPG 与互动叙事。'}
-              </Translate>
+              <Typewriter
+                lines={bioLines}
+                start={nameDone}
+                typingSpeedMs={37}
+                linePauseMs={500}
+                startDelayMs={1000}
+                onStart={() => setBioStarted(true)}
+              />
             </p>
             <nav className={styles.heroLinks} aria-label="Site links">
               <ul className={styles.linksRow}>

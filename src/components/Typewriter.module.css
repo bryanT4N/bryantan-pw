@@ -1,0 +1,50 @@
+/* Reserve the full final box so the layout never shifts while typing */
+.wrap {
+  position: relative;
+  display: inline-block;
+  /* keep the caret on the same line as the text; breaks only happen at <br/> */
+  white-space: nowrap;
+}
+
+.sizer {
+  visibility: hidden;
+}
+
+.typed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Blinking caret — always blinking (1s cycle: 0.5s on, 0.5s off) */
+.cursor {
+  display: inline-block;
+  margin-left: 1px;
+  font-weight: 400;
+  color: var(--accent);
+  animation: tw-blink 1s steps(1) infinite;
+}
+
+@keyframes tw-blink {
+  0%, 50% { opacity: 1; }
+  50.01%, 100% { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cursor { animation: none; }
+}
+
+/* Full text for screen readers / no-JS, visually hidden */
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
