@@ -197,6 +197,17 @@
   text-align: center;
 }
 
+/* 简历文字链 + 下载图标同行对齐 */
+.resumeLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.resumeIcon {
+  flex: none;
+}
+
 /* v1.8: icon-only 链接 — 墨色图标，hover 转 accent + 轻微上移 */
 .iconLink {
   display: inline-flex;

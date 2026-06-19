@@ -323,7 +323,7 @@
     "description": "Hero short bio"
   },
   "hero.links.resume": {
-    "message": "My Resume ↓",
+    "message": "My Resume",
     "description": "Hero link to resume PDF"
   },
   "hero.links.resume.aria": {

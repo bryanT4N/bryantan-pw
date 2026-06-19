@@ -7,7 +7,7 @@ import Translate, { translate } from '@docusaurus/Translate';
 import styles from './index.module.css';
 import HomepageFeatures from '../components/HomepageFeatures';
 import Typewriter from '../components/Typewriter';
-import { GitHubIcon, LinkedInIcon } from '../components/icons';
+import { GitHubIcon, LinkedInIcon, DownloadIcon } from '../components/icons';
 
 function HomepageHero() {
   const heroRef = useRef(null);
@@ -114,7 +114,10 @@ function HomepageHero() {
                   </a>
                 </li>
                 <li className={styles.resumeItem}>
-                  <a href={resumeUrl} download><Translate id="hero.links.resume" description="Hero link to resume PDF">个人简历 ↓</Translate></a>
+                  <a className={styles.resumeLink} href={resumeUrl} download>
+                    <Translate id="hero.links.resume" description="Hero link to resume PDF">个人简历</Translate>
+                    <DownloadIcon size={15} className={styles.resumeIcon} />
+                  </a>
                 </li>
               </ul>
             </nav>
