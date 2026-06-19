@@ -79,11 +79,11 @@
   font-family: var(--font-mono);
   font-size: 13px;
   color: var(--ink-faint);
-  margin-bottom: var(--space-4);
+  margin-bottom: var(--space-3);
 }
 
 .figure {
-  margin: var(--space-3) 0;
+  margin: 0 0 var(--space-3) 0;
 }
 
 .placeholder {

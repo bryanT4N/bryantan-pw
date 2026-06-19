@@ -125,15 +125,6 @@
   margin-left: var(--space-2);
 }
 
-.aboutNameMark {
-  display: inline-block;
-  width: 24px;
-  height: 2px;
-  background: var(--accent);
-  border-radius: 1px;
-  margin: 0 0 var(--space-2) 0;
-}
-
 .bio {
   font-family: var(--font-sans);
   font-weight: 400;

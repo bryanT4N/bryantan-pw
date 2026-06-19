@@ -66,7 +66,6 @@ export default function Personal() {
                   </span>
                 )}
               </h2>
-              <span className={styles.aboutNameMark} aria-hidden="true" />
 
               <p className={styles.bio}>
                 <Translate id="personal.about.bio" description="Personal page about-section bio">
