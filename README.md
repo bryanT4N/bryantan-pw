@@ -1,33 +1,41 @@
-# Website
+# bryantan.net
 
-This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
+The source for [bryantan.net](https://bryantan.net), my personal site and blog. Built with [Docusaurus](https://docusaurus.io/), a static site generator. The site is bilingual (English and 中文).
+
+## Requirements
+
+- Node 20 or newer
+- pnpm
 
 ## Installation
 
 ```console
-yarn install
+pnpm install
 ```
 
 ## Local Development
 
 ```console
-yarn start
+pnpm start
 ```
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+This starts a local dev server and opens a browser window. Most changes show up live without a restart.
+
+The dev server runs one language at a time. To preview both languages together, build and serve instead:
+
+```console
+pnpm build
+pnpm serve
+```
 
 ## Build
 
 ```console
-yarn build
+pnpm build
 ```
 
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
+This builds the static site into the `build` folder.
 
 ## Deployment
 
-```console
-GIT_USER=<Your GitHub username> USE_SSH=true yarn deploy
-```
-
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+The site is hosted on Cloudflare Pages. Pushing to `main` triggers a build and deploy automatically, so there is no manual deploy step.
