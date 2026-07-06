@@ -120,6 +120,7 @@
   align-items: center;
   text-align: center;
   max-width: var(--width-prose);   /* 680, 文字阅读宽 */
+  overflow: hidden;
 }
 
 /* v1.5: 中英名垂排（Bryan Q2 默认） — 谭磊轩主标题居中 + Bryan Tan 副标题居中 */

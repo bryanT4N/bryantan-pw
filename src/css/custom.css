@@ -159,6 +159,12 @@ a:hover {
   text-underline-offset: 3px;
 }
 
+/* Blog TOC sidebar — default col--2 too narrow for Chinese headings */
+.table-of-contents {
+  font-size: 13px;
+  min-width: 260px;
+}
+
 /* Selection */
 ::selection {
   background: var(--paper-hover);

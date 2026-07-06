@@ -2,8 +2,9 @@
 .wrap {
   position: relative;
   display: inline-block;
-  /* keep the caret on the same line as the text; breaks only happen at <br/> */
-  white-space: nowrap;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
 }
 
 .sizer {
