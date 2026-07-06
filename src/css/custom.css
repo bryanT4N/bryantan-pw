@@ -159,9 +159,21 @@ a:hover {
   text-underline-offset: 3px;
 }
 
-/* Blog post pages — widen container so TOC has room */
+/* Blog post pages — wider container + swap sidebar proportions
+   Default: Recent Posts col--3 (25%) | Content col--7 (58%) | TOC col--2 (17%)
+   Override: Recent Posts → 17% | Content unchanged | TOC → 25% (~350px) */
 html.blog-post-page .container {
   max-width: 1400px;
+}
+
+html.blog-post-page .row > .col.col--2 {
+  flex: 0 0 25%;
+  max-width: 25%;
+}
+
+html.blog-post-page .row > .col.col--3 {
+  flex: 0 0 16.67%;
+  max-width: 16.67%;
 }
 
 .table-of-contents {
