@@ -159,10 +159,11 @@ a:hover {
   text-underline-offset: 3px;
 }
 
-/* Blog post — widen container so TOC (col--2 = 16.67%) gets enough px for Chinese headings */
+/* Blog post — widen container + let TOC overflow its narrow col--2 into the right margin */
 html.blog-post-page .container {
   max-width: 1600px;
 }
+
 
 /* Selection */
 ::selection {
