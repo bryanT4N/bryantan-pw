@@ -162,7 +162,7 @@ a:hover {
 
 
 /* Blog post — wider container for 3-6-3 layout */
-html.blog-post-page .container {
+html.blog-wrapper .container {
   max-width: 1600px;
 }
 
