@@ -166,12 +166,12 @@ html.blog-post-page .container {
   max-width: 1680px;
 }
 
-/* Blog TOC — hide scrollbar but keep scrollable */
-html.blog-post-page .table-of-contents {
+/* Blog TOC wrapper — hide scrollbar but keep scrollable */
+html.blog-post-page .col.col--3 > .thin-scrollbar {
   scrollbar-width: none;
 }
 
-html.blog-post-page .table-of-contents::-webkit-scrollbar {
+html.blog-post-page .col.col--3 > .thin-scrollbar::-webkit-scrollbar {
   display: none;
 }
 
