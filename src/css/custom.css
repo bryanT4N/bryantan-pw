@@ -161,6 +161,11 @@ a:hover {
 
 
 
+/* Blog post — wider container for 3-6-3 layout */
+html.blog-post-page .container {
+  max-width: 1400px;
+}
+
 /* Selection */
 ::selection {
   background: var(--paper-hover);
