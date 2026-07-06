@@ -166,6 +166,15 @@ html.blog-post-page .container {
   max-width: 1680px;
 }
 
+/* Blog TOC — hide scrollbar but keep scrollable */
+html.blog-post-page .table-of-contents {
+  scrollbar-width: none;
+}
+
+html.blog-post-page .table-of-contents::-webkit-scrollbar {
+  display: none;
+}
+
 /* Selection */
 ::selection {
   background: var(--paper-hover);
