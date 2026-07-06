@@ -166,6 +166,17 @@ html.blog-wrapper .container {
   max-width: 1600px;
 }
 
+/* Blog post title — dark instead of accent */
+html.blog-wrapper article h1 a,
+html.blog-wrapper article h2 a {
+  color: var(--ink);
+}
+
+html.blog-wrapper article h1 a:hover,
+html.blog-wrapper article h2 a:hover {
+  color: var(--accent);
+}
+
 /* Blog TOC wrapper — hide scrollbar but keep scrollable */
 html.blog-post-page .col.col--3 > .thin-scrollbar {
   scrollbar-width: none;
