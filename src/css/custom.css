@@ -159,10 +159,6 @@ a:hover {
   text-underline-offset: 3px;
 }
 
-/* Blog post — widen container + let TOC overflow its narrow col--2 into the right margin */
-html.blog-post-page .container {
-  max-width: 1600px;
-}
 
 
 /* Selection */
