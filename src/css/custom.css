@@ -163,7 +163,7 @@ a:hover {
 
 /* Blog post — wider container for 3-6-3 layout */
 html.blog-post-page .container {
-  max-width: 1920px;
+  max-width: 1680px;
 }
 
 /* Selection */
