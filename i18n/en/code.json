@@ -439,7 +439,7 @@
     "description": "Personal page about-section subtitle name"
   },
   "personal.about.bio": {
-    "message": "Master of Interactive Technology candidate at SMU Guildhall, formerly a game designer at 4399. Worked on the SLG title Era of Conquest (2021).",
+    "message": "Master of Interactive Technology candidate at SMU Guildhall, formerly a game designer at 4399 Games. Worked on the SLG title Era of Conquest (2021).",
     "description": "Personal page about-section bio"
   },
   "personal.resume.download": {
@@ -479,7 +479,7 @@
     "description": "TGP I contribution - web mechanic"
   },
   "teamwork.tgp1.contribution.abilities": {
-    "message": "I also built the character abilities around the web projectile — shooting, bullet management, an aiming guide line, and the web's connection building and auto-breaking. I also made a simple dialogue system and half of the menu UI.",
+    "message": "I also built the character abilities around the web projectile — shooting, bullet management, an aiming guide line, and the web's connection building and auto-breaking. I also made the menu UI, a simple dialogue system, and its editor tooling. You can configure dialogue flow, images, sound effects, and text box visibility in an editor panel.",
     "description": "TGP I contribution - abilities and UI"
   },
   "teamwork.tgp2.meta": {
@@ -495,7 +495,7 @@
     "description": "TGP II contribution - perception"
   },
   "teamwork.tgp2.contribution.behavior": {
-    "message": "I also built the AI's behavior logic. The AI scores each lane and picks the best one. It can choose between forked paths and adjust its turning line. For obstacles and items on the track, I designed a six-tier tag system. The AI avoids or approaches objects based on their tag weight.",
+    "message": "I also built the AI's behavior logic. The AI scores each lane and picks the best one. It can choose between forked paths and adjust its turning line. I provided level designers with a six-tier weight tag system. They can tag obstacles and items on the track to easily tune the AI's avoidance and approach behavior.",
     "description": "TGP II contribution - behavior"
   },
   "teamwork.tgp2.steam": {
