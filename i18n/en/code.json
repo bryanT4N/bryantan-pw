@@ -391,7 +391,7 @@
     "description": "DFS I UI system"
   },
   "individual.dfs1.data": {
-    "message": "All game content is data-driven through XML files — characters, evidence, frame-by-frame animations, and the full dialogue script. Outside of this project, I built a one-click export tool on top of Luban. All data is configured in Excel and exported to XML with a right-click. This makes the whole workflow very convenient.",
+    "message": "Characters, evidence, and frame-by-frame animations are all data-driven through XML files. Dialogue scripts use a custom plain-text streaming format. Outside of this project, I built a one-click export tool on top of Luban. All data is configured in Excel and exported to XML with a right-click. This makes the whole workflow very convenient.",
     "description": "DFS I data-driven"
   },
   "individual.engine.title": {

@@ -66,12 +66,12 @@ export default function IndividualWork() {
             </p>
             <p className={styles.description}>
               <Translate id="individual.dfs1.ui" description="DFS I UI system">
-                引擎的保留模式 UI 系统没有用任何第三方库。包括面板、按钮、标签、图片、网格和流式布局等控件，支持九宫格纹理渲染和锚点布局。
+                引擎的保留模式 UI 不使用第三方库。支持面板、按钮、标签、图片、网格和流式布局等控件，支持九宫格纹理渲染和锚点布局。
               </Translate>
             </p>
             <p className={styles.description}>
               <Translate id="individual.dfs1.data" description="DFS I data-driven">
-                所有游戏内容通过 XML 数据文件驱动，包括角色、证据、逐帧动画定义和完整的对话脚本。我还基于 Luban 工具二次开发了一个通用的右键导表选单，支持一键从 Excel 导出到 XML，全数据驱动的配置工作流很方便。
+                角色、证据、逐帧动画等资源定义全部通过 XML 数据文件驱动，对话脚本则使用自定义的纯文本流式格式。我还基于 Luban 工具二次开发了一个通用的右键导表选单，支持一键从 Excel 导出到 XML，全数据驱动的配置工作流很方便。
               </Translate>
             </p>
           </article>

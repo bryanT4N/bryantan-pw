@@ -53,7 +53,7 @@ export default function Teamwork() {
             </p>
             <p className={styles.description}>
               <Translate id="teamwork.tgp2.contribution.behavior" description="TGP II contribution - behavior">
-                我还实现了赛车 AI 的行为逻辑。AI 通过效用分数评估每条车道的优劣，能够自主选择岔路、调整转弯轨迹。我为关卡策划提供了六级权重标签，对赛道上的不同物体设置标签即可灵活调节 AI 的避障和靠近行为。
+                我还实现了赛车 AI 的行为逻辑。AI 通过效用分数评估每条车道的优劣，能够自主选择岔路、调整转弯轨迹。我为关卡策划提供了六级权重标签，对赛道上的障碍物和道具设置标签即可灵活调节 AI 的避障和靠近行为。
               </Translate>
             </p>
             <p className={styles.actions}>
