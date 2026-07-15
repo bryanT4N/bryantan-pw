@@ -351,8 +351,8 @@
     "description": "Individual page H1 heading"
   },
   "individual.dfs1.meta": {
-    "message": "2026 Fall · in proposal",
-    "description": "DFS I project meta (date + status)"
+    "message": "2026 · C++ · Solo project",
+    "description": "DFS I project meta"
   },
   "individual.dfs1.concept.placeholder": {
     "message": "Static image placeholder",
@@ -379,15 +379,27 @@
     "description": "DFS I gameplay image caption"
   },
   "individual.dfs1.description": {
-    "message": "Coming soon.",
+    "message": "A courtroom drama game in the style of Phoenix Wright: Ace Attorney, built on my own C++ engine. It covers the full first chapter of the original, with dialogue, courtroom debate, and evidence presentation. The courtroom section recreates the original's cross-examination. Players can press witnesses on their statements or present evidence to counter them. The system checks if the evidence is correct. Wrong evidence loops back to the testimony. Correct evidence advances the story.",
     "description": "DFS I project description"
+  },
+  "individual.dfs1.dialogue": {
+    "message": "I built a stream-based dialogue system from scratch. Dialogue is written in a custom plain-text script format. Angle-bracket tags control the presentation — character portraits, backgrounds, sound effects, screen effects, text speed, and flow jumps. Tags can be placed inline within text. They trigger at the exact typewriter position. For example, a sound plays or the screen shakes right when a keyword appears.",
+    "description": "DFS I dialogue system"
+  },
+  "individual.dfs1.ui": {
+    "message": "The engine's retained-mode UI system uses no third-party libraries. It includes panels, buttons, labels, images, grid and flow layouts, 9-slice texture rendering, and anchor-based positioning.",
+    "description": "DFS I UI system"
+  },
+  "individual.dfs1.data": {
+    "message": "All game content is data-driven through XML files — characters, evidence, frame-by-frame animations, and the full dialogue script. Outside of this project, I built a one-click export tool on top of Luban. All data is configured in Excel and exported to XML with a right-click. This makes the whole workflow very convenient.",
+    "description": "DFS I data-driven"
   },
   "individual.engine.title": {
     "message": "Personal Engine",
     "description": "Personal engine title on Individual page"
   },
   "individual.engine.meta": {
-    "message": "2025 · C++ · OpenGL · Solo project",
+    "message": "2025 · C++ · Solo project",
     "description": "Personal engine meta line"
   },
   "individual.engine.still.caption": {
@@ -399,12 +411,12 @@
     "description": "Engine animated image caption"
   },
   "individual.engine.description": {
-    "message": "A game engine built from scratch in C++ and OpenGL. Implemented math utilities, an input system, audio, a renderer, textures and images, sprite sheets and animation, bitmap fonts and text boxes, an event system, and a developer console. Above is Starship, a small game made with the engine.",
+    "message": "A game engine built in C++. Supports 2D and 3D DirectX 11 rendering, obj and fbx model loading, Blinn-Phong lighting and shaders.",
     "description": "Personal engine description on Individual page"
   },
-  "individual.engine.download": {
-    "message": "Download Starship demo build ↓",
-    "description": "Engine demo build download link"
+  "individual.engine.features": {
+    "message": "Features include an event system, in-game console for debug commands, networked multiplayer, gamepad and mouse input, 2D simple physics, sprite sheets and animation, fonts and text boxes, ImGui and retained-mode UI, and JSON / XML data-driven configuration.",
+    "description": "Personal engine feature list"
   },
   "page.personal.title": {
     "message": "Personal",
@@ -447,7 +459,7 @@
     "description": "Teamwork page H1 heading"
   },
   "teamwork.tgp1.meta": {
-    "message": "2025 · SMU Guildhall · Unity · Shipped · 4-person team",
+    "message": "2025 · SMU Guildhall · Unity · 4-person team",
     "description": "TGP I meta line (date + school + tech + status)"
   },
   "teamwork.tgp1.trailer.placeholder": {
@@ -462,25 +474,33 @@
     "message": "A side-scrolling 2D puzzle game and SMU Guildhall TGP I team project. The player controls a spider that cannot climb the normal way; instead, it uses its uniquely elastic webs to navigate obstacles, evade hazards, and reach the top of the spider nest.",
     "description": "TGP I project description"
   },
-  "teamwork.tgp1.contribution.label": {
-    "message": "My role · Programmer",
-    "description": "Contribution label"
+  "teamwork.tgp1.contribution.web": {
+    "message": "I worked as the gameplay programmer on this project. I built the core web mechanic. The web is elastic when pushed sideways and pulls along its length. The physics are based on Unity's joint system.",
+    "description": "TGP I contribution - web mechanic"
   },
-  "teamwork.tgp1.contribution": {
-    "message": "Built the web gameplay (physics-based, using Unity joints), the spider's aiming and shooting, the dialogue system, and part of the UI.",
-    "description": "TGP I personal contribution"
+  "teamwork.tgp1.contribution.abilities": {
+    "message": "I also built the character abilities around the web projectile — shooting, bullet management, an aiming guide line, and the web's connection building and auto-breaking. I also made a simple dialogue system and half of the menu UI.",
+    "description": "TGP I contribution - abilities and UI"
   },
   "teamwork.tgp2.meta": {
-    "message": "2027 Spring · SMU Guildhall · upcoming",
-    "description": "TGP II meta line (date + school + status)"
-  },
-  "teamwork.tgp2.trailer.coming": {
-    "message": "▷ Trailer coming Spring 2027",
-    "description": "TGP II trailer placeholder line"
+    "message": "2026 · SMU Guildhall · Unreal · 40-person team",
+    "description": "TGP II meta line"
   },
   "teamwork.tgp2.description": {
-    "message": "Coming soon.",
-    "description": "TGP II project description (placeholder)"
+    "message": "An arcade multiplayer racing game and SMU Guildhall TGP II team project. Players control cute hamsters racing through three unique tracks, mastering the hamsterball's rolling and bouncing physics along with seven power-ups to take first place. Supports up to 4-player local split-screen.",
+    "description": "TGP II project description"
+  },
+  "teamwork.tgp2.contribution.perception": {
+    "message": "I worked as the AI programmer on this project. I built the racing AI's environment perception. The AI uses Unreal's Spline to set up a track coordinate system and split the track into segments. This lets it know where it is, which direction to go, and how wide the lanes are.",
+    "description": "TGP II contribution - perception"
+  },
+  "teamwork.tgp2.contribution.behavior": {
+    "message": "I also built the AI's behavior logic. The AI scores each lane and picks the best one. It can choose between forked paths and adjust its turning line. For obstacles and items on the track, I designed a six-tier tag system. The AI avoids or approaches objects based on their tag weight.",
+    "description": "TGP II contribution - behavior"
+  },
+  "teamwork.tgp2.steam": {
+    "message": "Steam store page →",
+    "description": "TGP II Steam link"
   },
   "home.projects.title": {
     "message": "Recent Projects",
@@ -491,7 +511,7 @@
     "description": "Project card view-detail link label"
   },
   "data.project.arachnot.description": {
-    "message": "A side-scrolling 2D puzzle game (2025) built in Unity. The player controls a spider that cannot climb normally and uses its uniquely elastic webs to navigate obstacles, evade hazards, and reach the top of the spider nest.",
+    "message": "A side-scrolling 2D puzzle game built in Unity. The player controls a spider that cannot climb normally and uses its uniquely elastic webs to navigate obstacles, evade hazards, and reach the top of the spider nest.",
     "description": "ArachNOT project description on Home"
   },
   "data.project.engine.title": {
@@ -499,24 +519,16 @@
     "description": "Personal engine project title"
   },
   "data.project.engine.description": {
-    "message": "A game engine (2025) built in C++ and OpenGL. Features include math utilities, an input system, audio, renderer, textures and images, sprite sheets and animation, bitmap fonts and text boxes, an event system, a developer console, and more.",
+    "message": "A game engine built in C++. Supports 2D/3D DirectX 11 rendering, Blinn-Phong lighting, networked multiplayer, retained-mode UI, and more.",
     "description": "Personal engine project description"
   },
   "data.project.dfs1.description": {
-    "message": "Coming soon.",
-    "description": "DFS I project description (Home card placeholder)"
-  },
-  "data.project.dfs1.status": {
-    "message": "2026 Fall · in proposal",
-    "description": "DFS I project status badge (Home card)"
+    "message": "A courtroom drama game in the style of Phoenix Wright: Ace Attorney, built on my own C++ engine. Recreates dialogue, courtroom debate, and evidence presentation.",
+    "description": "DFS I project description (Home card)"
   },
   "data.project.tgp2.description": {
-    "message": "Coming soon.",
-    "description": "TGP II project description (Home card placeholder)"
-  },
-  "data.project.tgp2.status": {
-    "message": "2027 Spring · upcoming",
-    "description": "TGP II project status badge (Home card)"
+    "message": "An arcade multiplayer hamsterball racing game built in Unreal. Players control hamsters racing through multiple tracks, mastering unique rolling and bouncing physics with seven power-ups to take first place.",
+    "description": "TGP II project description (Home card)"
   },
   "data.experience.4399.jobTitle": {
     "message": "Systems / Combat Designer",

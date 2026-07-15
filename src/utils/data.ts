@@ -9,19 +9,29 @@ import {
 // v1.6: i18n via @docusaurus/Translate#translate() — per-locale SSR build picks the right message
 const projects: Array<ProjectType> = [
   {
-    img: 'img/projects/ArachNOT.gif',
-    title: 'ArachNOT',
+    img: 'img/projects/tgp2/gameplay.mp4',
+    title: "Hamsterballin'",
     description: translate({
-      id: 'data.project.arachnot.description',
-      message: '横板 2D 解谜游戏 (2025)，使用 Unity 开发。玩家扮演一只因不会正常攀爬而受到排挤的蜘蛛，利用它特殊的弹性蛛网穿越障碍、躲避危险，登至蜘蛛巢穴顶部。',
-      description: 'ArachNOT project description on Home',
+      id: 'data.project.tgp2.description',
+      message: '街机风格多人仓鼠球赛车游戏，使用 Unreal 开发。玩家操控仓鼠在多条赛道上竞速，利用独特的滚动弹跳物理和七种道具争夺第一。',
+      description: 'TGP II project description (Home card)',
     }),
-    codeLink: '',
-    detailLink: '/teamwork',
-    techstack: ['Unity'],
+    detailLink: '/teamwork#hamsterballin',
+    techstack: ['2026', 'Unreal'],
   },
   {
-    img: 'img/projects/Starship.gif',
+    img: 'img/projects/dfs1/gameplay.gif',
+    title: 'Ace Attorney Approximation',
+    description: translate({
+      id: 'data.project.dfs1.description',
+      message: '逆转裁判风格的法庭剧情游戏，使用自己搭建的 C++ 引擎开发。还原了对话、法庭辩论和证据呈堂等核心玩法。',
+      description: 'DFS I project description (Home card)',
+    }),
+    detailLink: '/individual#aaa',
+    techstack: ['2026', 'C++'],
+  },
+  {
+    img: 'img/projects/engine/chess_lit.png',
     title: translate({
       id: 'data.project.engine.title',
       message: '个人引擎',
@@ -29,57 +39,22 @@ const projects: Array<ProjectType> = [
     }),
     description: translate({
       id: 'data.project.engine.description',
-      message: '基于 C++ 和 OpenGL 开发的游戏引擎 (2025)。功能涵盖数学工具类、输入系统、音频系统、渲染器、纹理与图像、精灵图与动画、bitmap 字体与文本框、事件系统、开发者控制台等。',
+      message: '基于 C++ 搭建的游戏引擎。支持 2D/3D DirectX 11 渲染、Blinn-Phong 光照、网络对战、保留模式 UI 等。',
       description: 'Personal engine project description',
     }),
-    codeLink: '',
-    detailLink: '/individual',
-    techstack: ['C++', 'OpenGL'],
-  },
-  // {
-  //   img: 'img/projects/sceneeditor.webp',
-  //   title: '3D 场景编辑器',
-  //   description:
-  //     '图形学课程作业 (2020)。基于 C++ 和 OpenGL 开发，实现的基本功能包括 Blinn-Phong 光照，天空盒，欧拉角摄像机，高度图地形，模型变换，交互控制等。',
-  //   codeLink: 'https://github.com/bryanT4N/3DSE/',
-  //   liveLink: '',
-  //   techstack: ['C++', 'OpenGL'],
-  // },
-  // {
-  //   img: 'img/projects/bryantanpw.webp',
-  //   title: 'bryantan.net',
-  //   description: '使用 Docusaurus 制作的个人主页，用于信息展示和博客发布。',
-  //   codeLink: 'https://github.com/bryanT4N/bryantan-pw',
-  //   techstack: ['ReactJS', 'TypeScript'],
-  // },
-  {
-    title: 'DFS I',
-    description: translate({
-      id: 'data.project.dfs1.description',
-      message: 'Coming soon.',
-      description: 'DFS I project description (Home card placeholder)',
-    }),
-    status: translate({
-      id: 'data.project.dfs1.status',
-      message: '2026 Fall · in proposal',
-      description: 'DFS I project status badge (Home card)',
-    }),
-    detailLink: '/individual',
-    techstack: ['Unity', 'C#'],
+    detailLink: '/individual#engine',
+    techstack: ['2025', 'C++'],
   },
   {
-    title: 'TGP II',
+    img: 'img/projects/ArachNOT.gif',
+    title: 'ArachNOT',
     description: translate({
-      id: 'data.project.tgp2.description',
-      message: 'Coming soon.',
-      description: 'TGP II project description (Home card placeholder)',
+      id: 'data.project.arachnot.description',
+      message: '横板 2D 解谜游戏，使用 Unity 开发。玩家扮演一只因不会正常攀爬而受到排挤的蜘蛛，利用它特殊的弹性蛛网穿越障碍、躲避危险，登至蜘蛛巢穴顶部。',
+      description: 'ArachNOT project description on Home',
     }),
-    status: translate({
-      id: 'data.project.tgp2.status',
-      message: '2027 Spring · upcoming',
-      description: 'TGP II project status badge (Home card)',
-    }),
-    detailLink: '/teamwork',
+    detailLink: '/teamwork#arachnot',
+    techstack: ['2025', 'Unity'],
   },
 ];
 

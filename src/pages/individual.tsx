@@ -1,12 +1,35 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Layout from '@theme/Layout';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Translate, { translate } from '@docusaurus/Translate';
+import MediaGallery from '../components/MediaGallery';
+import type { MediaItem } from '../components/MediaGallery';
 import styles from './individual.module.css';
 
 export default function IndividualWork() {
-  const gifUrl = useBaseUrl('/img/projects/Starship.gif');
-  const buildUrl = useBaseUrl('/files/Starship.zip');
+  useEffect(() => {
+    if (typeof window !== 'undefined' && window.location.hash) {
+      const el = document.querySelector(window.location.hash);
+      if (el) setTimeout(() => el.scrollIntoView({ behavior: 'smooth' }), 100);
+    }
+  }, []);
+  const engineBase = useBaseUrl('/img/projects/engine');
+  const starshipGif = useBaseUrl('/img/projects/Starship.gif');
+  const dfs1Base = useBaseUrl('/img/projects/dfs1');
+
+  const engineMedia: MediaItem[] = [
+    { type: 'image', src: `${engineBase}/chess_lit.png` },
+    { type: 'image', src: starshipGif },
+    { type: 'image', src: `${engineBase}/loading.png` },
+    { type: 'image', src: `${engineBase}/chess_normals.png` },
+  ];
+
+  const dfs1Media: MediaItem[] = [
+    { type: 'image', src: `${dfs1Base}/courtroom.png` },
+    { type: 'image', src: `${dfs1Base}/gameplay.gif` },
+    { type: 'image', src: `${dfs1Base}/objection.png` },
+    { type: 'image', src: `${dfs1Base}/cross_examination.png` },
+  ];
 
   return (
     <Layout
@@ -21,58 +44,56 @@ export default function IndividualWork() {
             </h1>
           </header>
 
-          {/* v1.8: 非 coming-soon 的真项目放上面，coming-soon (DFS) 放底部 */}
-          <article className={styles.project}>
+          <article id="aaa" className={styles.project}>
+            <h2 className={styles.projectTitle}>
+              Ace Attorney Approximation
+            </h2>
+            <div className={styles.meta}>
+              <Translate id="individual.dfs1.meta" description="DFS I project meta">2026 · C++ · 个人项目</Translate>
+            </div>
+
+            <MediaGallery items={dfs1Media} />
+
+            <p className={styles.description}>
+              <Translate id="individual.dfs1.description" description="DFS I project description">
+                逆转裁判风格的法庭剧情游戏，使用自己搭建的 C++ 引擎开发。还原了原版第一章《初次的逆转》的完整流程，包括对话、法庭辩论和证据呈堂。法庭辩论部分还原了原版的交叉询问机制，玩家可以对证词提出质疑或者出示证据反驳。系统会判断证据是否正确，错误时回到证词继续，正确时推进剧情。
+              </Translate>
+            </p>
+            <p className={styles.description}>
+              <Translate id="individual.dfs1.dialogue" description="DFS I dialogue system">
+                我从零实现了一套流式对话系统。对话以自定义的纯文本脚本格式编写，用尖括号标签控制演出。标签涵盖角色立绘、背景、音效、屏幕特效、文字速度和流程跳转等。这些标签可以内嵌在文字中间，在打字机显示到该位置时精确触发，比如说到关键词时播放音效或晃动屏幕。
+              </Translate>
+            </p>
+            <p className={styles.description}>
+              <Translate id="individual.dfs1.ui" description="DFS I UI system">
+                引擎的保留模式 UI 系统没有用任何第三方库。包括面板、按钮、标签、图片、网格和流式布局等控件，支持九宫格纹理渲染和锚点布局。
+              </Translate>
+            </p>
+            <p className={styles.description}>
+              <Translate id="individual.dfs1.data" description="DFS I data-driven">
+                所有游戏内容通过 XML 数据文件驱动，包括角色、证据、逐帧动画定义和完整的对话脚本。我还基于 Luban 工具二次开发了一个通用的右键导表选单，支持一键从 Excel 导出到 XML，全数据驱动的配置工作流很方便。
+              </Translate>
+            </p>
+          </article>
+
+          <article id="engine" className={styles.project}>
             <h2 className={styles.projectTitle}>
               <Translate id="individual.engine.title" description="Personal engine title on Individual page">个人引擎</Translate>
             </h2>
             <div className={styles.meta}>
-              <Translate id="individual.engine.meta" description="Personal engine meta line">2025 · C++ · OpenGL · 个人项目</Translate>
+              <Translate id="individual.engine.meta" description="Personal engine meta line">2025 · C++ · 个人项目</Translate>
             </div>
 
-            <figure className={styles.figure}>
-              <img className={styles.image} src={gifUrl} alt="Personal engine — running demo" loading="lazy" />
-              <figcaption className={styles.caption}>
-                <Translate id="individual.engine.running.caption" description="Engine animated image caption">运行演示 · Running (Starship demo)</Translate>
-              </figcaption>
-            </figure>
+            <MediaGallery items={engineMedia} />
 
             <p className={styles.description}>
               <Translate id="individual.engine.description" description="Personal engine description on Individual page">
-                基于 C++ 和 OpenGL 从零搭建的游戏引擎。实现了数学库、输入系统、音频系统、渲染器、纹理与图像、精灵图与动画、bitmap 字体与文本框、事件系统、开发者控制台等模块。上方为用该引擎制作的小游戏 Starship 的画面。
+                基于 C++ 搭建的游戏引擎，支持 2D 和 3D DirectX 11 渲染，支持 obj 和 fbx 模型加载，支持 Blinn-Phong 光照和 shader。
               </Translate>
             </p>
-            <p className={styles.actions}>
-              <a className={styles.action} href={buildUrl} download>
-                <Translate id="individual.engine.download" description="Engine demo build download link">下载 Starship demo 构建 ↓</Translate>
-              </a>
-            </p>
-          </article>
-
-          <article className={styles.project}>
-            <h2 className={styles.projectTitle}>
-              DFS I — Ace Attorney Approximation
-            </h2>
-            <div className={styles.meta}>
-              <Translate id="individual.dfs1.meta" description="DFS I project meta (date + status)">2026 Fall · in proposal</Translate>
-            </div>
-
-            <figure className={styles.figure}>
-              <div className={styles.placeholder}>
-                <span>
-                  <Translate id="individual.dfs1.concept.placeholder" description="DFS I static-image placeholder">静态图 placeholder</Translate>
-                  <br />
-                  <Translate id="individual.dfs1.concept.coming" description="DFS I concept-art coming line">Concept art coming Fall 2026</Translate>
-                </span>
-              </div>
-              <figcaption className={styles.caption}>
-                <Translate id="individual.dfs1.concept.caption" description="DFS I concept image caption">概念图 · Concept</Translate>
-              </figcaption>
-            </figure>
-
             <p className={styles.description}>
-              <Translate id="individual.dfs1.description" description="DFS I project description">
-                Coming soon.
+              <Translate id="individual.engine.features" description="Personal engine feature list">
+                实现了事件系统、游戏内控制台命令调试、网络连接对战、手柄和鼠标输入、2D 简易物理、精灵图和动画、字体与文本框、ImGui 和保留模式 UI、支持 JSON 和 XML 数据驱动。
               </Translate>
             </p>
           </article>

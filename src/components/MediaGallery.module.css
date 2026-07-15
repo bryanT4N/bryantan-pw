@@ -1,0 +1,126 @@
+.gallery {
+  display: grid;
+  grid-template-columns: 20% 1fr;
+  gap: var(--space-3);
+}
+
+.thumbsOuter {
+  position: relative;
+  min-height: 0;
+}
+
+.thumbs {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+.thumbs::-webkit-scrollbar {
+  display: none;
+}
+
+.thumb {
+  all: unset;
+  cursor: pointer;
+  flex-shrink: 0;
+  border: 4px solid transparent;
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+  filter: brightness(0.55);
+  transition: border-color var(--dur-fast) var(--ease), filter var(--dur-fast) var(--ease);
+}
+
+.thumb:hover {
+  border-color: var(--rule);
+  filter: brightness(0.8);
+}
+
+.active,
+.active:hover {
+  border-color: var(--accent);
+  filter: brightness(1);
+}
+
+.thumbImg {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background: var(--surface);
+}
+
+.playBadge {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  color: white;
+  background: rgba(0, 0, 0, 0.3);
+  pointer-events: none;
+}
+
+.preview {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.previewFrame {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  overflow: hidden;
+  background: #000;
+}
+
+.previewMedia {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border: none;
+}
+
+.caption {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--ink-soft);
+  margin: var(--space-2) 0 0 0;
+}
+
+@media screen and (max-width: 768px) {
+  .gallery {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .thumbsOuter {
+    position: static;
+    order: 1;
+  }
+
+  .thumbs {
+    position: static;
+    flex-direction: row;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  .thumb {
+    width: 100px;
+  }
+
+  .preview {
+    order: -1;
+  }
+}

@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from '@docusaurus/Link';
 import Translate from '@docusaurus/Translate';
 import styles from './Project.module.css';
 
@@ -30,7 +31,13 @@ export const Project = ({
     <article className={styles.card}>
       {img ? (
         <div className={styles.imgContainer}>
-          <img src={img} className={styles.img} alt={title} />
+          {img.endsWith('.mp4') ? (
+            <video className={styles.img} autoPlay muted loop playsInline preload="metadata">
+              <source src={img} type="video/mp4" />
+            </video>
+          ) : (
+            <img src={img} className={styles.img} alt={title} />
+          )}
         </div>
       ) : (
         <div className={styles.imgPlaceholder}>
@@ -44,15 +51,20 @@ export const Project = ({
         {(link || (techstack && techstack.length > 0)) && (
           <div className={styles.footer}>
             <span className={styles.footerLink}>
-              {link && (
+              {link && (isExternal ? (
                 <a
                   className={styles.link}
                   href={link}
-                  {...(isExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <Translate id="project.card.viewLink" description="Project card view-detail link label">查看 →</Translate>
                 </a>
-              )}
+              ) : (
+                <Link className={styles.link} to={link}>
+                  <Translate id="project.card.viewLink" description="Project card view-detail link label">查看 →</Translate>
+                </Link>
+              ))}
             </span>
             {techstack && techstack.length > 0 && (
               <span className={styles.meta}>{techstack.join(' · ')}</span>
