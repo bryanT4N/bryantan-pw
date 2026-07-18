@@ -24,7 +24,7 @@ const projects: Array<ProjectType> = [
     title: 'Ace Attorney Approximation',
     description: translate({
       id: 'data.project.dfs1.description',
-      message: '逆转裁判风格的法庭剧情游戏，使用自己搭建的 C++ 引擎开发。还原了对话、法庭辩论和证据呈堂等核心玩法。',
+      message: '逆转裁判风格的法庭剧情游戏，使用自己搭建的 C++ 引擎开发。还原了对话、法庭辩论和交叉询问等核心玩法。',
       description: 'DFS I project description (Home card)',
     }),
     detailLink: '/individual#aaa',
@@ -34,8 +34,8 @@ const projects: Array<ProjectType> = [
     img: 'img/projects/engine/chess_lit.png',
     title: translate({
       id: 'data.project.engine.title',
-      message: '个人引擎',
-      description: 'Personal engine project title',
+      message: '自制引擎',
+      description: 'Custom engine project title',
     }),
     description: translate({
       id: 'data.project.engine.description',
@@ -67,7 +67,7 @@ const experience: Array<ExperienceType> = [
       message: '系统 / 战斗策划',
       description: '4399 job title',
     }),
-    date: '2022.07 — 2024.05',
+    date: '2021.07 — 2024.05',
     company: translate({
       id: 'data.experience.4399.company',
       message: '广州四三九九信息科技有限公司',

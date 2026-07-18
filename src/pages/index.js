@@ -39,7 +39,7 @@ function HomepageHero() {
     {
       id: 'hero.bio',
       description: 'Hero short bio',
-      message: '系统/战斗策划，兴趣使然的游戏开发者。{br}关注 RPG 与互动叙事。',
+      message: '游戏策划，兴趣使然的开发者。{br}关注 RPG 与互动叙事。',
     },
     { br: '\n' }
   ).split('\n');
@@ -146,7 +146,7 @@ export default function Home() {
       title={translate({ id: 'page.home.title', message: 'Home', description: 'Homepage <title>' })}
       description={translate({
         id: 'page.home.description',
-        message: '谭磊轩 Bryan Tan — 系统/战斗策划，关注 RPG 和互动叙事研究。',
+        message: '谭磊轩 Bryan Tan — 游戏策划，兴趣使然的开发者，关注 RPG 和互动叙事研究。',
         description: 'Homepage meta description',
       })}>
       <HomepageHero />

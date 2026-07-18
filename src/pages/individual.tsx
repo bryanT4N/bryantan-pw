@@ -14,14 +14,13 @@ export default function IndividualWork() {
     }
   }, []);
   const engineBase = useBaseUrl('/img/projects/engine');
-  const starshipGif = useBaseUrl('/img/projects/Starship.gif');
   const dfs1Base = useBaseUrl('/img/projects/dfs1');
 
   const engineMedia: MediaItem[] = [
+    { type: 'video', src: `${engineBase}/Doomenstein.mp4`, thumbnail: `${engineBase}/Doomenstein_thumb.jpg` },
     { type: 'image', src: `${engineBase}/chess_lit.png` },
-    { type: 'image', src: starshipGif },
-    { type: 'image', src: `${engineBase}/loading.png` },
     { type: 'image', src: `${engineBase}/chess_normals.png` },
+    { type: 'image', src: `${engineBase}/loading.png` },
   ];
 
   const dfs1Media: MediaItem[] = [
@@ -56,7 +55,7 @@ export default function IndividualWork() {
 
             <p className={styles.description}>
               <Translate id="individual.dfs1.description" description="DFS I project description">
-                逆转裁判风格的法庭剧情游戏，使用自己搭建的 C++ 引擎开发。还原了原版第一章《初次的逆转》的完整流程，包括对话、法庭辩论和证据呈堂。法庭辩论部分还原了原版的交叉询问机制，玩家可以对证词提出质疑或者出示证据反驳。系统会判断证据是否正确，错误时回到证词继续，正确时推进剧情。
+                逆转裁判风格的法庭剧情游戏，使用自己搭建的 C++ 引擎开发。还原了原版第一章《初次的逆转》的完整流程，包括对话、法庭辩论和交叉询问。法庭辩论部分还原了原版的交叉询问机制，玩家可以对证词提出质疑或者出示证据反驳。系统会判断证据是否正确，错误时回到证词继续，正确时推进剧情。
               </Translate>
             </p>
             <p className={styles.description}>
@@ -78,7 +77,7 @@ export default function IndividualWork() {
 
           <article id="engine" className={styles.project}>
             <h2 className={styles.projectTitle}>
-              <Translate id="individual.engine.title" description="Personal engine title on Individual page">个人引擎</Translate>
+              <Translate id="individual.engine.title" description="Custom engine title on Individual page">自制引擎</Translate>
             </h2>
             <div className={styles.meta}>
               <Translate id="individual.engine.meta" description="Personal engine meta line">2025 · C++ · 个人项目</Translate>

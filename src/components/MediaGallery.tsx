@@ -49,6 +49,9 @@ export default function MediaGallery({ items }: Props) {
               key={current.src}
               className={styles.previewMedia}
               controls
+              autoPlay
+              loop
+              muted
               playsInline
               preload="metadata"
               poster={current.thumbnail}

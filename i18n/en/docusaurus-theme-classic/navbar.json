@@ -19,8 +19,8 @@
     "message": "Teamwork",
     "description": "Navbar item with label 团队作品"
   },
-  "item.label.关于": {
+  "item.label.关于我": {
     "message": "About",
-    "description": "Navbar item with label 关于"
+    "description": "Navbar item with label 关于我"
   }
 }

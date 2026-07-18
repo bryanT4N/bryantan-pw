@@ -395,8 +395,8 @@
     "description": "DFS I data-driven"
   },
   "individual.engine.title": {
-    "message": "Personal Engine",
-    "description": "Personal engine title on Individual page"
+    "message": "Custom Engine",
+    "description": "Custom engine title on Individual page"
   },
   "individual.engine.meta": {
     "message": "2025 · C++ · Solo project",
@@ -439,11 +439,19 @@
     "description": "Personal page about-section subtitle name"
   },
   "personal.about.bio": {
-    "message": "Master of Interactive Technology candidate at SMU Guildhall, formerly a game designer at 4399 Games. Worked on the SLG title Era of Conquest (2021).",
+    "message": "Master of Interactive Technology candidate at SMU Guildhall, formerly a game designer at 4399 Games.",
     "description": "Personal page about-section bio"
   },
+  "personal.about.bio2": {
+    "message": "Worked on the SLG title Era of Conquest (2021).",
+    "description": "Personal page about-section work history"
+  },
+  "personal.about.games": {
+    "message": "My favorite games are Rune Factory 3, Rocket League, Baldur's Gate 3, and Pokémon Gen 5 & 6. Currently learning Street Fighter 6.",
+    "description": "Personal page favorite games"
+  },
   "personal.resume.download": {
-    "message": "Download PDF ↓",
+    "message": "Resume ↓",
     "description": "Personal page resume download link"
   },
   "page.teamwork.title": {
@@ -515,8 +523,8 @@
     "description": "ArachNOT project description on Home"
   },
   "data.project.engine.title": {
-    "message": "Personal Engine",
-    "description": "Personal engine project title"
+    "message": "Custom Engine",
+    "description": "Custom engine project title"
   },
   "data.project.engine.description": {
     "message": "A game engine built in C++. Supports 2D/3D DirectX 11 rendering, Blinn-Phong lighting, networked multiplayer, retained-mode UI, and more.",

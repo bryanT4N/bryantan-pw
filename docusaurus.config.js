@@ -11,7 +11,7 @@ const siteTitle = currentLocale === 'zh-cn' ? '谭磊轩' : 'Bryan Tan';
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
   title: siteTitle,
-  tagline: '系统/战斗策划，兴趣使然的游戏开发者，关注 RPG 与互动叙事研究。',
+  tagline: '游戏策划，兴趣使然的开发者，关注 RPG 与互动叙事研究。',
   url: 'https://bryantan.net',
   baseUrl: '/',
   onBrokenLinks: 'throw',
@@ -166,7 +166,7 @@ module.exports = {
         { to: '/',           label: '首页',     position: 'right', activeBaseRegex: '^/(zh-cn)?/?$' },
         { to: '/individual', label: '个人作品', position: 'right' },
         { to: '/teamwork',   label: '团队作品', position: 'right' },
-        { to: '/personal',   label: '关于',     position: 'right' },
+        { to: '/personal',   label: '关于我',     position: 'right' },
         // v1.6: locale switcher at far right (English locale rolled out)
         { type: 'localeDropdown', position: 'right' },
         // v1.5: 去掉 navbar 的 GitHub item（Bryan 反馈 #2 — Home hero links 已有 GitHub）

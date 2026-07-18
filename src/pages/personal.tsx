@@ -5,6 +5,8 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Translate, { translate } from '@docusaurus/Translate';
 import styles from './personal.module.css';
 import { GitHubIcon, LinkedInIcon, EmailIcon } from '../components/icons';
+import { Education, Experience } from '../components';
+import { education, experience } from '../utils/data';
 
 export default function Personal() {
   const { i18n } = useDocusaurusContext();
@@ -29,14 +31,14 @@ export default function Personal() {
 
   return (
     <Layout
-      title={translate({ id: 'page.personal.title', message: '关于', description: 'Personal page <title>' })}
-      description={translate({ id: 'page.personal.description', message: '谭磊轩 · 关于', description: 'Personal page meta description' })}>
+      title={translate({ id: 'page.personal.title', message: '关于我', description: 'Personal page <title>' })}
+      description={translate({ id: 'page.personal.description', message: '谭磊轩 · 关于我', description: 'Personal page meta description' })}>
       <main className={styles.main}>
         <div className={styles.container}>
           <header className={styles.pageHeader}>
             <h1 className={styles.pageTitle}>
               <span className={styles.pageTitleMark} aria-hidden="true" />
-              <Translate id="page.personal.heading" description="Personal page H1 heading">关于</Translate>
+              <Translate id="page.personal.heading" description="Personal page H1 heading">关于我</Translate>
             </h1>
           </header>
 
@@ -69,49 +71,56 @@ export default function Personal() {
 
               <p className={styles.bio}>
                 <Translate id="personal.about.bio" description="Personal page about-section bio">
-                  SMU Guildhall 交互技术硕士在读，前 4399 游戏策划。参与游戏项目《文明与征服》(2021)。
+                  SMU Guildhall 交互技术硕士在读，前 4399 游戏策划。
+                </Translate>
+              </p>
+              <p className={styles.bio}>
+                <Translate id="personal.about.bio2" description="Personal page about-section work history">
+                  参与过游戏项目《文明与征服》(2021)。
+                </Translate>
+              </p>
+              <p className={styles.bio}>
+                <Translate id="personal.about.games" description="Personal page favorite games">
+                  最喜欢的游戏是《符文工房3》、《火箭联盟》、《博德之门3》和宝可梦 Gen5 Gen6。最近在学习打街霸 :)
                 </Translate>
               </p>
 
               <div className={styles.resumeBlock}>
-                <h3 className={styles.subTitle}>Resume</h3>
+                <a className={styles.action} href={resumeUrl} download>
+                  <Translate id="personal.resume.download" description="Personal page resume download link">个人简历 ↓</Translate>
+                </a>
                 <p className={styles.resumeMeta}>Last updated 2026-06-03</p>
-                <p className={styles.resumeActions}>
-                  <a className={styles.action} href={resumeUrl} download>
-                    <Translate id="personal.resume.download" description="Personal page resume download link">下载 PDF ↓</Translate>
-                  </a>
-                </p>
               </div>
             </div>
           </section>
 
-          {/* v1.8: Education + Experience 两段先隐藏（恢复时取消注释 + 加回 import：
-                import { Education, Experience } from '../components';
-                import { education, experience } from '../utils/data';）
-          <section className={styles.section} id="education">
-            <h2 className={styles.sectionTitle}>
-              <span className={styles.sectionTitleMark} aria-hidden="true" />
-              Education
-            </h2>
-            <div className={styles.entries}>
-              {education.map((props, idx) => (
-                <Education key={idx} {...props} />
-              ))}
-            </div>
-          </section>
+          {!isEn && (
+            <>
+              <section className={styles.section} id="education">
+                <h2 className={styles.sectionTitle}>
+                  <span className={styles.sectionTitleMark} aria-hidden="true" />
+                  Education
+                </h2>
+                <div className={styles.entries}>
+                  {education.map((props, idx) => (
+                    <Education key={idx} {...props} />
+                  ))}
+                </div>
+              </section>
 
-          <section className={styles.section} id="experience">
-            <h2 className={styles.sectionTitle}>
-              <span className={styles.sectionTitleMark} aria-hidden="true" />
-              Experience
-            </h2>
-            <div className={styles.entries}>
-              {experience.map((props, idx) => (
-                <Experience key={idx} {...props} />
-              ))}
-            </div>
-          </section>
-          */}
+              <section className={styles.section} id="experience">
+                <h2 className={styles.sectionTitle}>
+                  <span className={styles.sectionTitleMark} aria-hidden="true" />
+                  Experience
+                </h2>
+                <div className={styles.entries}>
+                  {experience.map((props, idx) => (
+                    <Experience key={idx} {...props} />
+                  ))}
+                </div>
+              </section>
+            </>
+          )}
 
           {/* Contact */}
           <section className={styles.section} id="contact">
