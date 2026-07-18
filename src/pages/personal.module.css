@@ -138,6 +138,7 @@
 /* Resume block embedded in About */
 .resumeBlock {
   width: 100%;
+  margin-top: var(--space-6);
   padding-top: var(--space-3);
   border-top: 1px solid var(--rule);
 }
