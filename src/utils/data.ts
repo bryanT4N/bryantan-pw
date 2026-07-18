@@ -101,7 +101,11 @@ const experience: Array<ExperienceType> = [
 const education: Array<EducationType> = [
   {
     img: 'img/education/Guildhall_Promo_Logo.png',
-    school: 'Southern Methodist University (SMU Guildhall)',
+    school: translate({
+      id: 'data.education.smu.school',
+      message: '南卫理公会大学',
+      description: 'SMU Guildhall school name',
+    }),
     city: 'Dallas, USA',
     study: translate({
       id: 'data.education.smu.study',

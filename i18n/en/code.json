@@ -530,6 +530,10 @@
     "message": "A game engine built in C++. Supports 2D/3D DirectX 11 rendering, Blinn-Phong lighting, networked multiplayer, retained-mode UI, and more.",
     "description": "Personal engine project description"
   },
+  "data.education.smu.school": {
+    "message": "Southern Methodist University",
+    "description": "SMU Guildhall school name"
+  },
   "data.project.dfs1.description": {
     "message": "A courtroom drama game in the style of Phoenix Wright: Ace Attorney, built on my own C++ engine. Recreates dialogue, courtroom debate, and evidence presentation.",
     "description": "DFS I project description (Home card)"
