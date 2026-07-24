@@ -81,7 +81,7 @@ export default function Personal() {
               </p>
               <p className={styles.bio}>
                 <Translate id="personal.about.games" description="Personal page favorite games">
-                  最喜欢的游戏是《符文工房3》、《火箭联盟》、《博德之门3》和宝可梦 Gen5 Gen6。最近在学习打街霸 :)
+                  最喜欢的游戏是《博德之门3》、《火箭联盟》、《符文工房3》和宝可梦 Gen5 Gen6。最近在学习打街霸 :(
                 </Translate>
               </p>
 
