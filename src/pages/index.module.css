@@ -399,7 +399,7 @@
 }
 
 .bgBlock:last-child {
-  margin-bottom: 0;
+  margin-bottom: var(--space-6);
 }
 
 .projectsWrap {
