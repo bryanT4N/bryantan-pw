@@ -27,7 +27,7 @@ const projects: Array<ProjectType> = [
       message: '逆转裁判风格的法庭剧情游戏，使用自己搭建的 C++ 引擎开发。还原了对话、法庭辩论和交叉询问等核心玩法。',
       description: 'DFS I project description (Home card)',
     }),
-    detailLink: '/individual#aaa',
+    detailLink: '/individual-work#aaa',
     techstack: ['2026', 'C++'],
   },
   {
@@ -42,7 +42,7 @@ const projects: Array<ProjectType> = [
       message: '基于 C++ 搭建的游戏引擎。支持 2D/3D DirectX 11 渲染、Blinn-Phong 光照、网络对战、保留模式 UI 等。',
       description: 'Personal engine project description',
     }),
-    detailLink: '/individual#engine',
+    detailLink: '/individual-work#engine',
     techstack: ['2025', 'C++'],
   },
   {
@@ -78,23 +78,7 @@ const experience: Array<ExperienceType> = [
       message: '广州',
       description: '4399 work location',
     }),
-    tasks: [
-      translate({
-        id: 'data.experience.4399.task.1',
-        message: 'SLG+塔防+自走棋项目：搭建战斗玩法、技能、Buff、出兵与怪物逻辑、玩家 AI、飘字等，管理战斗开发月版本规划。',
-        description: '4399 task 1 (SLG+TD+autobattler)',
-      }),
-      translate({
-        id: 'data.experience.4399.task.2',
-        message: 'MMORPG 项目：宠物系统。',
-        description: '4399 task 2 (MMORPG pet system)',
-      }),
-      translate({
-        id: 'data.experience.4399.task.3',
-        message: 'SLG《文明与征服》：设计主线解谜探索小游戏，产出 30+ 关卡。优化迭代战报等系统。',
-        description: '4399 task 3 (Civilization & Conquest)',
-      }),
-    ],
+    tasks: [],
   },
 ];
 

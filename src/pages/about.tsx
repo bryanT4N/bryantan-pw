@@ -3,7 +3,7 @@ import Layout from '@theme/Layout';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Translate, { translate } from '@docusaurus/Translate';
-import styles from './personal.module.css';
+import styles from './about.module.css';
 import { GitHubIcon, LinkedInIcon, EmailIcon } from '../components/icons';
 import { Education, Experience } from '../components';
 import { education, experience } from '../utils/data';
@@ -15,7 +15,7 @@ export default function Personal() {
     isEn ? '/files/Bryan_Tan_Resume_2026_en.pdf' : '/files/Bryan_Tan_Resume_2026.pdf'
   );
   // v1.8: 英文页用 SMU 邮箱，中文页保留 gmail
-  const email = isEn ? 'bryantan@smu.edu' : 'bry4n.lx.tan@gmail.com';
+  const email = 'bryantan@foxmail.com';
   // Bryan 后续把真人照保存到 static/img/portrait.png 后会自动作为 background-image 显示，
   // 同时 placeholder "Portrait coming" 自动消失。
   // 图缺失时 (默认) 显示 surface 底色 + placeholder 文案，CSS background-image 不显示 broken icon。
@@ -81,7 +81,7 @@ export default function Personal() {
               </p>
               <p className={styles.bio}>
                 <Translate id="personal.about.games" description="Personal page favorite games">
-                  最喜欢的游戏是《博德之门3》、《火箭联盟》、《符文工房3》和宝可梦 Gen5 Gen6。最近在学习打街霸 :(
+                  最喜欢的游戏是《博德之门3》、《火箭联盟》、《符文工房3》和宝可梦 Gen5 Gen6，最近在学习打街霸 :(
                 </Translate>
               </p>
 
@@ -89,7 +89,7 @@ export default function Personal() {
                 <a className={styles.action} href={resumeUrl} download>
                   <Translate id="personal.resume.download" description="Personal page resume download link">个人简历 ↓</Translate>
                 </a>
-                <p className={styles.resumeMeta}>Last updated 2026-06-03</p>
+                <p className={styles.resumeMeta}>Last updated 2026-07-23</p>
               </div>
             </div>
           </section>

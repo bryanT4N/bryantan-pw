@@ -17,7 +17,7 @@ function HomepageHero() {
   const resumeUrl = useBaseUrl(
     isEn ? '/files/Bryan_Tan_Resume_2026_en.pdf' : '/files/Bryan_Tan_Resume_2026.pdf'
   );
-  const email = isEn ? 'bryantan@smu.edu' : 'bry4n.lx.tan@gmail.com';
+  const email = 'bryantan@foxmail.com';
   // 中文每个字信息量比英文字母大，逐字打字调慢一些
   const nameTypingSpeedMs = isEn ? 55 : 120;
   const bioTypingSpeedMs = isEn ? 37 : 80;

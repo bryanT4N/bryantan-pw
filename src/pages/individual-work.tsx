@@ -4,7 +4,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Translate, { translate } from '@docusaurus/Translate';
 import MediaGallery from '../components/MediaGallery';
 import type { MediaItem } from '../components/MediaGallery';
-import styles from './individual.module.css';
+import styles from './individual-work.module.css';
 
 export default function IndividualWork() {
   useEffect(() => {

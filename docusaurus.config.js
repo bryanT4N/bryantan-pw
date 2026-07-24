@@ -164,9 +164,9 @@ module.exports = {
         // v1.7.2: activeBaseRegex 限制 active 态只在 "/" 或 "/zh-cn/" 根 URL；
         // 否则 Home 会因 startsWith("/") 在所有 sub-page 都亮起
         { to: '/',           label: '首页',     position: 'right', activeBaseRegex: '^/(zh-cn)?/?$' },
-        { to: '/individual', label: '个人作品', position: 'right' },
-        { to: '/teamwork',   label: '团队作品', position: 'right' },
-        { to: '/personal',   label: '关于我',     position: 'right' },
+        { to: '/individual-work', label: '个人作品', position: 'right' },
+        { to: '/teamwork',        label: '团队作品', position: 'right' },
+        { to: '/about',           label: '关于我',     position: 'right' },
         // v1.6: locale switcher at far right (English locale rolled out)
         { type: 'localeDropdown', position: 'right' },
         // v1.5: 去掉 navbar 的 GitHub item（Bryan 反馈 #2 — Home hero links 已有 GitHub）
