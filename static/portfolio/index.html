@@ -1,0 +1,839 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
+.mac-os-11 { --title-bar-height: 28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, h5 { white-space: pre-wrap; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; position: relative; }
+#write svg h1, #write svg h2, #write svg h3, #write svg h4, #write svg h5, #write svg h6, #write svg p { position: static; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+thead, tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; border-color: transparent !important; padding-top: 0px !important; padding-bottom: 0px !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  #write > p:nth-child(1) { margin-top: 0px; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+  figure { overflow-x: visible; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.mermaid-svg { margin: auto; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex: 2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; overflow-wrap: anywhere; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+mjx-container { break-inside: avoid; }
+.md-alert.md-alert-note { border-left-color: rgb(9, 105, 218); }
+.md-alert.md-alert-important { border-left-color: rgb(130, 80, 223); }
+.md-alert.md-alert-warning { border-left-color: rgb(154, 103, 0); }
+.md-alert.md-alert-tip { border-left-color: rgb(31, 136, 61); }
+.md-alert.md-alert-caution { border-left-color: rgb(207, 34, 46); }
+.md-alert { padding: 0px 1em; margin-bottom: 16px; color: inherit; border-left: 0.25em solid rgb(0, 0, 0); }
+.md-alert-text-note { color: rgb(9, 105, 218); }
+.md-alert-text-important { color: rgb(130, 80, 223); }
+.md-alert-text-warning { color: rgb(154, 103, 0); }
+.md-alert-text-tip { color: rgb(31, 136, 61); }
+.md-alert-text-caution { color: rgb(207, 34, 46); }
+.md-alert-text { font-size: 0.9rem; font-weight: 700; }
+.md-alert-text svg { fill: currentcolor; position: relative; top: 0.125em; margin-right: 1ch; overflow: visible; }
+.md-alert-text-container::after { content: attr(data-text); text-transform: capitalize; pointer-events: none; margin-right: 1ch; }
+
+
+:root {
+  --accent-blue: #0f2a4f;
+}
+
+
+/* =========================
+   Base
+   ========================= */
+body {
+  font-family: "Georgia", "Times New Roman", "Noto Serif",
+               "Source Serif Pro", serif;
+  font-size: 15px;
+  line-height: 1.65;
+  color: #222;
+  max-width: 860px;
+  margin: 48px auto;
+  padding: 0 24px;
+}
+
+/* =========================
+   Page Title (Centered)
+   ========================= */
+
+h1 {
+  text-align: center;
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: var(--accent-blue);
+}
+
+/* 副标题（姓名下方定位行） */
+h1 + p {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 40px;
+  font-size: 14px;
+  color: var(--accent-blue);
+}
+
+/* =========================
+   Section Titles
+   ========================= */
+
+h2 {
+  font-size: 19px;
+  font-weight: 600;
+  margin-top: 56px;
+  margin-bottom: 2px; /* 贴分隔线 */
+  color: var(--accent-blue);
+}
+
+h3 {
+  font-size: 16.5px;
+  font-weight: 600;
+  margin-top: 36px;
+  margin-bottom: 4px;
+  color: var(--accent-blue);
+}
+
+/* =========================
+   Divider
+   ========================= */
+
+hr {
+  border: none;
+  height: 1px;
+  background-color: var(--accent-blue);
+  margin-top: 4px;
+  margin-bottom: 24px;
+}
+
+/* =========================
+   Paragraphs & Lists
+   ========================= */
+
+p {
+  margin: 8px 0;
+}
+
+ul {
+  padding-left: 20px;
+  margin: 8px 0;
+}
+
+/* =========================
+   Project Meta Information
+   ========================= */
+
+.project-meta {
+  font-size: 13.5px;
+  color: #555;
+  margin-bottom: 14px;
+}
+
+/* 日期 / 时间 */
+.project-meta .date {
+  font-style: italic;
+  color: #666;
+}
+
+/* 标签名（完成时间 / 工具 / 职责） */
+.project-meta strong {
+  font-weight: 600;
+  color: #333;
+}
+
+/* =========================
+   Media
+   ========================= */
+
+video {
+  display: block;
+  margin: 0;
+  max-width: 640px
+  max-height: 360px;
+  width: 70%;
+}
+
+img {
+  display: block;
+  max-width: 640px;
+  width: 70%;
+  margin: 0;
+  border-radius: 2px;
+}
+
+figure.media {
+  margin: 8px 0 12px 0;
+}
+
+figure.media img,
+figure.media video,
+
+figure.media figcaption {
+  font-size: 13px;
+  color: #555;
+  margin-top: 4px;
+}
+
+/* =========================
+   Details / Summary UX
+   ========================= */
+
+details summary {
+  cursor: pointer;
+  user-select: none;      /* 防止拖选文字 */
+  font-weight: 600;
+}
+
+/* 悬浮反馈：让人知道“能点” */
+details summary:hover {
+  opacity: 0.75;
+}
+
+/* 键盘可访问性（Tab 聚焦） */
+details summary:focus {
+  outline: none;
+  text-decoration: underline;
+}
+
+
+/* =========================
+   Code (optional)
+   ========================= */
+
+code {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 13px;
+}
+
+/* =========================
+   KV Table
+   ========================= */
+table.kv {
+  width: auto;
+  border-collapse: collapse;
+  margin: 12px 0;
+}
+
+table.kv td {
+  border: none;
+  padding: 2px 0;
+  vertical-align: top;
+}
+
+table.kv td.key {
+  min-width: 8px;           /* “tab 宽度” */
+  padding-right: 12px;
+  font-weight: 600;
+  color: #333;
+  white-space: nowrap;
+}
+
+table.kv.kv-left td.key {
+  text-align: left;
+}
+
+table.kv td.value {
+  color: #222;
+}
+
+/* =========================
+   Fixed Side TOC Menu
+   ========================= */
+
+/* ====== 基础：正文保持居中（不要再用 body margin-left 推整体） ====== */
+:root{
+  --content-max: 880px;     /* 你的正文最大宽度 */
+  --sidebar-w: 320px;       /* 目录宽度 */
+  --sidebar-gap: 24px;      /* 目录与正文间距 */
+}
+
+/* Typora 导出 HTML 通常正文容器是 #write（有的版本是 .typora-export-content） */
+#write {
+  max-width: var(--content-max);
+  margin: 40px auto;
+  padding: 0 24px;
+}
+
+/* ====== 把 TOC 自带的边框/圆角/阴影统统清掉 ====== */
+.md-toc,
+.md-toc * {
+  border: 0 !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+}
+
+/* ====== 宽屏时：把 TOC 固定在“正文左侧空白区”，不影响正文居中 ====== */
+@media (min-width: 1200px){
+
+  .md-toc{
+    position: fixed;
+    top: 24px;
+
+    /* 关键：放到正文左边的 gutter 里 */
+    left: calc(50% - (var(--content-max) / 2) - var(--sidebar-w) - var(--sidebar-gap));
+    width: var(--sidebar-w);
+
+    max-height: calc(100vh - 48px);
+    overflow-y: auto;   /* 只允许纵向滚动 */
+    overflow-x: hidden; /* 禁止横向滚动 */
+  }
+
+  .md-toc ul{ list-style:none; margin:0; padding:0; }
+  .md-toc li{ margin:4px 0; }
+  .md-toc ul ul{ padding-left:12px; margin-top:4px; }
+  .md-toc a{ color:#333; text-decoration:none; }
+  .md-toc a:hover{ text-decoration:underline; }
+}
+
+/* ====== 窄屏时：不要固定侧边（否则会挤/遮挡），改为正常块级目录 ====== */
+@media (max-width: 1199px){
+  .md-toc{
+    position: static;
+    width: auto;
+    max-height: none;
+    overflow: visible;
+    margin: 16px 0 24px 0;
+    padding: 0;
+  }
+}
+
+/* =========================
+   Profile Avatar
+   ========================= */
+
+.profile {
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+  margin-bottom: 12px;
+}
+
+.profile img {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  object-fit: cover;
+
+  /* 非必须，但很干净 */
+  /*border: 1px solid #ddd;*/
+}
+
+
+
+</style><title>谭磊轩 - 游戏设计与开发作品集</title>
+</head>
+<body class='typora-export os-windows'><div class='typora-export-content'>
+<div id='write'  class=''><center><div class="profile">
+  <img src="./assets/info_g_a.png" alt="Avatar">
+</div></center><h1 id='谭磊轩'><strong><span>谭磊轩</span></strong></h1><p><strong><span>游戏设计与开发作品集</span></strong>
+<a href='mailto:bryantan@foxmail.com'><span>Email</span></a><span> · </span><a href='https://github.com/bryanT4N'><span>Github</span></a><span> · </span><a href='https://bryantan.net/zh-cn/'><span>bryantan.net</span></a></p><div class='md-toc' mdtype='toc'><p class="md-toc-content" role="list"><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n2"><a class="md-toc-inner" href="#谭磊轩"><strong>谭磊轩</strong></a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n5"><a class="md-toc-inner" href="#展示作品一览"><strong>展示作品一览</strong></a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n6798"><a class="md-toc-inner" href="#1-游戏体验心得节选">1 游戏体验心得节选</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n6804"><a class="md-toc-inner" href="#51-宝可梦黑白-体验记录">5.1 宝可梦黑/白 体验记录</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n6806"><a class="md-toc-inner" href="#52-绝区零-博客节选">5.2 绝区零 博客节选</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n6797"><a class="md-toc-inner" href="#2-hamsterballin街机赛车">2 <em>Hamsterballin'</em>（街机赛车）</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n16"><a class="md-toc-inner" href="#3-arachnot横板-2d-解谜">3 <em>ArachNOT</em>（横板 2D 解谜）</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n23"><a class="md-toc-inner" href="#4-逆转裁判-c-复刻adv">4 <em>逆转裁判</em> C++ 复刻（ADV）</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n32"><a class="md-toc-inner" href="#5-c-个人引擎">5 C++ 个人引擎</a></span></p></div><h2 id='展示作品一览'><strong><span>展示作品一览</span></strong></h2><hr>
+<table class="kv kv-left">
+<colgroup> <col style="width: 40px;"> <col style="width: 160px;"> <col style="width: 80px;"> <col style="width: 160px;"> <col style="width: 80px;"> <col style="width: 80px;"> <col> </colgroup>
+<tr><th></th><th>项目</th><th>来源</th><th>类型</th><th>引擎</th><th>规模</th><th>贡献</th></tr>
+<tr><td>1</td><td><b>游戏体验心得节选</b></td><td>个人</td><td>游戏分析，测评</td><td></td><td></td><td>策划</td></tr>
+<tr><td>2</td><td><b><i>Hamsterballin'</i></b></td><td>团队</td><td>街机多人赛车</td><td>Unreal</td><td>40 人</td><td>AI 程序</td></tr>
+<tr><td>3</td><td><b><i>ArachNOT</i></b></td><td>团队</td><td>横板 2D 解谜</td><td>Unity</td><td>4 人</td><td>Gameplay 程序 / 策划</td></tr>
+<tr><td>4</td><td><b><i>逆转裁判</i> C++复刻</b></td><td>个人</td><td>互动 ADV</td><td>C++</td><td> </td><td>全部</td></tr>
+<tr><td>5</td><td><b>C++个人引擎</b></td><td>个人</td><td>2D / 3D 技术演示</td><td>C++</td><td> </td><td>全部</td></tr>
+</table><h2 id='1-游戏体验心得节选'><span>1 游戏体验心得节选</span></h2><hr>
+<div class="project-meta">
+<table class="kv">
+<colgroup> <col style="width: 140px;"> <col> </colgroup>
+</table>
+</div><p><span>日常记录的一些对游戏的思考心得，这里列举两篇节选文章。</span></p><h3 id='51-宝可梦黑白-体验记录'><span>5.1 宝可梦黑/白 体验记录</span></h3><p><span>这篇是聊宝可梦黑/白的，这种形式自己在 Excel 里写得比较多，是我养成的记录习惯。</span></p><p><span>首先会把自己主玩的内容、好体验坏体验、新手体验这些先全部回顾总结；然后去感受一下大的思路，从玩家生态、多维度追求、游戏循环的角度梳理一遍；最后把一些印象比较深或者值得讲的局部拿出来聊。业余时间我一般只拆自己的体验、不拆系统，体验没到位的话拆解系统意义不大。</span></p><p><a href="./assets/002-Pokémon Black and White.html"><span>查看独立页面 →</span></a><span>  </span></p><iframe src="./assets/002-Pokémon Black and White.html" style="
+        width:100%;
+        height:500px;
+        zoom:0.8;
+        border:none;">
+</iframe><h3 id='52-绝区零-博客节选'><span>5.2 绝区零 博客节选</span></h3><p><span>这篇是把博客里聊绝区零的东西贴一些过来，这部分内容要考虑读者就会多一些解释说明，没有那么精炼。有些是开服记录的，有些是退坑后补充的，都是关注探讨一些特定的设计点。虽然离现在有一段时间了，但也能体现思考的方式和过程。</span></p><details>
+    <summary><u><b>5.2.1 招架支援 和 回避支援</b></u></summary>
+    <p>……绝区零的招架和闪避被视为一种简易 QTE，在开服时就因为“过于简单”曾被猛烈集火过。这是一个被低估的利大于弊的设计。虽说根源上来自《合金装备》，但用在绝区零里的思路明显不同。它的效果有两个：</p>
+    <p>第一，在于让整个游戏的技巧障碍 (Skill Barrier) 有非常低的起点；第二，在于它刻意构建了<b>技巧深度上明确的递进分层</b>。</p>
+    <p>后者不容易被注意到，但实际上更关键。有的设计者也称之为“自我再造” (Reinvention)，它指的是<u>玩家随着技巧提升，解放注意力并意识到新的挑战内容，于是游戏的技巧范围不断扩展（《体验引擎：游戏设计全景探秘》）</u>。</p>
+    <p>从这个角度来说，招架和闪避制造了极明确的“第一层挑战”：金光红光的存在感如此之强，以至于即便你从未玩过动作游戏，在接触战斗时也会瞬间意识到这是首要的挑战内容。等掌握这部分之后，才是角色技能、特性的利用，然后再延伸到建立在连携机制上的合轴之类的其它技巧。</p>
+    <blockquote>
+	<p>这种明确的递进好在哪呢？</p>
+	<p>我们可以找个反向的例子来对比：一个从不玩射击游戏的玩家，在刚开始玩战术射击游戏（如 Valorant）的时候往往不知所措，因为没办法从游戏提供的信息和反馈里明白自己该做什么/做错了什么。</p>
+	<p>唯一知道的是看到人要对枪和瞄准，而对枪中包含的身位控制和选位决策又不是显而易见的挑战。所以新手容易挫败于自己总是莫名其妙死亡，玩了几局一直在努力拖鼠标但好像没有进步。</p>
+	<p>这是因为战术射击游戏的复杂度是多管齐下的。如何买枪和道具、人该往哪去、怎样对枪，这些所有的事情会在同一局游戏里一股脑的糊在玩家脸上，所以我们为了跨越最低限度的技巧障碍就感觉要学很多东西。同样的情况在所有高门槛的游戏品类里都随处可见。</p>
+    </blockquote>
+    <p>而绝区零刻意制造出分层，首先展露自己友好的一面，这当然值得学习。我们在<u>《街霸6》</u>里看到的<u>现代模式</u>这样的设计，其诞生的目的也是类似的，可谓有异曲同工之妙。所以说招架和闪避设计的实际影响在普通玩家中是被低估的。</p>
+    <p>……</p>
+</details><details>
+    <summary><u><b>5.2.2 二游活动玩法</b></u></summary>
+    <p>我退坑《绝区零》《崩坏：星穹铁道》的直接原因，都是因为对小游戏玩法不满意。绝区零是 2.0 的随便观经营，我能 get 策划想制造什么体验，但认为考虑欠妥。星铁是 1.1 银狼版本的贴纸拍照活动，这个是认为无聊、不够尊重玩家的时间。</p>
+    <p>因此我想很有必要记录一下自己对活动玩法的思考：</p>
+    <p>米游做活动具备二游活动的显著特点，基线是只要玩家投入时间就能拿满奖励。这就对难度和形式有要求，因为玩家之间的水平差异巨大。这也是在活动里很少玩到难度适宜、能让人紧张兴奋的游戏的原因。</p>
+    <p>显然并不是所有小游戏都适合作为活动玩法。既然如此，哪些玩法是合适的？该怎么评判一个活动玩法本身的质量？</p>
+    <p>T0 级别，是那种<b>基础体验有趣</b>、玩完一局之后意犹未竟的游戏（基础体验指的是游戏的操控本身就能产生乐趣，比如马里奥的跳）。绝区零上过的糖豆人玩法、星铁的豹豹碰碰大作战可以放在 T0。蛇对蛇如果进活动，也应该在 T0。</p>
+    <p>T1 级别是确实<b>具备休闲乐趣</b>、适合所有人的小游戏玩法，比如宝开的宝石迷阵、祖玛、幻幻球。它们都是那种让玩家通关时愉快地认为自己干的不错的类型。</p>
+    <p>上面这两档都很适合做变化加花，然后重复利用，因为底子足够好非常容易产生好的变体。</p>
+    <p>T2 级别是有广泛受众但是未必能匹配所有人的玩法，比如音游、塔防之类的。这些玩法往往本身有一定的潜力，但由于玩家水平差异的问题，只能给关卡设置不太有趣的难度，容易让人感到无聊。我想既然只是为了维持活跃和投放奖励，可以考虑做一种可复用的动态难度机制，来让不同水平的玩家在这类玩法中都能感受到乐趣。</p>
+    <p>T3 级别也就是最差劲的一档，我称之为“无论怎么调整难度都不可能让人感到有趣”的玩法。星铁 1.1 银狼版本的找贴纸拍照的活动毫无疑问就是属于此类。只有插需求赶工，或者沉迷小众爱好并且对市场缺少敬畏，这两种情况才能解释这类玩法上线。</p>
+    <p>绝区零 2.0 版本的随便观经营玩法是另一个问题。</p>
+    <p>策划的这个玩法设计所预期的，是“玩家下空洞/做任务”和“家里挂着机就有奖励”的穿插结合和互补的体验。我们可以理解为来源于那种有事情可做的放置游戏，打个本研究下配置回来就发现又能拿奖励然后提升角色，然后变强了又去做更多的事情。</p>
+    <p>这在放置游戏当然是好体验甚至是核心体验，给人一种“轻松变强”的感觉。但移到绝区零就存在问题：第一，别人做的是数值膨胀，整个循环能够成立，而绝区零主玩法的数值膨胀不了，随便观只是用来投奖励的副玩法，带来的反馈必然不够；第二，放置游戏的循环，直接对应放置游戏的受众，而绝区零的玩家生态构成、大家玩游戏的习惯是跟放置游戏的受众有差别的。</p>
+    <p>至少像我这样原本上线频率不高、不怎么做任务、只是集中打一下奖励玩家就被筛选了，因为我感觉到“你希望我玩游戏的方式”不尊重我们原本的习惯。这样，一个出发点可能是“低负担”“送福利”玩法就产生了坏的结果。更何况各种题材的模拟经营玩法在我这本来也就至多排到 T2，体感比较无趣。</p>
+	<p>……</p>
+</details><details>
+    <summary><u><b>5.2.3 新艾利都作为选关界面</b></u></summary>
+	<p>……以角色扮演的 3D 场景，取代大片按钮 UI + 角色/家园美术作为第一屏和“选关界面”，是推关二游这种形态的一个明显进步，“操控主角行动”相比纯功能界面给了玩家更强的自主感。</p>
+    <p>这相当于汲取了大世界游戏的优点，但又不改变建立在关卡单元上的底层逻辑，保留了生产方面的优势。</p>
+    <p>虽然进步很有推广的价值，但我们依然可以看到这种做法在绝区零里面尚存的一些问题。</p>
+    <p>……</p>
+</details><details>
+    <summary><u><b>5.2.4 关卡内容隔离 和 玩法叙事错位</b></u></summary>
+    <p>……新艾利都实际成为一个“包装层”。原本在包装之下的关卡内容单元，它们是相互隔离的，无法跨越不同系统进行有效的组织。但玩家在接受了这层精美的、有沉浸感的包装以后，这种“关卡即内容”的推关游戏传统忽然就难以令人信服，因为产生了叙事上的错位：</p>
+	<p>在一个典型的“剧情1 -> 新艾利都 -> 剧情2”游玩过程中，除了那个用来开启下个关卡的 NPC，新艾利都始终都保持着“不知情”的状态——它把所有剧情隔绝了，存在于新艾利都的代理人全都是没有记忆的克隆体。</p>
+	<p>你在专注模式经历了多少事件的来龙去脉，归来却无法肯定那些记忆真的在此发生；你在街头偶遇的那个代理人，并不知晓它“自己”的过往。</p>
+	<p>这就是为什么我们在这个“包装层”经历的事件有种虚无感（尤其是在同个事件反复发生的时候）只有在专注模式里播放的剧情才像真人出镜。玩绝区零的时候我对很多代理人的日常工作根本没有实感，而玩星铁的时候却真的相信贝洛伯格有一个地火组织在顽强生存。</p>
+    <p>正因为有“包装层”的幻觉，玩家会期待绝区零能做到像 3A 游戏那样讲述有代入感的连贯故事，但在其它传统推关二游里，玩家完全清楚“11-8”这样的关卡就是机械的、单元化的。</p>
+    <p>那有没有可能在新艾利都这一侧，把这些分散在各个系统的叙事单元串联起来呢？我们可以试想一下，理想状态下绝区零的各个内容玩法可能是怎样组织的：</p>
+    <ol>
+    <ul>
+		<li class="">我通过主线推进认识了新的代理人，现在我可以接代理人发布的支线任务。</li>
+		<li class="">代理人发布的任务让我进一步了解了他的工作和生活，我们的亲密度升级了。当前的亲密度解锁了代理人秘闻前篇，允许我们更进一步。</li>
+		<li class="">我完成了代理人秘闻前篇，我可以找代理人出来约会了。代理人的组织对我开放了支线任务，我通过组织里的一些 NPC 侧面了解了更多关于代理人的趣闻。</li>
+		<li class="">我总是知道怎样让代理人开心，我们的亲密度升级了。现在的亲密度解锁了代理人秘闻后篇，允许我们建立更深的羁绊。</li>
+		<li class="">我完成了代理人秘闻后篇，我们成为了患难与共/无话不谈的密友。我解锁了角色动态壁纸。</li>
+	</ul>
+    </ol>
+    回顾一下目前游戏内的实际情况，这里排除了作为主轴的主线不聊，活动玩法也可以不算：
+    <ol>
+	<li class=""><b>独家视界：</b>
+“质量不错的故事，但和主角无关”。代理人自己的经历，要比玩家能参与的部分丰富得多。由于把主角踢出局了，我玩起来其实感受到不舒服。
+好处是相比普通主线更聚焦于角色，刻画效果也比较好。但确实和游戏主体的部分毫无关联。
+	</li>
+	<li class=""><b>代理人秘闻：</b>
+“主角与代理人共同经历的事”。在养老公养老婆的二游里，本来很重要（其实我认为是最重要）。
+实际游玩感受只是<b>外传</b>，对其它模块不产生任何影响。而且不少秘闻又臭又长，奖励也差。内容与定位不匹配。
+	</li>
+    <li class=""><b>亲密度玩法：</b>
+把推关游戏的“低耦合”设计体现的最明显的玩法系统。它和一切剧情相割裂，主线、秘闻等建立羁绊的经历全与亲密度毫不相关。在这个意义上，knock knock 只是看起来像某些恋爱模拟游戏里的手机，实际功能地位远达不到。
+功能定位其实可以很好：用小事件让角色立体起来，也奖励在生活区域的互动行为，建立积极性。这个系统对玩家接受新艾利都的包装有益，可惜没有担起梳理叙事的作用。
+    </li>
+    <li class=""><b>绳网任务：</b>
+个人而言这是 ZZZ 最不可理喻的玩法，Todolist 体验的罪魁祸首，极度消磨耐心。
+两点原因：第一是设计的很多“趣味”玩法有学习成本，占用玩家大量的精力，而且还和游戏的核心内容不沾边，更别提早期的格子关卡操作也非常憋屈；第二就是绳网任务在叙事中基本不存在有效的人物塑造——既想把空洞里的流程做简短，又不在关卡外提供表现空间（因为新艾利都只起到一个选关的作用，仅仅交接任务时候聊几句）。
+既然没有完整的人物塑造，就不适合强行让很多的陌生 NPC 发任务。绳网这些小支线如果围绕代理人设计，哪怕只是做一些侧面塑造或者奖励亲密度，也比目前的方式强得多。又或者，就要干脆的腾出叙事空间来认真写丰富世界观的内容。星铁有个叫“致：黯淡星”的支线给我印象非常深刻，至今想起也忍不住惊叹喝采，相比之下 ZZZ 的确差距比较大。
+    </li>
+    </ol>
+    <p>可见，游戏目前完全不具备梳理玩法叙事的能力。如果我们想解决叙事上的不和谐，这些玩法系统继续井水不犯河水当然不行，但很可能又舍弃不了解耦带来的生产优势，舍弃不了单元化的内容。</p>
+    <p>客观来说，生产可以追求低耦合，但前提是体验应当保持高内聚。当然，对于已上线的游戏，这种大结构的问题恐怕调整起来会很有难度。新艾利都作为玩家认知里所有叙事的汇集点，目前确实还不能完全满足所有玩家的期待。</p>
+    <p>……</p>
+</details><h2 id='2-hamsterballin街机赛车'><span>2 </span><em><span>Hamsterballin&#39;</span></em><span>（街机赛车）</span></h2><hr>
+<div class="project-meta">
+<table class="kv">
+<colgroup> <col style="width: 140px;"> <col> </colgroup>
+<tr><td class="key"><strong>来源</strong></td><td class="value">团队项目</td></tr>
+<tr><td class="key"><strong>规模</strong></td><td class="value">40 人</td></tr>
+<tr><td class="key"><strong>引擎</strong></td><td class="value">Unreal Engine 5.7</td></tr>
+<tr><td class="key"><strong>职责</strong></td><td class="value">AI 程序</td></tr>
+</table>
+</div><p><em><span>Hamsterballin&#39;</span></em><span> 是一款街机风格多人赛车游戏，SMU Guildhall TGP II 团队项目。玩家操控仓鼠在三条风格各异的赛道上竞速，利用仓鼠球独特的滚动和弹跳物理，配合七种道具争夺第一，支持最多四人本地分屏。我在项目中主要负责 AI 部分。</span></p><p><a href="https://store.steampowered.com/app/4319370/Hamsterballin/"><span>查看 Steam 页面 →</span></a><span>  </span></p><center><table>
+<colgroup> <col style="width: 480px;"><col style="width: 480px;"></colgroup>
+<tr>
+    <td><center>
+        <figure class="media">
+<video src="/img/projects/tgp2/gameplay.mp4"
+       controls
+       autoplay
+       muted
+       loop
+       playsinline
+       style="width: 100%">
+</video>
+<figcaption>Figure 2. <i>Hamsterballin'</i> 玩法宣传片</figcaption>
+</figure>
+    </center></td>
+    <td><center>
+        <figure class="media">
+<img src="/img/projects/tgp2/splitscreen_4p.jpg" style="width: 100%">
+<figcaption>Figure 3. 四人本地分屏</figcaption>
+</figure>
+    </center></td>
+</tr>
+</table></center>
+<center><table>
+<colgroup> <col style="width: 480px;"><col style="width: 480px;"></colgroup>
+<tr>
+    <td><center>
+        <figure class="media">
+<video src="/img/projects/tgp2/ai_obstacles.mp4" style="width: 100%" autoplay muted loop playsinline></video>
+<figcaption>Figure 4. AI 行为演示</figcaption>
+</figure>
+    </center></td>
+    <td><center>
+        <figure class="media">
+<img src="/img/projects/tgp2/ai_lanes.png" style="width: 100%">
+<figcaption>Figure 5. 基于效用分数的 AI</figcaption>
+</figure>
+    </center></td>
+</tr>
+</table></center><details open>
+    <summary><u><b>贡献：</b></u></summary>
+    1. 实现了赛车 AI 的环境感知系统，基于 Unreal 的 Spline 建立赛道坐标系并切分赛道段，AI 能够理解当前位置、行驶方向和可用车道宽度。<br>
+    2. 实现了赛车 AI 的行为逻辑，AI 通过效用分数评估每条车道的优劣，能够自主选择岔路、调整转弯轨迹，检测赛道上的障碍物和道具作出避障或贴近行为。<br>
+    3. 为关卡策划提供可配置的六级权重标签，对赛道上的障碍物或道具设置不同标签即可灵活调节 AI 的避障和拾取行为。
+</details><h2 id='3-arachnot横板-2d-解谜'><span>3 </span><em><span>ArachNOT</span></em><span>（横板 2D 解谜）</span></h2><hr>
+<div class="project-meta">
+<table class="kv">
+<colgroup> <col style="width: 140px;"> <col> </colgroup>
+<tr><td class="key"><strong>来源</strong></td><td class="value">团队项目</td></tr>
+<tr><td class="key"><strong>规模</strong></td><td class="value">4 人</td></tr>
+<tr><td class="key"><strong>引擎</strong></td><td class="value">Unity</td></tr>
+<tr><td class="key"><strong>职责</strong></td><td class="value">Gameplay 程序 / 策划</td></tr>
+</table>
+</div><p><em><span>ArachNOT</span></em><span> 是一款横板 2D 解谜游戏，玩家扮演一只因不会正常攀爬而受到排挤的蜘蛛，利用它特殊的弹性蛛网穿越障碍、躲避危险，登至蜘蛛巢穴顶部。</span></p><p><span>可玩 EXE 附于 </span><code>ArachNOT</code><span> 文件夹，</span><u><span>推荐使用 Xbox 控制器游玩</span></u><span>。</span></p><center>
+<figure class="media">
+<iframe
+       src="https://www.youtube.com/embed/SwW2MTjFZvY"
+       title="ArachNOT trailer"
+       style="aspect-ratio:16/9;"
+       loading="lazy"
+       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+       allowFullScreen>
+</iframe>
+    <figcaption>Figure 6. <i>ArachNOT</i> 玩法宣传片</figcaption>
+</figure>
+</center>
+<details open>
+    <summary><u><b>贡献：</b></u></summary>
+	1. 设计并实现了玩法核心的蛛网机制，复合侧向弹性和牵引两种功能（物理基于Unity关节）。<br>
+	2. 实现了围绕蛛网子弹的角色能力，包括射击和子弹管理，瞄准辅助线，蛛网的连接构建和自动断裂。<br>
+	3. 实现了菜单界面 UI，以及简易对话系统和配套工具，可以在编辑器面板内配置对话流和各种图像、音效、对话框显隐控制。
+</details><details>
+    <summary><u><b>机制细节：</b></u></summary>
+<!-- Part 1 -->
+<center>
+<figure class="media">
+<img src="./assets/BTan_TGP1_ArachNOT_Screenshot_01.gif">
+<figcaption>Figure 7. 射击锚点、生成弹性蛛网（蹦床效果）</figcaption>
+</figure>
+</center>
+    - 角色可以向任意位置瞄准并射出子弹，如果子弹落在可附着的表面则会生成蛛网锚点。<br>
+    - 存在两个锚点时，它们之间将会连接一条蛛网线条。<br>
+    - 蛛网线条对接触到的角色或物体提供垂直于线条的弹力。<br>
+    - 蛛网在物理上使用多种 Joint 连接质点来构建，视觉上使用 B 样条插值平滑处理。<br>
+    - 弹力是凭空生成的，用物体与质点的碰撞情况来检测判断何时应该施加。<br>
+    - 瞄准线和子弹命中使用相同的射线检测来保证一致性。
+<!-- Part 2 -->
+<center>
+<figure class="media">
+<img src="./assets/BTan_TGP1_ArachNOT_Screenshot_02.gif">
+<figcaption>Figure 8. 蛛网的收缩拖拽</figcaption>
+</figure>
+</center>
+    - 蛛网线条会像弹簧一样收缩。当线端附着在活动的物体上时，物体会受到拉力而发生移动。<br>
+    - 拉力通过 Spring Joint 实现，生成弹簧时总是按照一个恒定的比例参数，根据锚点的间距预先计算出最大收缩距离。
+<!-- Part 3 -->
+<center>
+<figure class="media">
+<img src="./assets/BTan_TGP1_ArachNOT_Screenshot_03.gif">
+<figcaption>Figure 9. 蛛网在松弛状态下关闭蹦床效果</figcaption>
+</figure>
+</center>
+    - 蛛网预设了两种状态，通过锚点间的距离来区分。<br>
+    - 松弛状态下不会对触碰的物体施加弹力。<br>
+    - 蛛网线条的颜色在两种状态间进行插值。
+<!-- Part 4 -->
+<center>
+<figure class="media">
+<img src="./assets/BTan_TGP1_ArachNOT_Screenshot_04.gif">
+<figcaption>Figure 10. 菜单和对话</figcaption>
+</figure>
+</center>
+    - 主菜单使用滚动视差背景，支持鼠标和手柄切换。<br>
+    - UI 控制使用事件系统，所有 UI 均为 uGUI。<br>
+    - 游戏设置和进度保存到本地。<br>
+    - 对话系统支持播放可配置的对话序列，支持音效控制与淡入淡出，支持打字机效果。
+<!-- End -->
+</details><h2 id='4-逆转裁判-c-复刻adv'><span>4 </span><em><span>逆转裁判</span></em><span> C++ 复刻（ADV）</span></h2><hr>
+<div class="project-meta">
+<table class="kv">
+<colgroup> <col style="width: 140px;"> <col> </colgroup>
+<tr><td class="key"><strong>来源</strong></td><td class="value">个人项目</td></tr>
+<tr><td class="key"><strong>技术</strong></td><td class="value">C++</td></tr>
+</table>
+</div><p><span>仿照《逆转裁判》制作的互动 ADV 游戏，使用自己的 C++ 引擎开发。还原了原版第一章的流程，包括对话、法庭辩论和交叉询问。</span></p><p><span>可玩 EXE 附于 </span><code>Ace Attorney Approximation</code><span> 文件夹，推荐使用鼠标游玩。</span></p><center><table>
+<colgroup> <col style="width: 480px;"><col style="width: 480px;"></colgroup>
+<tr>
+    <td><center>
+        <figure class="media">
+<img src="/img/projects/dfs1/courtroom.png" style="width: 100%">
+<figcaption>Figure 11. 法庭</figcaption>
+</figure>
+    </center></td>
+    <td><center>
+        <figure class="media">
+<img src="/img/projects/dfs1/gameplay.gif" style="width: 100%">
+<figcaption>Figure 12. Gameplay 演示</figcaption>
+</figure>
+    </center></td>
+</tr>
+</table></center>
+<center><table>
+<colgroup> <col style="width: 480px;"><col style="width: 480px;"></colgroup>
+<tr>
+    <td><center>
+        <figure class="media">
+<img src="/img/projects/dfs1/objection.png" style="width: 100%">
+<figcaption>Figure 13. Objection 特效</figcaption>
+</figure>
+    </center></td>
+    <td><center>
+        <figure class="media">
+<img src="/img/projects/dfs1/cross_examination.png" style="width: 100%">
+<figcaption>Figure 14. 交叉询问</figcaption>
+</figure>
+    </center></td>
+</tr>
+</table></center><details open>
+    <summary><u><b>功能：</b></u></summary>
+    1. 实现了以流式脚本驱动的对话系统，以标签控制对话流程、选项和画面表现。标签涵盖角色立绘动画、背景、音效、屏幕特效、文字速度和流程跳转等。这些标签可以内嵌在对话文本中，在打字机显示到该位置时精确触发。<br>
+    2. 实现了保留模式UI框架，参考 Unreal 和 Godot 架构在个人 C++ 引擎中搭建，功能包括锚点/列表/网格布局、StyleBox、基于 Widget 树的输入路由等，然后基于此UI框架实现了九宫格按钮控件和菜单、背包等界面。<br>
+    3. 实现了接近原版的玩法和交叉询问机制，完全通过脚本系统的世界状态标记和条件跳转驱动。证人证词循环、追问分支、出示证据判定都在脚本内完成。<br>
+    4. 实现了全数据驱动的配置工作流，基于 Luban 工具二次开发了一个通用的右键导表选单，支持一键从 Excel 导出到 XML。角色、证据、逐帧动画等资源定义全部通过 XML 数据文件驱动，对话系统还通过 XML 预设了 16 层画布可通过标签灵活指定控制。<br>
+</details><h2 id='5-c-个人引擎'><span>5 C++ 个人引擎</span></h2><hr>
+<div class="project-meta">
+<table class="kv">
+<colgroup> <col style="width: 140px;"> <col> </colgroup>
+<tr><td class="key"><strong>来源</strong></td><td class="value">个人项目</td></tr>
+<tr><td class="key"><strong>技术</strong></td><td class="value">C++</td></tr>
+</table>
+</div><p><span>2D 和 3D DirectX 11 渲染，支持 OBJ 和 FBX 模型加载，支持 Blinn-Phong 光照和 shader。</span></p><p><span>实现了事件系统、游戏内控制台命令调试、TCP 网络连接对战、手柄和鼠标输入、2D 简易物理、精灵图和动画、字体与文本框、ImGui 和保留模式 UI、多线程资源加载和资源池、支持 JSON 和 XML 数据驱动。</span></p><p><span>多个演示项目 EXE 附于 </span><code>C++ Engine Demo</code><span> 文件夹。</span></p><center><table>
+<colgroup> <col style="width: 480px;"><col style="width: 480px;"></colgroup>
+<tr>
+    <td><center>
+        <figure class="media">
+<video src="/img/projects/engine/Doomenstein.mp4"
+       controls
+       autoplay
+       muted
+       loop
+       playsinline
+       style="width: 100%">
+</video>
+<figcaption>Figure 15. Doom-like 项目: 怪物生态</figcaption>
+</figure>
+    </center></td>
+    <td><center>
+        <figure class="media">
+<video src="./assets/libra_enemy.mp4"
+       controls
+       autoplay
+       muted
+       loop
+       playsinline
+       style="width: 100%">
+</video>
+<figcaption>Figure 16. <i>Libra</i> 项目: Heatmap 寻路调试</figcaption>
+</figure>
+    </center></td>
+</tr>
+</table></center><p><em><span>NetChess3D</span></em><span> 项目支持多线程资源加载，简单 TCP 网络对战，多套 OBJ 棋子模型即时切换。</span></p><center><table>
+<colgroup> <col style="width: 480px;"><col style="width: 480px;"></colgroup>
+<tr>
+    <td><center>
+        <figure class="media">
+<img src="/img/projects/engine/chess_lit.png" style="width: 100%">
+<figcaption>Figure 17. Blinn-Phong 光照 + OBJ 棋子 + ImGui</figcaption>
+</figure>
+    </center></td>
+    <td><center>
+        <figure class="media">
+<img src="/img/projects/engine/chess_normals.png" style="width: 100%">
+<figcaption>Figure 18. 光照调试</figcaption>
+</figure>
+    </center></td>
+</tr>
+</table></center><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p></div></div>
+</body>
+</html>
