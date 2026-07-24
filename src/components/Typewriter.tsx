@@ -11,6 +11,7 @@ type TypewriterProps = {
   startDelayMs?: number;    // delay before typing begins
   showCursor?: boolean;
   keepCursorWhenDone?: boolean;  // keep the caret blinking after finishing
+  lineGap?: string;              // CSS gap between lines (e.g. '1rem'), default none
   className?: string;
 };
 
@@ -29,6 +30,7 @@ export default function Typewriter({
   startDelayMs = 300,
   showCursor = true,
   keepCursorWhenDone = true,
+  lineGap,
   className,
 }: TypewriterProps) {
   const [lineIdx, setLineIdx] = useState(0);
@@ -85,45 +87,40 @@ export default function Typewriter({
 
   const hasTyped = lineIdx > 0 || charIdx > 0;
 
-  const renderLines = (typed: boolean) =>
+  const renderContent = () =>
     lines.map((line, i) => {
-      let content: React.ReactNode = line;
-      let cursorHere = false;
-      if (typed) {
-        content = !start
-          ? ''
-          : done || i < lineIdx
-          ? line
-          : i === lineIdx
-          ? line.slice(0, charIdx)
-          : '';
-        cursorHere =
-          showCursor &&
-          start &&
-          (done
-            ? keepCursorWhenDone && i === lines.length - 1
-            : hasTyped && i === lineIdx);
+      const isActive = start && !done && i === lineIdx;
+      const isFinished = start && (done || i < lineIdx);
+      const allHidden = !start || (!done && i > lineIdx);
+      const showCursorHere = showCursor && start && (
+        isActive ? hasTyped :
+        done && keepCursorWhenDone && i === lines.length - 1
+      );
+
+      const lastVisibleIdx = isFinished ? line.length - 1 : (isActive ? charIdx - 1 : -1);
+
+      const chars: React.ReactNode[] = [];
+      for (let j = 0; j < line.length; j++) {
+        const visible = isFinished || (isActive && j < charIdx);
+        const isCursorAnchor = showCursorHere && j === lastVisibleIdx;
+        chars.push(
+          <span key={j} className={`${visible ? '' : styles.hidden}${isCursorAnchor ? ` ${styles.cursorAnchor}` : ''}`}>{line[j]}</span>
+        );
       }
+
       return (
         <React.Fragment key={i}>
-          {content}
-          {cursorHere && <span className={styles.cursor}>|</span>}
-          {i < lines.length - 1 && <br />}
+          {allHidden ? (
+            <span className={styles.hidden}>{line}</span>
+          ) : chars}
+          {i < lines.length - 1 && <span className={styles.lineBreak} style={lineGap ? { height: lineGap } : undefined} />}
         </React.Fragment>
       );
     });
 
   return (
-    <span className={className ? `${styles.wrap} ${className}` : styles.wrap}>
-      {/* invisible sizer reserves the full final box → no layout shift while typing */}
-      <span className={styles.sizer} aria-hidden="true">
-        {renderLines(false)}
-      </span>
-      {/* visible animated text, overlaid on the sizer */}
-      <span className={styles.typed} aria-hidden="true">
-        {renderLines(true)}
-      </span>
-      {/* full text for screen readers / SEO */}
+    <span className={className ? `${styles.wrap} ${className}` : styles.wrap} aria-hidden="true">
+      {renderContent()}
       <span className={styles.srOnly}>{lines.join(' ')}</span>
     </span>
   );

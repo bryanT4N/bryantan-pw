@@ -7,24 +7,27 @@
   word-wrap: break-word;
 }
 
-.sizer {
-  visibility: hidden;
+.hidden {
+  color: transparent;
 }
 
-.typed {
+.lineBreak {
+  display: block;
+}
+
+.cursorAnchor {
+  position: relative;
+}
+
+.cursorAnchor::after {
+  content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-/* Blinking caret — always blinking (1s cycle: 0.5s on, 0.5s off) */
-.cursor {
-  display: inline-block;
-  margin-left: 1px;
-  font-weight: 400;
-  color: var(--accent);
+  left: calc(100% + 1px);
+  top: 0.1em;
+  width: 2px;
+  height: 1.1em;
+  background: var(--accent);
+  pointer-events: none;
   animation: tw-blink 1s steps(1) infinite;
 }
 

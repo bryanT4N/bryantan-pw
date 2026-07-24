@@ -21,10 +21,11 @@
   overflow: hidden;
   background: var(--paper);
   padding: var(--space-7) 0;        /* 64 top / 64 bottom */
-  min-height: 80vh;
+  min-height: 90vh;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
+  padding-top: max(var(--space-7), 13vh);
   --mouse-x: 0;
   --mouse-y: 0;
 }
@@ -48,7 +49,7 @@
   height: 100%;
   object-fit: cover;
   object-position: center 100%;
-  opacity: 0.88;
+  opacity: 0.70;
   mix-blend-mode: multiply;
   transform: translate3d(
     calc(var(--mouse-x) * 1px),
@@ -89,8 +90,9 @@
   position: relative;
   z-index: 2;
   display: grid;
-  grid-template-columns: 1fr;
-  justify-items: center;
+  grid-template-columns: auto 1fr;
+  gap: var(--space-6);              /* 48 */
+  align-items: start;
   width: 100%;
   max-width: var(--width-main);     /* 1120 弹性 */
   margin: 0 auto;
@@ -101,6 +103,24 @@
   animation-timeline: auto, scroll(root);
   animation-range: normal, 0 80vh;
   will-change: opacity, transform;
+}
+
+.heroPortraitWrap {
+  flex-shrink: 0;
+}
+
+.heroPortrait {
+  width: 360px;
+  height: 450px;
+  object-fit: cover;
+  -webkit-mask-image:
+    linear-gradient(to right, transparent, black 12%, black 88%, transparent),
+    linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-composite: source-in;
+  mask-image:
+    linear-gradient(to right, transparent, black 12%, black 88%, transparent),
+    linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
+  mask-composite: intersect;
 }
 
 @keyframes hero-text-fade-in {
@@ -114,13 +134,60 @@
   100% { opacity: 0.7; transform: translateY(-16px); }
 }
 
-.heroText {
+.heroInnerEn {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  width: 100%;
+  max-width: var(--width-main);
+  margin: 0 auto;
+  padding: 0 clamp(24px, 6vw, 64px);
+  animation:
+    hero-text-fade-in 800ms cubic-bezier(0.2, 0.6, 0.2, 1) 100ms both,
+    hero-text-scroll linear both;
+  animation-timeline: auto, scroll(root);
+  animation-range: normal, 0 80vh;
+  will-change: opacity, transform;
+}
+
+.heroTextEn {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  max-width: var(--width-prose);   /* 680, 文字阅读宽 */
+  max-width: var(--width-prose);
   overflow: hidden;
+}
+
+.heroTextEn .heroLinks {
+  justify-content: center;
+}
+
+.heroTextEn .linksRow {
+  justify-content: center;
+}
+
+.heroTextEn .resumeItem {
+  text-align: center;
+}
+
+.heroText {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  overflow: hidden;
+  padding-top: var(--space-4);
+}
+
+.bioDetail {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  margin: 0 0 var(--space-1) 0;    /* 4 between paragraphs */
 }
 
 /* v1.5: 中英名垂排（Bryan Q2 默认） — 谭磊轩主标题居中 + Bryan Tan 副标题居中 */
@@ -130,7 +197,7 @@
   font-size: 56px;
   line-height: 1.15;
   letter-spacing: -0.02em;
-  margin: 0 0 var(--space-2) 0;     /* 8 below name */
+  margin: 0 0 var(--space-4) 0;     /* 24 below name */
   color: var(--ink);
 }
 
@@ -157,7 +224,8 @@
 .heroLinks {
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
+  margin-top: var(--space-4);      /* 24 gap before icons */
 }
 
 .linksRow {
@@ -168,7 +236,7 @@
   align-items: center;
   flex-wrap: wrap;
   gap: var(--space-3);              /* 16 */
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .linksRow li {
@@ -195,13 +263,23 @@
 /* v1.8: 简历文字链独占一行，图标换行到下方 */
 .resumeItem {
   flex-basis: 100%;
-  text-align: center;
+  text-align: left;
 }
 
 /* 简历文字链 — 比上面链接更浅，默认带下划线 */
 .linksRow a.resumeLink {
   color: var(--ink-faint);
   border-bottom-color: var(--ink-faint);
+}
+
+.linkSep {
+  display: inline-block;
+  width: var(--space-4);
+}
+
+.linksRow a.portfolioLink {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
 }
 
 /* hero 链接逐个浮现 — 纯 opacity/transform，不占布局不挤开 */
@@ -248,9 +326,25 @@
     min-height: 0;
     padding: var(--space-6) 0;
   }
+  .heroInner {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+  }
+  .heroText {
+    align-items: center;
+    text-align: center;
+  }
+  .heroLinks {
+    justify-content: center;
+  }
+  .heroPortrait {
+    width: 220px;
+    height: 275px;
+  }
   .heroIllustration {
     object-position: center 30%;
-    opacity: 0.55;     /* mobile 端图位置可能偏，再淡化让文字更突出 */
+    opacity: 0.55;
   }
   .name {
     font-size: 40px;
@@ -284,6 +378,58 @@
   .heroInner {
     animation: hero-text-fade-in 800ms cubic-bezier(0.2, 0.6, 0.2, 1) 100ms both;
   }
+}
+
+/* === Education / Experience section (mirrors HomepageFeatures layout) === */
+.bgSection {
+  position: relative;
+  z-index: 3;
+  margin-top: calc(-90vh + 700px);
+  padding: var(--space-6) 0 0 0;
+}
+
+.bgContainer {
+  max-width: var(--width-page);
+  margin: 0 auto;
+  padding: 0 clamp(24px, 6vw, 64px);
+}
+
+.bgBlock {
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--rule);
+  margin-bottom: var(--space-6);
+}
+
+.bgBlock:last-child {
+  margin-bottom: var(--space-6);
+}
+
+.bgEntries {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.sectionTitle {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  margin: 0 0 var(--space-5) 0;
+  color: var(--ink);
+}
+
+.sectionTitleMark {
+  display: inline-block;
+  width: 24px;
+  height: 2px;
+  background: var(--accent);
+  border-radius: 1px;
+  flex-shrink: 0;
 }
 
 /* === Legacy class no-ops (v1 / v1.1 / v1.2 transition safety) === */

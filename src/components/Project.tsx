@@ -25,7 +25,7 @@ export const Project = ({
   detailLink,
 }: ProjectProps) => {
   const link = detailLink || liveLink || codeLink;
-  const isExternal = !!link && /^https?:\/\//.test(link);
+  const isExternal = !!link && (/^https?:\/\//.test(link) || link.includes('/portfolio/'));
 
   return (
     <article className={styles.card}>
@@ -58,11 +58,11 @@ export const Project = ({
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <Translate id="project.card.viewLink" description="Project card view-detail link label">查看 →</Translate>
+                  <Translate id="project.card.viewLink" description="Project card view-detail link label">查看作品集 →</Translate>
                 </a>
               ) : (
                 <Link className={styles.link} to={link}>
-                  <Translate id="project.card.viewLink" description="Project card view-detail link label">查看 →</Translate>
+                  <Translate id="project.card.viewLink" description="Project card view-detail link label">查看作品集 →</Translate>
                 </Link>
               ))}
             </span>

@@ -16,7 +16,7 @@ const projects: Array<ProjectType> = [
       message: '街机风格多人仓鼠球赛车游戏，使用 Unreal 开发。玩家操控仓鼠在多条赛道上竞速，利用独特的滚动弹跳物理和七种道具争夺第一。',
       description: 'TGP II project description (Home card)',
     }),
-    detailLink: '/teamwork#hamsterballin',
+    detailLink: translate({ id: 'data.project.tgp2.detailLink', message: '/zh-cn/portfolio/#2-hamsterballin街机赛车', description: 'TGP II detail link (zh→portfolio, en→teamwork)' }),
     techstack: ['2026', 'Unreal'],
   },
   {
@@ -27,7 +27,7 @@ const projects: Array<ProjectType> = [
       message: '逆转裁判风格的法庭剧情游戏，使用自己搭建的 C++ 引擎开发。还原了对话、法庭辩论和交叉询问等核心玩法。',
       description: 'DFS I project description (Home card)',
     }),
-    detailLink: '/individual-work#aaa',
+    detailLink: translate({ id: 'data.project.dfs1.detailLink', message: '/zh-cn/portfolio/#4-逆转裁判-c-复刻adv', description: 'DFS I detail link (zh→portfolio, en→individual)' }),
     techstack: ['2026', 'C++'],
   },
   {
@@ -42,7 +42,7 @@ const projects: Array<ProjectType> = [
       message: '基于 C++ 搭建的游戏引擎。支持 2D/3D DirectX 11 渲染、Blinn-Phong 光照、网络对战、保留模式 UI 等。',
       description: 'Personal engine project description',
     }),
-    detailLink: '/individual-work#engine',
+    detailLink: translate({ id: 'data.project.engine.detailLink', message: '/zh-cn/portfolio/#5-c-个人引擎', description: 'Engine detail link (zh→portfolio, en→individual)' }),
     techstack: ['2025', 'C++'],
   },
   {
@@ -53,7 +53,7 @@ const projects: Array<ProjectType> = [
       message: '横板 2D 解谜游戏，使用 Unity 开发。玩家扮演一只因不会正常攀爬而受到排挤的蜘蛛，利用它特殊的弹性蛛网穿越障碍、躲避危险，登至蜘蛛巢穴顶部。',
       description: 'ArachNOT project description on Home',
     }),
-    detailLink: '/teamwork#arachnot',
+    detailLink: translate({ id: 'data.project.arachnot.detailLink', message: '/zh-cn/portfolio/#3-arachnot横板-2d-解谜', description: 'ArachNOT detail link (zh→portfolio, en→teamwork)' }),
     techstack: ['2025', 'Unity'],
   },
 ];

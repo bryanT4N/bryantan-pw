@@ -192,6 +192,13 @@ html.blog-post-page .col.col--3 > .thin-scrollbar::-webkit-scrollbar {
   color: var(--ink);
 }
 
+/* zh-cn: hide Individual/Teamwork/About navbar items */
+html[lang="zh-cn"] .navbar__link[href="/zh-cn/individual-work/"],
+html[lang="zh-cn"] .navbar__link[href="/zh-cn/teamwork/"],
+html[lang="zh-cn"] .navbar__link[href="/zh-cn/about/"] {
+  display: none;
+}
+
 /* Code highlights */
 .docusaurus-highlight-code-line {
   background-color: var(--docusaurus-highlighted-code-line-bg);

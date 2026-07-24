@@ -8,6 +8,8 @@ import styles from './index.module.css';
 import HomepageFeatures from '../components/HomepageFeatures';
 import Typewriter from '../components/Typewriter';
 import { GitHubIcon, LinkedInIcon, EmailIcon } from '../components/icons';
+import { Education, Experience } from '../components';
+import { education, experience } from '../utils/data';
 
 function HomepageHero() {
   const heroRef = useRef(null);
@@ -18,13 +20,14 @@ function HomepageHero() {
     isEn ? '/files/Bryan_Tan_Resume_2026_en.pdf' : '/files/Bryan_Tan_Resume_2026.pdf'
   );
   const email = 'bryantan@foxmail.com';
+  const portraitUrl = useBaseUrl('/img/portrait.png');
   // 中文每个字信息量比英文字母大，逐字打字调慢一些
-  const nameTypingSpeedMs = isEn ? 55 : 120;
-  const bioTypingSpeedMs = isEn ? 37 : 80;
+  const nameTypingSpeedMs = isEn ? 55 : 333;
+  const bioTypingSpeedMs = isEn ? 37 : 35;
   // hero 4 个组件浮现延迟，分语言两套（顺序：LinkedIn / GitHub / Email / My Resume）
   const revealDelaysMs = isEn
-    ? [350, 1050, 1750, 3250]
-    : [100, 800, 1500, 3000];
+    ? [350, 1050, 1750, 3250, 3800]
+    : [100, 800, 1500, 2200, 2900];
   // Hero name + bio type out in sequence: name first, then the two bio sentences.
   // The single caret stays at the name's end until the bio types its first char.
   const [nameDone, setNameDone] = useState(false);
@@ -39,7 +42,7 @@ function HomepageHero() {
     {
       id: 'hero.bio',
       description: 'Hero short bio',
-      message: '游戏策划，兴趣使然的开发者。{br}关注 RPG 与互动叙事。',
+      message: '游戏策划，兴趣使然的开发者，SMU Guildhall 交互技术硕士在读。{br}参与过游戏项目《文明与征服》(2021)。{br}最喜欢的游戏是《博德之门3》、《火箭联盟》、《符文工房3》和宝可梦 Gen5 Gen6，最近在学习打街霸 :(',
     },
     { br: '\n' }
   ).split('\n');
@@ -94,18 +97,24 @@ function HomepageHero() {
           />
         </div>
         <div className={styles.heroBottomFade} aria-hidden="true" />
-        <div className={styles.heroInner}>
-          <div className={styles.heroText}>
+        <div className={isEn ? styles.heroInnerEn : styles.heroInner}>
+          {!isEn && (
+            <div className={styles.heroPortraitWrap}>
+              <img src={portraitUrl} alt="Bryan Tan" className={styles.heroPortrait} loading="eager" />
+            </div>
+          )}
+          <div className={isEn ? styles.heroTextEn : styles.heroText}>
             <h1 className={styles.name}>
               <Typewriter lines={[heroName]} typingSpeedMs={nameTypingSpeedMs} startDelayMs={0} showCursor={!bioStarted} onDone={() => setNameDone(true)} />
             </h1>
             <p className={styles.bio}>
               <Typewriter
                 lines={bioLines}
-                start={nameDone}
+                start={isEn ? nameDone : true}
                 typingSpeedMs={bioTypingSpeedMs}
                 linePauseMs={500}
-                startDelayMs={1000}
+                lineGap="1rem"
+                startDelayMs={isEn ? 1000 : nameTypingSpeedMs * 2}
                 onStart={() => setBioStarted(true)}
               />
             </p>
@@ -130,6 +139,12 @@ function HomepageHero() {
                   <a className={styles.resumeLink} href={`${resumeUrl}#navpanes=0`} target="_blank" rel="noopener noreferrer">
                     <Translate id="hero.links.resume" description="Hero link to resume PDF">个人简历</Translate>
                   </a>
+                  <span className={styles.revealItem} style={{ animationDelay: `${revealDelaysMs[4]}ms` }}>
+                    <span className={styles.linkSep}> </span>
+                    <a className={styles.portfolioLink} href={useBaseUrl('/portfolio/')} target="_blank" rel="noopener noreferrer">
+                      <Translate id="hero.links.portfolio" description="Hero link to portfolio single page">查看作品集(单页) →</Translate>
+                    </a>
+                  </span>
                 </li>
               </ul>
             </nav>
@@ -140,7 +155,41 @@ function HomepageHero() {
   );
 }
 
+function HomeBackground() {
+  return (
+    <div className={styles.bgSection}>
+      <div className={styles.bgContainer}>
+        <section className={styles.bgBlock}>
+          <h2 className={styles.sectionTitle}>
+            <span className={styles.sectionTitleMark} aria-hidden="true" />
+            <Translate id="home.experience.title" description="Homepage experience section title">工作经历</Translate>
+          </h2>
+          <div className={styles.bgEntries}>
+            {experience.map((props, idx) => (
+              <Experience key={idx} {...props} />
+            ))}
+          </div>
+        </section>
+
+        <section className={styles.bgBlock}>
+          <h2 className={styles.sectionTitle}>
+            <span className={styles.sectionTitleMark} aria-hidden="true" />
+            <Translate id="home.education.title" description="Homepage education section title">教育经历</Translate>
+          </h2>
+          <div className={styles.bgEntries}>
+            {education.map((props, idx) => (
+              <Education key={idx} {...props} />
+            ))}
+          </div>
+        </section>
+      </div>
+    </div>
+  );
+}
+
 export default function Home() {
+  const { i18n } = useDocusaurusContext();
+  const isEn = i18n.currentLocale === 'en';
   return (
     <Layout
       title={translate({ id: 'page.home.title', message: 'Home', description: 'Homepage <title>' })}
@@ -151,6 +200,7 @@ export default function Home() {
       })}>
       <HomepageHero />
       <main>
+        {!isEn && <HomeBackground />}
         <HomepageFeatures />
       </main>
     </Layout>

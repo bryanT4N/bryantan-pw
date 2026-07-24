@@ -11,7 +11,8 @@
  */
 
 .section {
-  padding: var(--space-6) 0 var(--space-7) 0;   /* 48 top / 64 bottom */
+  padding-top: 0;
+  padding-bottom: var(--space-7);
   background: var(--paper);
 }
 
@@ -31,6 +32,8 @@
   line-height: 1.25;
   letter-spacing: -0.01em;
   margin: 0 0 var(--space-5) 0;                  /* 32 below */
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--rule);
   color: var(--ink);
 }
 
