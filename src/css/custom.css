@@ -192,7 +192,8 @@ html.blog-post-page .col.col--3 > .thin-scrollbar::-webkit-scrollbar {
   color: var(--ink);
 }
 
-/* zh-cn: hide Individual/Teamwork/About navbar items */
+/* zh-cn: hide page navbar items (single-page layout) */
+html[lang="zh-cn"] .navbar__link[href="/zh-cn/"],
 html[lang="zh-cn"] .navbar__link[href="/zh-cn/individual-work/"],
 html[lang="zh-cn"] .navbar__link[href="/zh-cn/teamwork/"],
 html[lang="zh-cn"] .navbar__link[href="/zh-cn/about/"] {

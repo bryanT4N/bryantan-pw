@@ -95,8 +95,8 @@ function HomepageHero() {
             loading="eager"
             fetchpriority="high"
           />
+          <div className={styles.heroBottomFade} />
         </div>
-        <div className={styles.heroBottomFade} aria-hidden="true" />
         <div className={isEn ? styles.heroInnerEn : styles.heroInner}>
           {!isEn && (
             <div className={styles.heroPortraitWrap}>
@@ -139,51 +139,50 @@ function HomepageHero() {
                   <a className={styles.resumeLink} href={`${resumeUrl}#navpanes=0`} target="_blank" rel="noopener noreferrer">
                     <Translate id="hero.links.resume" description="Hero link to resume PDF">个人简历</Translate>
                   </a>
-                  <span className={styles.revealItem} style={{ animationDelay: `${revealDelaysMs[4]}ms` }}>
-                    <span className={styles.linkSep}> </span>
-                    <a className={styles.portfolioLink} href={useBaseUrl('/portfolio/')} target="_blank" rel="noopener noreferrer">
-                      <Translate id="hero.links.portfolio" description="Hero link to portfolio single page">查看作品集(单页) →</Translate>
-                    </a>
-                  </span>
+                  {!isEn && (
+                    <span className={styles.revealItem} style={{ animationDelay: `${revealDelaysMs[4]}ms` }}>
+                      <span className={styles.linkSep}> </span>
+                      <a className={styles.portfolioLink} href={useBaseUrl('/portfolio/')} target="_blank" rel="noopener noreferrer">
+                        <Translate id="hero.links.portfolio" description="Hero link to portfolio single page">查看作品集(单页) →</Translate>
+                      </a>
+                    </span>
+                  )}
                 </li>
               </ul>
             </nav>
           </div>
         </div>
+        {!isEn && (
+          <div className={styles.bgContainer}>
+            <section className={styles.bgBlock}>
+              <h2 className={styles.sectionTitle}>
+                <span className={styles.sectionTitleMark} aria-hidden="true" />
+                <Translate id="home.experience.title" description="Homepage experience section title">工作经历</Translate>
+              </h2>
+              <div className={styles.bgEntries}>
+                {experience.map((props, idx) => (
+                  <Experience key={idx} {...props} />
+                ))}
+              </div>
+            </section>
+            <section className={styles.bgBlock}>
+              <h2 className={styles.sectionTitle}>
+                <span className={styles.sectionTitleMark} aria-hidden="true" />
+                <Translate id="home.education.title" description="Homepage education section title">教育经历</Translate>
+              </h2>
+              <div className={styles.bgEntries}>
+                {education.map((props, idx) => (
+                  <Education key={idx} {...props} />
+                ))}
+              </div>
+            </section>
+          </div>
+        )}
+        <div className={styles.projectsWrap}>
+          <HomepageFeatures />
+        </div>
       </section>
     </>
-  );
-}
-
-function HomeBackground() {
-  return (
-    <div className={styles.bgSection}>
-      <div className={styles.bgContainer}>
-        <section className={styles.bgBlock}>
-          <h2 className={styles.sectionTitle}>
-            <span className={styles.sectionTitleMark} aria-hidden="true" />
-            <Translate id="home.experience.title" description="Homepage experience section title">工作经历</Translate>
-          </h2>
-          <div className={styles.bgEntries}>
-            {experience.map((props, idx) => (
-              <Experience key={idx} {...props} />
-            ))}
-          </div>
-        </section>
-
-        <section className={styles.bgBlock}>
-          <h2 className={styles.sectionTitle}>
-            <span className={styles.sectionTitleMark} aria-hidden="true" />
-            <Translate id="home.education.title" description="Homepage education section title">教育经历</Translate>
-          </h2>
-          <div className={styles.bgEntries}>
-            {education.map((props, idx) => (
-              <Education key={idx} {...props} />
-            ))}
-          </div>
-        </section>
-      </div>
-    </div>
   );
 }
 
@@ -199,10 +198,7 @@ export default function Home() {
         description: 'Homepage meta description',
       })}>
       <HomepageHero />
-      <main>
-        {!isEn && <HomeBackground />}
-        <HomepageFeatures />
-      </main>
+      <main />
     </Layout>
   );
 }

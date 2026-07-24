@@ -13,7 +13,6 @@
 .section {
   padding-top: 0;
   padding-bottom: var(--space-7);
-  background: var(--paper);
 }
 
 .container {
