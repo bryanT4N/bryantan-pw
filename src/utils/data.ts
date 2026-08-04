@@ -16,7 +16,7 @@ const projects: Array<ProjectType> = [
       message: '街机风格多人仓鼠球赛车游戏，使用 Unreal 开发。玩家操控仓鼠在多条赛道上竞速，利用独特的滚动弹跳物理和七种道具争夺第一。',
       description: 'TGP II project description (Home card)',
     }),
-    detailLink: translate({ id: 'data.project.tgp2.detailLink', message: '/zh-cn/portfolio/#2-hamsterballin街机赛车', description: 'TGP II detail link (zh→portfolio, en→teamwork)' }),
+    detailLink: translate({ id: 'data.project.tgp2.detailLink', message: '/zh-cn/portfolio/#3-hamsterballin街机赛车', description: 'TGP II detail link (zh→portfolio, en→teamwork)' }),
     techstack: ['2026', 'Unreal'],
   },
   {
@@ -53,7 +53,7 @@ const projects: Array<ProjectType> = [
       message: '横板 2D 解谜游戏，使用 Unity 开发。玩家扮演一只因不会正常攀爬而受到排挤的蜘蛛，利用它特殊的弹性蛛网穿越障碍、躲避危险，登至蜘蛛巢穴顶部。',
       description: 'ArachNOT project description on Home',
     }),
-    detailLink: translate({ id: 'data.project.arachnot.detailLink', message: '/zh-cn/portfolio/#3-arachnot横板-2d-解谜', description: 'ArachNOT detail link (zh→portfolio, en→teamwork)' }),
+    detailLink: translate({ id: 'data.project.arachnot.detailLink', message: '/zh-cn/portfolio/#2-arachnot横板-2d-解谜', description: 'ArachNOT detail link (zh→portfolio, en→teamwork)' }),
     techstack: ['2025', 'Unity'],
   },
 ];
