@@ -3,7 +3,7 @@
  * bryantan.net Homepage v1 — Design Tokens + Global Styles
  * Spec: 0_HomepageDesign_v1_Final_Spec.md (2026-06-02)
  *
- * Token 体系：暖纸白底 + 陶土橙红 accent + Fraunces/Inter/JetBrains Mono 字体
+ * Token 体系：暖纸白底 + 深橄榄金 accent + Fraunces/Inter/JetBrains Mono 字体
  * 设计哲学：工艺派 craft — 看不到设计本身但用起来舒服
  */
 
@@ -17,8 +17,8 @@
   --ink:          #1F1B16;  /* 文字主色（暖近黑） */
   --ink-soft:     #5B5246;  /* 次要文字 / meta */
   --ink-faint:    #9A938A;  /* 最弱信息 */
-  --accent:       #B05A3B;  /* 陶土橙红 */
-  --accent-hover: #8F4628;  /* accent 暗一档 */
+  --accent:       #77641A;  /* 深橄榄金 */
+  --accent-hover: #5D4E14;  /* accent 暗一档 */
   --rule:         #D9D2C2;  /* 极淡分隔线 */
 
   /* --- Type Tokens --- */
@@ -51,13 +51,13 @@
   --width-content: var(--width-main);
 
   /* --- Infima 覆写：把 Docusaurus 默认色映射到 v1 token --- */
-  --ifm-color-primary:         #B05A3B;
-  --ifm-color-primary-dark:    #9F5235;
-  --ifm-color-primary-darker:  #964D32;
-  --ifm-color-primary-darkest: #7B4029;
-  --ifm-color-primary-light:   #B96B4D;
-  --ifm-color-primary-lighter: #C0775A;
-  --ifm-color-primary-lightest:#CD937D;
+  --ifm-color-primary:         #77641A;
+  --ifm-color-primary-dark:    #6B5A17;
+  --ifm-color-primary-darker:  #655516;
+  --ifm-color-primary-darkest: #534612;
+  --ifm-color-primary-light:   #836E1D;
+  --ifm-color-primary-lighter: #89731E;
+  --ifm-color-primary-lightest:#9B8222;
 
   --ifm-background-color:        #F5F1E8;
   --ifm-navbar-background-color: #F5F1E8;
@@ -82,7 +82,7 @@
 
 /* dark mode 被禁用（docusaurus.config.js: disableSwitch: true），保留 dark 块作为防御 */
 html[data-theme='dark'] {
-  --ifm-color-primary: #B05A3B;
+  --ifm-color-primary: #77641A;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 

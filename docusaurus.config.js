@@ -91,7 +91,7 @@ module.exports = {
             tagName: 'link',
             rel: 'mask-icon',
             href: 'img/faviconA.ico',
-            color: '#B05A3B',
+            color: '#77641A',
           },
           {
             tagName: 'meta',
