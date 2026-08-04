@@ -507,6 +507,21 @@ table.kv td.value {
 
 
 
+</style><style id="section-collapse">
+#write h2.collapsible, #write h3.collapsible { cursor: pointer; }
+#write h2.collapsible::before, #write h3.collapsible::before {
+  content: '\25bc\fe0e';
+  display: inline-block;
+  width: 1.15em;
+  margin-left: -1.15em;
+  font-size: 0.7em;
+  vertical-align: 0.12em;
+  color: var(--accent-blue);
+  opacity: 0.55;
+}
+#write h2.collapsible[data-collapsed='true']::before,
+#write h3.collapsible[data-collapsed='true']::before { content: '\25b6\fe0e'; }
+#write h2.collapsible:hover::before, #write h3.collapsible:hover::before { opacity: 1; }
 </style><title>谭磊轩 - 游戏设计与开发作品集</title>
 </head>
 <body class='typora-export os-windows'><div class='typora-export-content'>
@@ -534,7 +549,7 @@ table.kv td.value {
         border:none;">
 </iframe><h3 id='12-绝区零博客节选'><span>1.2 《绝区零》博客节选</span></h3><p><span>这篇是把博客里聊绝区零的东西贴一些过来，因为是博客文章所以解释说明有点多，没有那么精炼。有些是开服记录的，有些是退坑后补充的，都是探讨一些特定的设计点。虽然离现在有一段时间了，但也能体现思考过程和一些关注的聚焦点。</span></p><details>
     <summary><u><b>1.2.1 招架支援 和 回避支援</b></u></summary>
-    <p>……绝区零的招架和闪避被视为一种简易 QTE，在开服时就因为“过于简单”曾被猛烈集火过。这是一个被低估的利大于弊的设计。虽说根源上来自《合金装备》，但用在绝区零里的思路明显不同。它的效果有两个：</p>
+    <p>……绝区零的招架和闪避被视为一种简易 QTE，在开服时就因为“过于简单”被猛烈集火过。这是一个被低估的利大于弊的设计。虽说根源上来自《合金装备》，但用在绝区零里的思路明显不同。它的效果有两个：</p>
     <p>第一，在于让整个游戏的技巧障碍 (Skill Barrier) 有非常低的起点；第二，在于它刻意构建了<b>技巧深度上明确的递进分层</b>。</p>
     <p>后者不容易被注意到，但实际上更关键。有的设计者也称之为“自我再造” (Reinvention)，它指的是<u>玩家随着技巧提升，解放注意力并意识到新的挑战内容，于是游戏的技巧范围不断扩展（《体验引擎：游戏设计全景探秘》）</u>。</p>
     <p>从这个角度来说，招架和闪避制造了极明确的“第一层挑战”：金光红光的存在感如此之强，以至于即便你从未玩过动作游戏，在接触战斗时也会瞬间意识到这是首要的挑战内容。等掌握这部分之后，才是角色技能、特性的利用，然后再延伸到建立在连携机制上的合轴之类的其它技巧。</p>
@@ -549,8 +564,8 @@ table.kv td.value {
 </details><details>
     <summary><u><b>1.2.2 谈二游活动玩法</b></u></summary>
     <p>我退坑《绝区零》《崩坏：星穹铁道》的直接原因，都是因为对小游戏玩法不满意。绝区零是 2.0 的随便观经营，我能 get 策划想制造什么体验，但认为考虑欠妥。星铁是 1.1 银狼版本的贴纸拍照活动，这个是认为无聊、不够尊重玩家的时间。</p>
-    <p>因此我想很有必要记录一下自己对活动玩法的思考：</p>
-    <p>米游做活动具备二游活动的显著特点，基线是只要玩家投入时间就能拿满奖励。这就对难度和形式有要求，因为玩家之间的水平差异巨大。这也是在活动里很少玩到难度适宜、能让人紧张兴奋的游戏的原因。</p>
+    <p>于是想记录一下自己对活动玩法的思考：</p>
+    <p>米游的活动在二游活动里很有代表性，基准是只要玩家投入时间就能拿满奖励。这就对难度和形式有要求，因为玩家之间的水平差异巨大。这也是在活动里很少玩到难度适宜、能让人紧张兴奋的游戏的原因。</p>
     <p>显然并不是所有小游戏都适合作为活动玩法。既然如此，哪些玩法是合适的？该怎么评判一个活动玩法本身的质量？</p>
     <p>T0 级别，是那种<b>基础体验有趣</b>、玩完一局之后意犹未竟的游戏（基础体验指的是游戏的操控本身就能产生乐趣，比如马里奥的跳）。绝区零上过的糖豆人玩法、星铁的豹豹碰碰大作战可以放在 T0。蛇对蛇如果进活动，也应该在 T0。</p>
     <p>T1 级别是确实<b>具备休闲乐趣</b>、适合所有人的小游戏玩法，比如宝开的宝石迷阵、祖玛、幻幻球。它们都是那种让玩家通关时愉快地认为自己干的不错的类型。</p>
@@ -850,5 +865,98 @@ table.kv td.value {
     </center></td>
 </tr>
 </table></center><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p></div></div>
+<script id="section-collapse-js">
+(function () {
+  var write = document.getElementById('write');
+  if (!write) return;
+
+  var STATIC_HEADINGS = ['\u5c55\u793a\u4f5c\u54c1\u4e00\u89c8'];
+  var kids = Array.prototype.slice.call(write.children);
+
+  function levelOf(el) {
+    if (el.tagName === 'H2') return 2;
+    if (el.tagName === 'H3') return 3;
+    return 0;
+  }
+
+  var sections = [];
+  kids.forEach(function (el, i) {
+    var level = levelOf(el);
+    if (!level || !el.id || STATIC_HEADINGS.indexOf(el.id) >= 0) return;
+    var owned = [];
+    for (var j = i + 1; j < kids.length; j++) {
+      var next = levelOf(kids[j]);
+      if (next && next <= level) break;
+      owned.push(kids[j]);
+    }
+    var hideable = owned.slice();
+    if (hideable.length && hideable[0].tagName === 'HR') hideable.shift();
+    sections.push({ heading: el, level: level, owned: owned, hideable: hideable });
+  });
+  if (!sections.length) return;
+
+  var collapsed = {};
+  sections.forEach(function (s) { collapsed[s.heading.id] = s.level === 3; });
+
+  function render() {
+    kids.forEach(function (el) { el.style.display = ''; });
+    sections.forEach(function (s) {
+      if (!collapsed[s.heading.id]) return;
+      s.hideable.forEach(function (el) { el.style.display = 'none'; });
+    });
+    sections.forEach(function (s) {
+      s.heading.setAttribute('data-collapsed', collapsed[s.heading.id] ? 'true' : 'false');
+      s.heading.setAttribute('aria-expanded', collapsed[s.heading.id] ? 'false' : 'true');
+    });
+  }
+
+  function toggle(s) {
+    collapsed[s.heading.id] = !collapsed[s.heading.id];
+    render();
+  }
+
+  sections.forEach(function (s) {
+    var h = s.heading;
+    h.classList.add('collapsible');
+    h.setAttribute('role', 'button');
+    h.setAttribute('tabindex', '0');
+    h.addEventListener('click', function () {
+      var sel = window.getSelection();
+      if (sel && !sel.isCollapsed) return;
+      toggle(s);
+    });
+    h.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar') {
+        e.preventDefault();
+        toggle(s);
+      }
+    });
+  });
+
+  function expandForHash() {
+    var id = (location.hash || '').slice(1);
+    if (!id) return false;
+    try { id = decodeURIComponent(id); } catch (err) {}
+    var target = document.getElementById(id);
+    if (!target) return false;
+    var changed = false;
+    sections.forEach(function (s) {
+      var owns = s.heading === target || s.owned.indexOf(target) >= 0;
+      if (owns && collapsed[s.heading.id]) { collapsed[s.heading.id] = false; changed = true; }
+    });
+    if (changed) render();
+    target.scrollIntoView();
+    return changed;
+  }
+
+  render();
+  expandForHash();
+  window.addEventListener('hashchange', expandForHash);
+  write.addEventListener('click', function (e) {
+    var a = e.target.closest ? e.target.closest('a[href^="#"]') : null;
+    if (a) setTimeout(expandForHash, 0);
+  });
+})();
+</script>
 </body>
 </html>
