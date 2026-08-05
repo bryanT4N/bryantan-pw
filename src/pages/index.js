@@ -28,9 +28,17 @@ function HomepageHero() {
   const revealDelaysMs = isEn
     ? [350, 1050, 1750, 3250, 3800]
     : [100, 800, 1500, 2200, 2900];
-  // Hero name + bio type out in sequence: name first, then the two bio sentences.
-  // The single caret stays at the name's end until the bio types its first char.
+  const linePauseMs = 500;
+  const nameCaretLingerMs = 1450;
+  // The caret restarts its blink on every character, so a parked caret runs tw-blink from
+  // the top: lit 0-500ms, dark 500-1000ms. Handing over just inside the dark half spends
+  // one whole blink and leaves no clipped sliver of a second one.
+  const nameToBioPauseMs = 970;
+  // Only the zh bio starts before the name finishes, so only there do both carets show
+  // and the name's linger past its last character. The en bio still waits for the name,
+  // and keeps the original single caret handed over the moment the bio starts.
   const [nameDone, setNameDone] = useState(false);
+  const [nameCaretHeld, setNameCaretHeld] = useState(!isEn);
   const [bioStarted, setBioStarted] = useState(false);
   const heroName = translate({
     id: 'hero.name',
@@ -42,10 +50,19 @@ function HomepageHero() {
     {
       id: 'hero.bio',
       description: 'Hero short bio',
-      message: '游戏策划，兴趣使然的开发者，SMU Guildhall 交互技术硕士在读。{br}参与过游戏项目《文明与征服》(2021)。{br}最喜欢的游戏是《博德之门3》、《火箭联盟》、《符文工房3》和宝可梦 Gen5 Gen6，最近在学习打街霸 :(',
+      message: '游戏策划，兴趣使然的开发者，SMU Guildhall 交互技术硕士在读。{br}参与过游戏项目《文明与征服》(2021)。{br}杂食玩家，十年老书虫。最喜欢的游戏是《博德之门3》和宝可梦 Gen5 Gen6。最近在学习打街霸 :(',
     },
     { br: '\n' }
   ).split('\n');
+
+  useEffect(() => {
+    if (isEn || !nameDone) return undefined;
+    // onDone lands one typing interval past the final character; drop that interval
+    // so the linger is measured from when the last character actually appeared.
+    const held = Math.max(0, nameCaretLingerMs - nameTypingSpeedMs);
+    const timer = setTimeout(() => setNameCaretHeld(false), held);
+    return () => clearTimeout(timer);
+  }, [isEn, nameDone, nameTypingSpeedMs]);
 
   // Mouse parallax — hover-capable devices only, 温和 ±3px / ±2px, rAF-throttled
   useEffect(() => {
@@ -105,16 +122,16 @@ function HomepageHero() {
           )}
           <div className={isEn ? styles.heroTextEn : styles.heroText}>
             <h1 className={styles.name}>
-              <Typewriter lines={[heroName]} typingSpeedMs={nameTypingSpeedMs} startDelayMs={0} showCursor={!bioStarted} onDone={() => setNameDone(true)} />
+              <Typewriter lines={[heroName]} typingSpeedMs={nameTypingSpeedMs} startDelayMs={0} showCursor={nameCaretHeld || !bioStarted} onDone={() => setNameDone(true)} />
             </h1>
             <p className={styles.bio}>
               <Typewriter
                 lines={bioLines}
                 start={isEn ? nameDone : true}
                 typingSpeedMs={bioTypingSpeedMs}
-                linePauseMs={500}
+                linePauseMs={linePauseMs}
                 lineGap="1rem"
-                startDelayMs={isEn ? 1000 : nameTypingSpeedMs * 2}
+                startDelayMs={isEn ? Math.max(0, nameToBioPauseMs - nameTypingSpeedMs) : nameTypingSpeedMs}
                 onStart={() => setBioStarted(true)}
               />
             </p>
