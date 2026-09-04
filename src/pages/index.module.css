@@ -344,6 +344,12 @@
   .heroLinks {
     justify-content: center;
   }
+  .linksRow {
+    justify-content: center;
+  }
+  .resumeItem {
+    text-align: center;
+  }
   .heroIllustration {
     object-position: center 30%;
     opacity: 0.55;
