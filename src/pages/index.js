@@ -50,7 +50,7 @@ function HomepageHero() {
     {
       id: 'hero.bio',
       description: 'Hero short bio',
-      message: '游戏策划，兴趣使然的开发者，SMU Guildhall 交互技术硕士在读。{br}参与过游戏项目《文明与征服》(2021)。{br}杂食玩家，十年老书虫。最喜欢的游戏是《博德之门3》和宝可梦 Gen5 Gen6。最近在学习打街霸 :(',
+      message: '游戏策划/程序开发，SMU Guildhall 交互技术硕士在读。{br}参与过游戏项目《文明与征服》(2021)。{br}最喜欢的游戏是《符文工房3》、宝可梦 Gen5 Gen6 和《博德之门3》。',
     },
     { br: '\n' }
   ).split('\n');
@@ -211,7 +211,7 @@ export default function Home() {
       title={translate({ id: 'page.home.title', message: 'Home', description: 'Homepage <title>' })}
       description={translate({
         id: 'page.home.description',
-        message: '谭磊轩 Bryan Tan — 游戏策划，兴趣使然的开发者，关注 RPG 和互动叙事研究。',
+        message: '谭磊轩 Bryan Tan — 游戏策划/程序开发，关注 RPG 和互动叙事研究。',
         description: 'Homepage meta description',
       })}>
       <HomepageHero />
