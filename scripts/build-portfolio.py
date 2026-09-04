@@ -2,6 +2,12 @@
 """Regenerate static/portfolio/ from the Typora export.
 
     python scripts/build-portfolio.py [path/to/谭磊轩_作品集]
+    python scripts/build-portfolio.py --local [path/to/谭磊轩_作品集]
+
+--local writes "<export name>v2.html" beside the export instead, and applies
+only the collapsible headings. Paths and media stay exactly as exported, so
+that copy reads offline off the folder it sits in, keeps the full-size
+originals, and plays the ArachNOT trailer without YouTube.
 
 The published page is NOT a copy of the export. Six transforms are applied
 every time, so re-exporting from Typora and running this script is the only
@@ -31,6 +37,7 @@ REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DEFAULT_EXPORT_DIR = os.path.join(os.path.dirname(REPO), '作品集', '谭磊轩_作品集')
 OUT_HTML = os.path.join(REPO, 'static', 'portfolio', 'index.html')
 OUT_ASSETS = os.path.join(REPO, 'static', 'portfolio', 'assets')
+LOCAL_SUFFIX = 'v2'
 
 # ---------------------------------------------------------------- transforms
 
@@ -200,12 +207,45 @@ def write_atomic(path, data, binary=False):
 
 
 def find_export(export_dir):
+    # LOCAL_SUFFIX is this script's own output, so it is never a candidate.
     matches = [n for n in os.listdir(export_dir)
-               if n.endswith('.html') and not n.startswith('.')]
+               if n.endswith('.html') and not n.startswith('.')
+               and not n.endswith(LOCAL_SUFFIX + '.html')]
     if len(matches) != 1:
-        raise SystemExit('expected exactly one .html export in %s, found %d'
-                         % (export_dir, len(matches)))
+        raise SystemExit('expected exactly one .html export in %s, found %d: %s'
+                         % (export_dir, len(matches), ', '.join(sorted(matches))))
     return os.path.join(export_dir, matches[0])
+
+
+def inject_collapse(text, log):
+    if 'section-collapse' in text:
+        raise SystemExit('this file already carries the collapse code; run against a fresh export')
+
+    if text.count('</style><title>') != 1:
+        raise SystemExit('cannot locate the end of the custom style block')
+    text = text.replace('</style><title>', '</style>' + COLLAPSE_CSS + '<title>', 1)
+
+    script = COLLAPSE_JS.replace(
+        '__STATIC_HEADINGS__',
+        '[' + ', '.join("'%s'" % h for h in STATIC_HEADINGS) + ']')
+    if text.count('</body>') != 1:
+        raise SystemExit('cannot locate </body>')
+    text = text.replace('</body>', script + '\n</body>', 1)
+    log.append('  ->inject   collapsible headings (static: %s)' % ', '.join(STATIC_HEADINGS))
+    return text
+
+
+def build_local(src_html, log):
+    """The offline copy: collapsible headings only, every path left as exported."""
+    out = inject_collapse(io.open(src_html, encoding='utf-8', newline='').read(), log)
+    if 'section-collapse-js' not in out:
+        raise SystemExit('collapse script went missing')
+
+    stem, ext = os.path.splitext(src_html)
+    target = stem + LOCAL_SUFFIX + ext
+    write_atomic(target, out)
+    log.append('  ->keep     all ./.assets/ paths and full-size media untouched')
+    return target, out
 
 
 def build_index(src_html, log):
@@ -240,17 +280,7 @@ def build_index(src_html, log):
     out = out.replace(TRAILER_VIDEO, TRAILER_EMBED)
     log.append('  ->form     ai_obstacles gif -> mp4, ArachNOT trailer -> YouTube')
 
-    if out.count('</style><title>') != 1:
-        raise SystemExit('cannot locate the end of the custom style block')
-    out = out.replace('</style><title>', '</style>' + COLLAPSE_CSS + '<title>', 1)
-
-    script = COLLAPSE_JS.replace(
-        '__STATIC_HEADINGS__',
-        '[' + ', '.join("'%s'" % h for h in STATIC_HEADINGS) + ']')
-    if out.count('</body>') != 1:
-        raise SystemExit('cannot locate </body>')
-    out = out.replace('</body>', script + '\n</body>', 1)
-    log.append('  ->inject   collapsible headings (static: %s)' % ', '.join(STATIC_HEADINGS))
+    out = inject_collapse(out, log)
 
     if './.assets/' in out:
         leftover = re.findall(r'\./\.assets/[^"\')]+', out)
@@ -294,17 +324,26 @@ def copy_assets(export_dir, subpages, log):
 
 
 def main():
-    export_dir = sys.argv[1] if len(sys.argv) > 1 else DEFAULT_EXPORT_DIR
+    args = [a for a in sys.argv[1:] if a != '--local']
+    local = '--local' in sys.argv
+    export_dir = args[0] if args else DEFAULT_EXPORT_DIR
     if not os.path.isdir(export_dir):
         raise SystemExit('export folder not found: %s' % export_dir)
 
     src_html = find_export(export_dir)
     log = []
+    sys.stdout.reconfigure(encoding='utf-8')
+
+    if local:
+        target, out = build_local(src_html, log)
+        print('source: %s' % src_html)
+        print('\n'.join(log))
+        print('wrote:  %s  (%d chars, %d lines)' % (target, len(out), out.count('\n') + 1))
+        return
+
     out, subpages = build_index(src_html, log)
     copy_assets(export_dir, subpages, log)
     write_atomic(OUT_HTML, out)
-
-    sys.stdout.reconfigure(encoding='utf-8')
     print('source: %s' % src_html)
     print('\n'.join(log))
     print('wrote:  %s  (%d chars, %d lines)' % (OUT_HTML, len(out), out.count('\n') + 1))
